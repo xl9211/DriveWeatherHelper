@@ -8,6 +8,9 @@
 
 #import "TBAddRouteViewController.h"
 #import "TBCityListViewController.h"
+#import "TBAppDelegate.h"
+#import "TBRouteListViewController.h"
+#import <sqlite3.h>
 
 @implementation TBAddRouteViewController
 
@@ -27,11 +30,57 @@
     [super dealloc];
 }
 
-- (IBAction)cancel:(id)sender
+- (void)clean
 {
     self.cityFrom.text = nil;
+    self.provinceFrom.text = nil;
     self.cityTo.text = nil;
+    self.provinceTo.text = nil;
     [self dismissModalViewControllerAnimated:YES];
+}
+
+- (IBAction)cancel:(id)sender
+{
+    [self clean];
+}
+
+- (NSString *)dataFilePath {
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    return [documentsDirectory stringByAppendingPathComponent:kDBFilename];
+}
+
+- (IBAction)save:(id)sender
+{
+    TBAppDelegate *delegate = [[UIApplication sharedApplication] delegate];
+	TBRouteListViewController *root = [delegate.navController.viewControllers objectAtIndex:0];
+    
+    sqlite3 *database;
+    const char *db_path = [[self dataFilePath] UTF8String];
+    if (sqlite3_open(db_path, &database) != SQLITE_OK)
+    {
+        sqlite3_close(database);
+        NSAssert(0, @"Failed to open database");
+    }
+    
+    NSString *insert = [[NSString alloc] 
+                              initWithFormat:@"insert or replace into route_info (city_from, province_from, city_to, province_to) values ('%@', '%@', '%@', '%@')",
+                              self.cityFrom.text,
+                              self.provinceFrom.text,
+                              self.cityTo.text,
+                              self.provinceTo.text];
+	char *errorMsg;
+	if (sqlite3_exec(database, [insert UTF8String], NULL, NULL, &errorMsg) != SQLITE_OK)
+	{
+		NSAssert1(0, @"Error insertSelecting tables: %s", errorMsg);	
+	}
+
+    sqlite3_close(database);
+    
+    [root readDataFromDB];
+    [[root tableView] reloadData];
+    
+    [self clean];
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil

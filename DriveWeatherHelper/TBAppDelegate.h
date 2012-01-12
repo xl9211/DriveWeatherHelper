@@ -10,13 +10,17 @@
 
 #define kDBFilename @"dwh.sqlite3"
 
+@class BMKMapManager;
+
 @interface TBAppDelegate : UIResponder <UIApplicationDelegate>
 {
     UINavigationController *navController;
+    BMKMapManager *_mapManager;
 }
 
 @property (strong, nonatomic) IBOutlet UIWindow *window;
 @property (strong, nonatomic) IBOutlet UINavigationController *navController;
+//@property (strong, nonatomic) BMKMapManager *_mapManager;
 
 - (NSString *)dataFilePath;
 

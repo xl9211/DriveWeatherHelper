@@ -12,12 +12,14 @@
 @implementation TBCityListViewController
 
 @synthesize tableView;
+@synthesize provinceList;
 @synthesize cityList;
 @synthesize selectedCity;
 @synthesize selectedProvince;
 
 - (void)dealloc
 {
+    [provinceList release];
     [cityList release];
     [selectedCity release];
     [selectedProvince release];
@@ -53,6 +55,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    provinceList = [[NSArray alloc] initWithObjects:@"北京", @"上海", @"天津", @"重庆", @"黑龙江", @"吉林", 
+                    @"辽宁", @"内蒙古", @"河北", @"山西", @"陕西", @"山东", @"新疆", @"西藏", @"青海", @"甘肃", 
+                    @"宁夏", @"河南", @"江苏", @"湖北", @"浙江", @"安徽", @"福建", @"江西", @"湖南", @"贵州", 
+                    @"四川", @"广东", @"云南", @"广西", @"海南", @"香港", @"澳门", @"台湾", nil];
     
     cityList = [[NSMutableDictionary alloc] init];
     
@@ -101,6 +108,7 @@
     self.selectedCity = nil;
     self.selectedProvince = nil;
     self.cityList = nil;
+    self.provinceList = nil;
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -114,19 +122,19 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView 
 {
-    return [[self.cityList allKeys] count];
+    return [self.provinceList count];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    NSString *key = [[self.cityList allKeys] objectAtIndex:section];
-    return [[self.cityList objectForKey:key] count];
+    NSString *province = [self.provinceList objectAtIndex:section];
+    return [[self.cityList objectForKey:province] count];
 }
 
 - (NSString *)tableView:(UITableView *)tableView
 titleForHeaderInSection:(NSInteger)section {
-    NSString *key = [[self.cityList allKeys] objectAtIndex:section];
-    return key;
+    NSString *province = [self.provinceList objectAtIndex:section];
+    return province;
 }
 
 /*
@@ -149,7 +157,7 @@ titleForHeaderInSection:(NSInteger)section {
     
     NSUInteger section = [indexPath section];
     NSUInteger row = [indexPath row];
-    NSString *province = [[self.cityList allKeys] objectAtIndex:section];
+    NSString *province = [self.provinceList objectAtIndex:section];
     cell.textLabel.text = [[self.cityList objectForKey:province] objectAtIndex:row];
     
     return cell;
@@ -162,7 +170,7 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath
     
     NSUInteger section = [indexPath section];
     NSUInteger row = [indexPath row];
-    NSString *province = [[self.cityList allKeys] objectAtIndex:section];
+    NSString *province = [self.provinceList objectAtIndex:section];
     NSString *city = [[self.cityList objectForKey:province] objectAtIndex:row];
     
     self.selectedCity.text = city;

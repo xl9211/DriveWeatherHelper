@@ -9,6 +9,13 @@
 /* Begin PBXBuildFile section */
 		6D46506D14BEC52000B223B5 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D46506C14BEC52000B223B5 /* libsqlite3.dylib */; };
 		6D46507314BEC8E700B223B5 /* dwh.sqlite3 in Resources */ = {isa = PBXBuildFile; fileRef = 6D46507214BEC8E700B223B5 /* dwh.sqlite3 */; };
+		6D7D54E014BF315A0098BD89 /* TBRouteWeatherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D7D54DE14BF315A0098BD89 /* TBRouteWeatherViewController.m */; };
+		6D7D54E114BF315A0098BD89 /* TBRouteWeatherViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D7D54DF14BF315A0098BD89 /* TBRouteWeatherViewController.xib */; };
+		6D7D550C14BF31F60098BD89 /* libbaidumapapi.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D7D550814BF31F60098BD89 /* libbaidumapapi.a */; };
+		6D7D550D14BF31F70098BD89 /* libbaidumapapi.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D7D550A14BF31F60098BD89 /* libbaidumapapi.a */; };
+		6D7D550E14BF31F70098BD89 /* mapapi.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 6D7D550B14BF31F60098BD89 /* mapapi.bundle */; };
+		6D7D551014BF33120098BD89 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D7D550F14BF33120098BD89 /* CoreLocation.framework */; };
+		6D7D551214BF331D0098BD89 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D7D551114BF331D0098BD89 /* QuartzCore.framework */; };
 		6DA9B0B814BDB7CA0042E007 /* TBAddRouteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DA9B0B614BDB7CA0042E007 /* TBAddRouteViewController.m */; };
 		6DA9B0B914BDB7CA0042E007 /* TBAddRouteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6DA9B0B714BDB7CA0042E007 /* TBAddRouteViewController.xib */; };
 		6DBE91D314BD67FB00AB25E3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DBE91D214BD67FB00AB25E3 /* UIKit.framework */; };
@@ -27,6 +34,43 @@
 /* Begin PBXFileReference section */
 		6D46506C14BEC52000B223B5 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		6D46507214BEC8E700B223B5 /* dwh.sqlite3 */ = {isa = PBXFileReference; lastKnownFileType = file; name = dwh.sqlite3; path = DriveWeatherHelper/dwh.sqlite3; sourceTree = "<group>"; };
+		6D7D54DD14BF315A0098BD89 /* TBRouteWeatherViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBRouteWeatherViewController.h; sourceTree = "<group>"; };
+		6D7D54DE14BF315A0098BD89 /* TBRouteWeatherViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBRouteWeatherViewController.m; sourceTree = "<group>"; };
+		6D7D54DF14BF315A0098BD89 /* TBRouteWeatherViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TBRouteWeatherViewController.xib; sourceTree = "<group>"; };
+		6D7D54E914BF31F60098BD89 /* BMapKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMapKit.h; sourceTree = "<group>"; };
+		6D7D54EA14BF31F60098BD89 /* BMKAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMKAnnotation.h; sourceTree = "<group>"; };
+		6D7D54EB14BF31F60098BD89 /* BMKAnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMKAnnotationView.h; sourceTree = "<group>"; };
+		6D7D54EC14BF31F60098BD89 /* BMKCircle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMKCircle.h; sourceTree = "<group>"; };
+		6D7D54ED14BF31F60098BD89 /* BMKCircleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMKCircleView.h; sourceTree = "<group>"; };
+		6D7D54EE14BF31F60098BD89 /* BMKGeneralDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMKGeneralDelegate.h; sourceTree = "<group>"; };
+		6D7D54EF14BF31F60098BD89 /* BMKGeocodeType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMKGeocodeType.h; sourceTree = "<group>"; };
+		6D7D54F014BF31F60098BD89 /* BMKGeometry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMKGeometry.h; sourceTree = "<group>"; };
+		6D7D54F114BF31F60098BD89 /* BMKMapManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMKMapManager.h; sourceTree = "<group>"; };
+		6D7D54F214BF31F60098BD89 /* BMKMapView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMKMapView.h; sourceTree = "<group>"; };
+		6D7D54F314BF31F60098BD89 /* BMKMultiPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMKMultiPoint.h; sourceTree = "<group>"; };
+		6D7D54F414BF31F60098BD89 /* BMKOfflineMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMKOfflineMap.h; sourceTree = "<group>"; };
+		6D7D54F514BF31F60098BD89 /* BMKOfflineMapType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMKOfflineMapType.h; sourceTree = "<group>"; };
+		6D7D54F614BF31F60098BD89 /* BMKOverlay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMKOverlay.h; sourceTree = "<group>"; };
+		6D7D54F714BF31F60098BD89 /* BMKOverlayPathView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMKOverlayPathView.h; sourceTree = "<group>"; };
+		6D7D54F814BF31F60098BD89 /* BMKOverlayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMKOverlayView.h; sourceTree = "<group>"; };
+		6D7D54F914BF31F60098BD89 /* BMKPinAnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMKPinAnnotationView.h; sourceTree = "<group>"; };
+		6D7D54FA14BF31F60098BD89 /* BMKPointAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMKPointAnnotation.h; sourceTree = "<group>"; };
+		6D7D54FB14BF31F60098BD89 /* BMKPoiSearchType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMKPoiSearchType.h; sourceTree = "<group>"; };
+		6D7D54FC14BF31F60098BD89 /* BMKPolygon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMKPolygon.h; sourceTree = "<group>"; };
+		6D7D54FD14BF31F60098BD89 /* BMKPolygonView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMKPolygonView.h; sourceTree = "<group>"; };
+		6D7D54FE14BF31F60098BD89 /* BMKPolyline.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMKPolyline.h; sourceTree = "<group>"; };
+		6D7D54FF14BF31F60098BD89 /* BMKPolylineView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMKPolylineView.h; sourceTree = "<group>"; };
+		6D7D550014BF31F60098BD89 /* BMKRouteSearchType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMKRouteSearchType.h; sourceTree = "<group>"; };
+		6D7D550114BF31F60098BD89 /* BMKSearch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMKSearch.h; sourceTree = "<group>"; };
+		6D7D550214BF31F60098BD89 /* BMKShape.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMKShape.h; sourceTree = "<group>"; };
+		6D7D550314BF31F60098BD89 /* BMKTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMKTypes.h; sourceTree = "<group>"; };
+		6D7D550414BF31F60098BD89 /* BMKUserLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMKUserLocation.h; sourceTree = "<group>"; };
+		6D7D550514BF31F60098BD89 /* BMKVersion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMKVersion.h; sourceTree = "<group>"; };
+		6D7D550814BF31F60098BD89 /* libbaidumapapi.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libbaidumapapi.a; sourceTree = "<group>"; };
+		6D7D550A14BF31F60098BD89 /* libbaidumapapi.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libbaidumapapi.a; sourceTree = "<group>"; };
+		6D7D550B14BF31F60098BD89 /* mapapi.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = mapapi.bundle; sourceTree = "<group>"; };
+		6D7D550F14BF33120098BD89 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		6D7D551114BF331D0098BD89 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		6DA9B0B514BDB7CA0042E007 /* TBAddRouteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBAddRouteViewController.h; sourceTree = "<group>"; };
 		6DA9B0B614BDB7CA0042E007 /* TBAddRouteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBAddRouteViewController.m; sourceTree = "<group>"; };
 		6DA9B0B714BDB7CA0042E007 /* TBAddRouteViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TBAddRouteViewController.xib; sourceTree = "<group>"; };
@@ -54,10 +98,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6D7D551214BF331D0098BD89 /* QuartzCore.framework in Frameworks */,
+				6D7D551014BF33120098BD89 /* CoreLocation.framework in Frameworks */,
 				6D46506D14BEC52000B223B5 /* libsqlite3.dylib in Frameworks */,
 				6DBE91D314BD67FB00AB25E3 /* UIKit.framework in Frameworks */,
 				6DBE91D514BD67FB00AB25E3 /* Foundation.framework in Frameworks */,
 				6DBE91D714BD67FB00AB25E3 /* CoreGraphics.framework in Frameworks */,
+				6D7D550C14BF31F60098BD89 /* libbaidumapapi.a in Frameworks */,
+				6D7D550D14BF31F70098BD89 /* libbaidumapapi.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -71,6 +119,77 @@
 			);
 			name = Resources;
 			path = ..;
+			sourceTree = "<group>";
+		};
+		6D7D54E714BF31D60098BD89 /* BaiduMapAPI */ = {
+			isa = PBXGroup;
+			children = (
+				6D7D54E814BF31F60098BD89 /* inc */,
+				6D7D550614BF31F60098BD89 /* libs */,
+				6D7D550B14BF31F60098BD89 /* mapapi.bundle */,
+			);
+			name = BaiduMapAPI;
+			sourceTree = "<group>";
+		};
+		6D7D54E814BF31F60098BD89 /* inc */ = {
+			isa = PBXGroup;
+			children = (
+				6D7D54E914BF31F60098BD89 /* BMapKit.h */,
+				6D7D54EA14BF31F60098BD89 /* BMKAnnotation.h */,
+				6D7D54EB14BF31F60098BD89 /* BMKAnnotationView.h */,
+				6D7D54EC14BF31F60098BD89 /* BMKCircle.h */,
+				6D7D54ED14BF31F60098BD89 /* BMKCircleView.h */,
+				6D7D54EE14BF31F60098BD89 /* BMKGeneralDelegate.h */,
+				6D7D54EF14BF31F60098BD89 /* BMKGeocodeType.h */,
+				6D7D54F014BF31F60098BD89 /* BMKGeometry.h */,
+				6D7D54F114BF31F60098BD89 /* BMKMapManager.h */,
+				6D7D54F214BF31F60098BD89 /* BMKMapView.h */,
+				6D7D54F314BF31F60098BD89 /* BMKMultiPoint.h */,
+				6D7D54F414BF31F60098BD89 /* BMKOfflineMap.h */,
+				6D7D54F514BF31F60098BD89 /* BMKOfflineMapType.h */,
+				6D7D54F614BF31F60098BD89 /* BMKOverlay.h */,
+				6D7D54F714BF31F60098BD89 /* BMKOverlayPathView.h */,
+				6D7D54F814BF31F60098BD89 /* BMKOverlayView.h */,
+				6D7D54F914BF31F60098BD89 /* BMKPinAnnotationView.h */,
+				6D7D54FA14BF31F60098BD89 /* BMKPointAnnotation.h */,
+				6D7D54FB14BF31F60098BD89 /* BMKPoiSearchType.h */,
+				6D7D54FC14BF31F60098BD89 /* BMKPolygon.h */,
+				6D7D54FD14BF31F60098BD89 /* BMKPolygonView.h */,
+				6D7D54FE14BF31F60098BD89 /* BMKPolyline.h */,
+				6D7D54FF14BF31F60098BD89 /* BMKPolylineView.h */,
+				6D7D550014BF31F60098BD89 /* BMKRouteSearchType.h */,
+				6D7D550114BF31F60098BD89 /* BMKSearch.h */,
+				6D7D550214BF31F60098BD89 /* BMKShape.h */,
+				6D7D550314BF31F60098BD89 /* BMKTypes.h */,
+				6D7D550414BF31F60098BD89 /* BMKUserLocation.h */,
+				6D7D550514BF31F60098BD89 /* BMKVersion.h */,
+			);
+			path = inc;
+			sourceTree = "<group>";
+		};
+		6D7D550614BF31F60098BD89 /* libs */ = {
+			isa = PBXGroup;
+			children = (
+				6D7D550714BF31F60098BD89 /* Release-iphoneos */,
+				6D7D550914BF31F60098BD89 /* Release-iphonesimulator */,
+			);
+			path = libs;
+			sourceTree = "<group>";
+		};
+		6D7D550714BF31F60098BD89 /* Release-iphoneos */ = {
+			isa = PBXGroup;
+			children = (
+				6D7D550814BF31F60098BD89 /* libbaidumapapi.a */,
+			);
+			path = "Release-iphoneos";
+			sourceTree = "<group>";
+		};
+		6D7D550914BF31F60098BD89 /* Release-iphonesimulator */ = {
+			isa = PBXGroup;
+			children = (
+				6D7D550A14BF31F60098BD89 /* libbaidumapapi.a */,
+			);
+			path = "Release-iphonesimulator";
 			sourceTree = "<group>";
 		};
 		6DBE91C314BD67FB00AB25E3 = {
@@ -93,6 +212,8 @@
 		6DBE91D114BD67FB00AB25E3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6D7D551114BF331D0098BD89 /* QuartzCore.framework */,
+				6D7D550F14BF33120098BD89 /* CoreLocation.framework */,
 				6D46506C14BEC52000B223B5 /* libsqlite3.dylib */,
 				6DBE91D214BD67FB00AB25E3 /* UIKit.framework */,
 				6DBE91D414BD67FB00AB25E3 /* Foundation.framework */,
@@ -110,12 +231,16 @@
 				6DBE91EB14BD696100AB25E3 /* TBRouteListViewController.h */,
 				6DBE91EC14BD696100AB25E3 /* TBRouteListViewController.m */,
 				6DBE91ED14BD696100AB25E3 /* TBRouteListViewController.xib */,
+				6D7D54DD14BF315A0098BD89 /* TBRouteWeatherViewController.h */,
+				6D7D54DE14BF315A0098BD89 /* TBRouteWeatherViewController.m */,
+				6D7D54DF14BF315A0098BD89 /* TBRouteWeatherViewController.xib */,
 				6DA9B0B514BDB7CA0042E007 /* TBAddRouteViewController.h */,
 				6DA9B0B614BDB7CA0042E007 /* TBAddRouteViewController.m */,
 				6DA9B0B714BDB7CA0042E007 /* TBAddRouteViewController.xib */,
 				6DBE920114BD944B00AB25E3 /* TBCityListViewController.h */,
 				6DBE920214BD944B00AB25E3 /* TBCityListViewController.m */,
 				6DBE920314BD944B00AB25E3 /* TBCityListViewController.xib */,
+				6D7D54E714BF31D60098BD89 /* BaiduMapAPI */,
 				6D46506F14BEC7CB00B223B5 /* Resources */,
 				6DBE91D914BD67FB00AB25E3 /* Supporting Files */,
 			);
@@ -189,6 +314,8 @@
 				6DBE920514BD944B00AB25E3 /* TBCityListViewController.xib in Resources */,
 				6DA9B0B914BDB7CA0042E007 /* TBAddRouteViewController.xib in Resources */,
 				6D46507314BEC8E700B223B5 /* dwh.sqlite3 in Resources */,
+				6D7D54E114BF315A0098BD89 /* TBRouteWeatherViewController.xib in Resources */,
+				6D7D550E14BF31F70098BD89 /* mapapi.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -204,6 +331,7 @@
 				6DBE91EE14BD696100AB25E3 /* TBRouteListViewController.m in Sources */,
 				6DBE920414BD944B00AB25E3 /* TBCityListViewController.m in Sources */,
 				6DA9B0B814BDB7CA0042E007 /* TBAddRouteViewController.m in Sources */,
+				6D7D54E014BF315A0098BD89 /* TBRouteWeatherViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -230,6 +358,7 @@
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_INPUT_FILETYPE = sourcecode.cpp.objcpp;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -241,6 +370,8 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				LIBRARY_SEARCH_PATHS = "$(SRCROOT)/DriveWeatherHelper/libs/Release$(EFFECTIVE_PLATFORM_NAME)";
+				OTHER_LDFLAGS = "-lbaidumapapi";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -253,12 +384,15 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_INPUT_FILETYPE = sourcecode.cpp.objcpp;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				LIBRARY_SEARCH_PATHS = "$(SRCROOT)/DriveWeatherHelper/libs/Release$(EFFECTIVE_PLATFORM_NAME)";
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				OTHER_LDFLAGS = "-lbaidumapapi";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -267,9 +401,16 @@
 		6DBE91E714BD67FB00AB25E3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				GCC_INPUT_FILETYPE = sourcecode.cpp.objcpp;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DriveWeatherHelper/DriveWeatherHelper-Prefix.pch";
 				INFOPLIST_FILE = "DriveWeatherHelper/DriveWeatherHelper-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/DriveWeatherHelper/libs/Release-iphoneos\"",
+					"\"$(SRCROOT)/DriveWeatherHelper/libs/Release-iphonesimulator\"",
+				);
+				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -278,9 +419,16 @@
 		6DBE91E814BD67FB00AB25E3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				GCC_INPUT_FILETYPE = sourcecode.cpp.objcpp;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DriveWeatherHelper/DriveWeatherHelper-Prefix.pch";
 				INFOPLIST_FILE = "DriveWeatherHelper/DriveWeatherHelper-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/DriveWeatherHelper/libs/Release-iphoneos\"",
+					"\"$(SRCROOT)/DriveWeatherHelper/libs/Release-iphonesimulator\"",
+				);
+				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

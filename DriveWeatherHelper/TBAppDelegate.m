@@ -7,16 +7,19 @@
 //
 
 #import "TBAppDelegate.h"
+#import "BMapKit.h"
 
 @implementation TBAppDelegate
 
 @synthesize window = _window;
 @synthesize navController;
+//@synthesize _mapManager;
 
 - (void)dealloc
 {
     [_window release];
     [navController release];
+    [_mapManager release];
     [super dealloc];
 }
 
@@ -31,6 +34,13 @@
     //self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
     // Override point for customization after application launch.
     //self.window.backgroundColor = [UIColor whiteColor];
+    
+    _mapManager = [[BMKMapManager alloc] init];
+    BOOL ret = [_mapManager start:@"CA33F5A831637C35FB29B7996FD20BB644B6071B" generalDelegate:nil];
+    if (!ret)
+    {
+        DLog(@"Manager start failed!");
+    }
     
     NSString *dbPath = [self dataFilePath];
     

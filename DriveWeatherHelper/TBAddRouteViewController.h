@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+#define kDBFilename @"dwh.sqlite3"
+
 @interface TBAddRouteViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 {
     UITableView *tableView;
@@ -24,5 +26,7 @@
 @property (strong, nonatomic) UITextField *provinceTo;
 
 - (IBAction)cancel:(id)sender;
+- (IBAction)save:(id)sender;
+- (NSString *)dataFilePath;
 
 @end
