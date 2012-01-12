@@ -19,6 +19,7 @@
 {
     [cityFrom release];
     [cityTo release];
+    [tableView release];
     [super dealloc];
 }
 
@@ -141,7 +142,7 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath
     TBCityListViewController *cityListViewController = [[TBCityListViewController alloc]
                                                         initWithNibName:@"TBCityListViewController" bundle:nil];
     
-    cityListViewController.city = city;
+    cityListViewController.selectedCity = city;
     
     cityListViewController.title = label.text;
     [self.navigationController pushViewController:cityListViewController animated:YES];

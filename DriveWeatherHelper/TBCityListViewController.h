@@ -8,15 +8,19 @@
 
 #import <UIKit/UIKit.h>
 
+#define kDBFilename @"dwh.sqlite3"
+
 @interface TBCityListViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 {
     UITableView *tableView;
-    NSArray *listData;
-    UITextField *city;
+    NSMutableArray *cityList;
+    UITextField *selectedCity;
 }
 
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
-@property (strong, nonatomic) NSArray *listData;
-@property (strong, nonatomic) UITextField *city;
+@property (strong, nonatomic) NSArray *cityList;
+@property (strong, nonatomic) UITextField *selectedCity;
+
+- (NSString *)dataFilePath;
 
 @end

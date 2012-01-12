@@ -7,17 +7,19 @@
 //
 
 #import "TBCityListViewController.h"
+#import <sqlite3.h>
 
 @implementation TBCityListViewController
 
 @synthesize tableView;
-@synthesize listData;
-@synthesize city;
+@synthesize cityList;
+@synthesize selectedCity;
 
 - (void)dealloc
 {
-    [listData release];
-    [city release];
+    [cityList release];
+    [selectedCity release];
+    [tableView release];
     [super dealloc];
 }
 
@@ -40,14 +42,46 @@
 
 #pragma mark - View lifecycle
 
+- (NSString *)dataFilePath {
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    return [documentsDirectory stringByAppendingPathComponent:kDBFilename];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    NSArray *array = [[NSArray alloc]
+    /*NSArray *array = [[NSArray alloc]
                       initWithObjects:@"北京", @"蒲城", nil];
-    self.listData = array;
-    [array release];
+    self.cityList = array;
+    [array release];*/
+    
+    cityList = [[NSMutableArray alloc] init];
+    
+    sqlite3 *database;
+    const char *db_path = [[self dataFilePath] UTF8String];
+    if (sqlite3_open(db_path, &database) != SQLITE_OK)
+    {
+        sqlite3_close(database);
+        NSAssert(0, @"Failed to open database");
+    }
+	
+    NSString *query = @"select city from city_info";
+    sqlite3_stmt *statement;
+    int ret = sqlite3_prepare_v2(database, [query UTF8String], -1, &statement, nil);
+    if (ret == SQLITE_OK) 
+    {
+		while (sqlite3_step(statement) == SQLITE_ROW) 
+        {
+			char *rowData = (char *)sqlite3_column_text(statement, 0);
+			NSString *city = [[NSString alloc] initWithUTF8String:rowData];
+            [cityList addObject:city];
+			[city release];
+		}
+		sqlite3_finalize(statement);
+    }
+    sqlite3_close(database);
 }
 
 - (void)viewDidUnload
@@ -56,7 +90,8 @@
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
     self.tableView = nil;
-    self.city = nil;
+    self.selectedCity = nil;
+    self.cityList = nil;
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -71,7 +106,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return 2;
+    return [self.cityList count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -87,7 +122,7 @@
     }
     
     NSUInteger row = [indexPath row];
-    cell.textLabel.text = [listData objectAtIndex:row];
+    cell.textLabel.text = [cityList objectAtIndex:row];
     
     return cell;
 }
@@ -98,7 +133,7 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath
     //TBAppDelegate *delegate = [[UIApplication sharedApplication] delegate];
     //TBRouteListViewController *root = [delegate.navController.viewControllers objectAtIndex:0];
     UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
-    city.text = cell.textLabel.text;
+    self.selectedCity.text = cell.textLabel.text;
     
     [self.navigationController popViewControllerAnimated:YES];
 }

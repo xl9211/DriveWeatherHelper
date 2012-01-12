@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6D46506D14BEC52000B223B5 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D46506C14BEC52000B223B5 /* libsqlite3.dylib */; };
+		6D46507314BEC8E700B223B5 /* dwh.sqlite3 in Resources */ = {isa = PBXBuildFile; fileRef = 6D46507214BEC8E700B223B5 /* dwh.sqlite3 */; };
 		6DA9B0B814BDB7CA0042E007 /* TBAddRouteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DA9B0B614BDB7CA0042E007 /* TBAddRouteViewController.m */; };
 		6DA9B0B914BDB7CA0042E007 /* TBAddRouteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6DA9B0B714BDB7CA0042E007 /* TBAddRouteViewController.xib */; };
 		6DBE91D314BD67FB00AB25E3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DBE91D214BD67FB00AB25E3 /* UIKit.framework */; };
@@ -23,6 +25,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6D46506C14BEC52000B223B5 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		6D46507214BEC8E700B223B5 /* dwh.sqlite3 */ = {isa = PBXFileReference; lastKnownFileType = file; name = dwh.sqlite3; path = DriveWeatherHelper/dwh.sqlite3; sourceTree = "<group>"; };
 		6DA9B0B514BDB7CA0042E007 /* TBAddRouteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBAddRouteViewController.h; sourceTree = "<group>"; };
 		6DA9B0B614BDB7CA0042E007 /* TBAddRouteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBAddRouteViewController.m; sourceTree = "<group>"; };
 		6DA9B0B714BDB7CA0042E007 /* TBAddRouteViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TBAddRouteViewController.xib; sourceTree = "<group>"; };
@@ -50,6 +54,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6D46506D14BEC52000B223B5 /* libsqlite3.dylib in Frameworks */,
 				6DBE91D314BD67FB00AB25E3 /* UIKit.framework in Frameworks */,
 				6DBE91D514BD67FB00AB25E3 /* Foundation.framework in Frameworks */,
 				6DBE91D714BD67FB00AB25E3 /* CoreGraphics.framework in Frameworks */,
@@ -59,6 +64,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6D46506F14BEC7CB00B223B5 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				6D46507214BEC8E700B223B5 /* dwh.sqlite3 */,
+			);
+			name = Resources;
+			path = ..;
+			sourceTree = "<group>";
+		};
 		6DBE91C314BD67FB00AB25E3 = {
 			isa = PBXGroup;
 			children = (
@@ -79,6 +93,7 @@
 		6DBE91D114BD67FB00AB25E3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6D46506C14BEC52000B223B5 /* libsqlite3.dylib */,
 				6DBE91D214BD67FB00AB25E3 /* UIKit.framework */,
 				6DBE91D414BD67FB00AB25E3 /* Foundation.framework */,
 				6DBE91D614BD67FB00AB25E3 /* CoreGraphics.framework */,
@@ -101,6 +116,7 @@
 				6DBE920114BD944B00AB25E3 /* TBCityListViewController.h */,
 				6DBE920214BD944B00AB25E3 /* TBCityListViewController.m */,
 				6DBE920314BD944B00AB25E3 /* TBCityListViewController.xib */,
+				6D46506F14BEC7CB00B223B5 /* Resources */,
 				6DBE91D914BD67FB00AB25E3 /* Supporting Files */,
 			);
 			path = DriveWeatherHelper;
@@ -172,6 +188,7 @@
 				6DBE91EF14BD696100AB25E3 /* TBRouteListViewController.xib in Resources */,
 				6DBE920514BD944B00AB25E3 /* TBCityListViewController.xib in Resources */,
 				6DA9B0B914BDB7CA0042E007 /* TBAddRouteViewController.xib in Resources */,
+				6D46507314BEC8E700B223B5 /* dwh.sqlite3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

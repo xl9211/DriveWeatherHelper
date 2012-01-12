@@ -20,11 +20,41 @@
     [super dealloc];
 }
 
+- (NSString *)dataFilePath {
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    return [documentsDirectory stringByAppendingPathComponent:kDBFilename];
+}
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     //self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
     // Override point for customization after application launch.
     //self.window.backgroundColor = [UIColor whiteColor];
+    
+    NSString *dbPath = [self dataFilePath];
+    
+    if (![[NSFileManager defaultManager] fileExistsAtPath:dbPath]) 
+    {    
+        NSString *backupDBPath = [[NSBundle mainBundle] pathForResource:@"dwh" ofType:@"sqlite3"];  
+        
+        if (backupDBPath == nil)
+        {
+            return NO;  
+        } 
+        else 
+        {  
+            BOOL copiedBackupDB = [[NSFileManager defaultManager] 
+                                   copyItemAtPath:backupDBPath 
+                                   toPath:dbPath 
+                                   error:nil];  
+            if (!copiedBackupDB) 
+            {
+                return NO;  
+            }  
+        }  
+    }
+    
     [self.window addSubview:navController.view];
     [self.window makeKeyAndVisible];
     return YES;

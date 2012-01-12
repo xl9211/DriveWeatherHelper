@@ -17,6 +17,7 @@
 - (void)dealloc
 {
     [addRouteViewController release];
+    [navController release];
     [super dealloc];
 }
 
