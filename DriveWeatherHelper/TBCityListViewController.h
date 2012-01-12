@@ -13,13 +13,15 @@
 @interface TBCityListViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 {
     UITableView *tableView;
-    NSMutableArray *cityList;
+    NSMutableDictionary *cityList;
     UITextField *selectedCity;
+    UITextField *selectedProvince;
 }
 
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
-@property (strong, nonatomic) NSArray *cityList;
+@property (strong, nonatomic) NSMutableDictionary *cityList;
 @property (strong, nonatomic) UITextField *selectedCity;
+@property (strong, nonatomic) UITextField *selectedProvince;
 
 - (NSString *)dataFilePath;
 

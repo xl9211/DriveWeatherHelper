@@ -13,12 +13,16 @@
 
 @synthesize tableView;
 @synthesize cityFrom;
+@synthesize provinceFrom;
 @synthesize cityTo;
+@synthesize provinceTo;
 
 - (void)dealloc
 {
     [cityFrom release];
+    [provinceFrom release];
     [cityTo release];
+    [provinceTo release];
     [tableView release];
     [super dealloc];
 }
@@ -63,7 +67,9 @@
     // e.g. self.myOutlet = nil;
     self.tableView = nil;
     self.cityFrom = nil;
+    self.provinceFrom = nil;
     self.cityTo = nil;
+    self.provinceTo = nil;
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -106,22 +112,36 @@
         case 0:
             label.text = @"出发城市";
             
-            self.cityFrom = [[UITextField alloc] initWithFrame:CGRectMake(90, 12, 200, 25)];
+            self.provinceFrom = [[UITextField alloc] initWithFrame:CGRectMake(110, 14, 50, 25)];
+            self.provinceFrom.font = [UIFont boldSystemFontOfSize:14];
+            self.provinceFrom.clearsOnBeginEditing = NO;
+            self.provinceFrom.userInteractionEnabled = NO;
+            self.provinceFrom.placeholder = @"必填";
+            [cell.contentView addSubview:self.provinceFrom];
+            
+            self.cityFrom = [[UITextField alloc] initWithFrame:CGRectMake(170, 14, 150, 25)];
             self.cityFrom.font = [UIFont boldSystemFontOfSize:14];
             self.cityFrom.clearsOnBeginEditing = NO;
             self.cityFrom.userInteractionEnabled = NO;
-            self.cityFrom.placeholder = @"必填";
+            //self.cityFrom.placeholder = @"必填";
             [cell.contentView addSubview:self.cityFrom];
             
             break;
         case 1:
             label.text = @"到达城市";
             
-            self.cityTo = [[UITextField alloc] initWithFrame:CGRectMake(90, 12, 200, 25)];
+            self.provinceTo = [[UITextField alloc] initWithFrame:CGRectMake(110, 14, 50, 25)];
+            self.provinceTo.font = [UIFont boldSystemFontOfSize:14];
+            self.provinceTo.clearsOnBeginEditing = NO;
+            self.provinceTo.userInteractionEnabled = NO;
+            self.provinceTo.placeholder = @"必填";
+            [cell.contentView addSubview:self.provinceTo];
+            
+            self.cityTo = [[UITextField alloc] initWithFrame:CGRectMake(170, 14, 150, 25)];
             self.cityTo.font = [UIFont boldSystemFontOfSize:14];
             self.cityTo.clearsOnBeginEditing = NO;
             self.cityTo.userInteractionEnabled = NO;
-            self.cityTo.placeholder = @"必填";
+            //self.cityTo.placeholder = @"必填";
             [cell.contentView addSubview:self.cityTo];
             
             break;
@@ -137,12 +157,14 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
     UILabel *label = [[cell.contentView subviews] objectAtIndex:0];
-    UITextField *city = [[cell.contentView subviews] objectAtIndex:1];
+    UITextField *province = [[cell.contentView subviews] objectAtIndex:1];
+    UITextField *city = [[cell.contentView subviews] objectAtIndex:2];
     
     TBCityListViewController *cityListViewController = [[TBCityListViewController alloc]
                                                         initWithNibName:@"TBCityListViewController" bundle:nil];
     
     cityListViewController.selectedCity = city;
+    cityListViewController.selectedProvince = province;
     
     cityListViewController.title = label.text;
     [self.navigationController pushViewController:cityListViewController animated:YES];

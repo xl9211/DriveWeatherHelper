@@ -14,11 +14,13 @@
 @synthesize tableView;
 @synthesize cityList;
 @synthesize selectedCity;
+@synthesize selectedProvince;
 
 - (void)dealloc
 {
     [cityList release];
     [selectedCity release];
+    [selectedProvince release];
     [tableView release];
     [super dealloc];
 }
@@ -51,13 +53,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
-    /*NSArray *array = [[NSArray alloc]
-                      initWithObjects:@"北京", @"蒲城", nil];
-    self.cityList = array;
-    [array release];*/
     
-    cityList = [[NSMutableArray alloc] init];
+    cityList = [[NSMutableDictionary alloc] init];
     
     sqlite3 *database;
     const char *db_path = [[self dataFilePath] UTF8String];
@@ -67,17 +64,28 @@
         NSAssert(0, @"Failed to open database");
     }
 	
-    NSString *query = @"select city from city_info";
+    NSString *query = @"select city, province from city_info";
     sqlite3_stmt *statement;
     int ret = sqlite3_prepare_v2(database, [query UTF8String], -1, &statement, nil);
     if (ret == SQLITE_OK) 
     {
 		while (sqlite3_step(statement) == SQLITE_ROW) 
         {
-			char *rowData = (char *)sqlite3_column_text(statement, 0);
-			NSString *city = [[NSString alloc] initWithUTF8String:rowData];
-            [cityList addObject:city];
+			char *cityData = (char *)sqlite3_column_text(statement, 0);
+            char *provinceData = (char *)sqlite3_column_text(statement, 1);
+			NSString *city = [[NSString alloc] initWithUTF8String:cityData];
+            NSString *province = [[NSString alloc] initWithUTF8String:provinceData];
+            
+            NSMutableArray *value = [cityList objectForKey:province];
+            if (value == nil)
+            {
+                value = [[NSMutableArray alloc] init];
+                [cityList setObject:value forKey:province];
+            }
+            [value addObject:city];
+            
 			[city release];
+            [province release];
 		}
 		sqlite3_finalize(statement);
     }
@@ -91,6 +99,7 @@
     // e.g. self.myOutlet = nil;
     self.tableView = nil;
     self.selectedCity = nil;
+    self.selectedProvince = nil;
     self.cityList = nil;
 }
 
@@ -103,11 +112,28 @@
 #pragma mark -
 #pragma mark Table View
 
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView 
+{
+    return [[self.cityList allKeys] count];
+}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    // Return the number of rows in the section.
-    return [self.cityList count];
+    NSString *key = [[self.cityList allKeys] objectAtIndex:section];
+    return [[self.cityList objectForKey:key] count];
 }
+
+- (NSString *)tableView:(UITableView *)tableView
+titleForHeaderInSection:(NSInteger)section {
+    NSString *key = [[self.cityList allKeys] objectAtIndex:section];
+    return key;
+}
+
+/*
+- (NSArray *)sectionIndexTitlesForTableView:(UITableView *)tableView {
+    return keys;
+}
+ */
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -121,8 +147,10 @@
                  reuseIdentifier:CellIdentifier] autorelease];
     }
     
+    NSUInteger section = [indexPath section];
     NSUInteger row = [indexPath row];
-    cell.textLabel.text = [cityList objectAtIndex:row];
+    NSString *province = [[self.cityList allKeys] objectAtIndex:section];
+    cell.textLabel.text = [[self.cityList objectForKey:province] objectAtIndex:row];
     
     return cell;
 }
@@ -130,10 +158,15 @@
 - (void)tableView:(UITableView *)tableView 
 didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    //TBAppDelegate *delegate = [[UIApplication sharedApplication] delegate];
-    //TBRouteListViewController *root = [delegate.navController.viewControllers objectAtIndex:0];
-    UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
-    self.selectedCity.text = cell.textLabel.text;
+    //UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
+    
+    NSUInteger section = [indexPath section];
+    NSUInteger row = [indexPath row];
+    NSString *province = [[self.cityList allKeys] objectAtIndex:section];
+    NSString *city = [[self.cityList objectForKey:province] objectAtIndex:row];
+    
+    self.selectedCity.text = city;
+    self.selectedProvince.text = province;
     
     [self.navigationController popViewControllerAnimated:YES];
 }
