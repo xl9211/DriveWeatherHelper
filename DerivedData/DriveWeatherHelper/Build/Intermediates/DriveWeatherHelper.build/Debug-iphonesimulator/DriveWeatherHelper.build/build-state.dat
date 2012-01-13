@@ -1,1174 +1,0 @@
-TDriveWeatherHelper
-v4
-r1
-cCheck dependencies
-cProcessInfoPlistFile /Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Products/Debug-iphonesimulator/DriveWeatherHelper.app/Info.plist DriveWeatherHelper/DriveWeatherHelper-Info.plist
-cProcessPCH++ /Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/PrecompiledHeaders/DriveWeatherHelper-Prefix-cjpgtklugrtxucehmdidfnqwwuhi/DriveWeatherHelper-Prefix.pch.pth DriveWeatherHelper/DriveWeatherHelper-Prefix.pch normal i386 objective-c++ com.apple.compilers.llvm.clang.1_0.compiler
-cCompileC DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/Objects-normal/i386/main.o /Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/main.m normal i386 objective-c++ com.apple.compilers.llvm.clang.1_0.compiler
-cCompileC DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/Objects-normal/i386/TBAppDelegate.o /Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/TBAppDelegate.m normal i386 objective-c++ com.apple.compilers.llvm.clang.1_0.compiler
-cCompileC DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/Objects-normal/i386/TBRouteListViewController.o /Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/TBRouteListViewController.m normal i386 objective-c++ com.apple.compilers.llvm.clang.1_0.compiler
-cCompileC DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/Objects-normal/i386/TBCityListViewController.o /Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/TBCityListViewController.m normal i386 objective-c++ com.apple.compilers.llvm.clang.1_0.compiler
-cCompileC DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/Objects-normal/i386/TBAddRouteViewController.o /Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/TBAddRouteViewController.m normal i386 objective-c++ com.apple.compilers.llvm.clang.1_0.compiler
-cCompileC DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/Objects-normal/i386/TBRouteWeatherViewController.o /Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/TBRouteWeatherViewController.m normal i386 objective-c++ com.apple.compilers.llvm.clang.1_0.compiler
-cLd /Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Products/Debug-iphonesimulator/DriveWeatherHelper.app/DriveWeatherHelper normal i386
-cGenerateDSYMFile /Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Products/Debug-iphonesimulator/DriveWeatherHelper.app.dSYM /Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Products/Debug-iphonesimulator/DriveWeatherHelper.app/DriveWeatherHelper
-cCompileXIB /Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/TBMainWindow.xib
-cCopyStringsFile /Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Products/Debug-iphonesimulator/DriveWeatherHelper.app/en.lproj/InfoPlist.strings DriveWeatherHelper/en.lproj/InfoPlist.strings
-cCompileXIB /Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/TBRouteListViewController.xib
-cCompileXIB /Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/TBCityListViewController.xib
-cCompileXIB /Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/TBAddRouteViewController.xib
-cCpResource DriveWeatherHelper/../DriveWeatherHelper/dwh.sqlite3 DerivedData/DriveWeatherHelper/Build/Products/Debug-iphonesimulator/DriveWeatherHelper.app/dwh.sqlite3
-cCpResource DriveWeatherHelper/mapapi.bundle DerivedData/DriveWeatherHelper/Build/Products/Debug-iphonesimulator/DriveWeatherHelper.app/mapapi.bundle
-cCompileXIB /Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/TBRouteWeatherViewController.xib
-cTouch /Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Products/Debug-iphonesimulator/DriveWeatherHelper.app
-
-N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.0.sdk
-c000000004F066D550000000000000110
-t1325821269
-s272
-
-N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.0.sdk/System/Library/Frameworks/CFNetwork.framework/CFNetwork
-c000000004E72F23F00000000002050D0
-t1316155967
-s2117840
-
-N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.0.sdk/System/Library/Frameworks/CoreGraphics.framework/CoreGraphics
-c000000004E72F1CC0000000000245480
-t1316155852
-s2380928
-
-N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.0.sdk/System/Library/Frameworks/CoreLocation.framework/CoreLocation
-c000000004E78059F00000000000859A0
-t1316488607
-s547232
-
-N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.0.sdk/System/Library/Frameworks/Foundation.framework/Foundation
-c000000004E72F2960000000000353830
-t1316156054
-s3487792
-
-N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.0.sdk/System/Library/Frameworks/MobileCoreServices.framework/MobileCoreServices
-c000000004E72F3C800000000000998C0
-t1316156360
-s628928
-
-N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.0.sdk/System/Library/Frameworks/QuartzCore.framework/QuartzCore
-c000000004E72F69C00000000001A9D20
-t1316157084
-s1744160
-
-N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.0.sdk/System/Library/Frameworks/SystemConfiguration.framework/SystemConfiguration
-c000000004E72F177000000000006C8A0
-t1316155767
-s444576
-
-N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
-c000000004E7806AB00000000008F7390
-t1316488875
-s9401232
-
-N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.0.sdk/usr/lib/libsqlite3.dylib
-c000000004E72EDD300000000000C09E0
-t1316154835
-s788960
-
-N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.0.sdk/usr/lib/libz.dylib
-c000000004E72EDC60000000000013460
-t1316154822
-s78944
-
-N/Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/Objects-normal/i386/DriveWeatherHelper.LinkFileList
-c000000004F0FD09E00000000000004F6
-t1326436510
-s1270
-
-N/Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/Objects-normal/i386/NSObject+SBJson.o
-t1326435546
-s6180
-
-N/Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/Objects-normal/i386/SBJsonParser.o
-t1326435546
-s13836
-
-N/Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/Objects-normal/i386/SBJsonStreamParser.o
-t1326435546
-s24908
-
-N/Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/Objects-normal/i386/SBJsonStreamParserAccumulator.o
-t1326435546
-s8024
-
-N/Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/Objects-normal/i386/SBJsonStreamParserAdapter.o
-t1326435546
-s21340
-
-N/Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/Objects-normal/i386/SBJsonStreamParserState.o
-t1326435546
-s42676
-
-N/Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/Objects-normal/i386/SBJsonStreamWriter.o
-t1326435546
-s39420
-
-N/Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/Objects-normal/i386/SBJsonStreamWriterAccumulator.o
-t1326435546
-s8296
-
-N/Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/Objects-normal/i386/SBJsonStreamWriterState.o
-t1326435546
-s25076
-
-N/Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/Objects-normal/i386/SBJsonTokeniser.o
-t1326435546
-s24604
-
-N/Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/Objects-normal/i386/SBJsonUTF8Stream.o
-t2
-s0
-
-N/Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/Objects-normal/i386/SBJsonWriter.o
-t1326435546
-s15984
-
-N/Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/Objects-normal/i386/TBAddRouteViewController.o
-t1326435546
-s73496
-
-N/Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/Objects-normal/i386/TBAppDelegate.o
-t1326436270
-s58268
-
-N/Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/Objects-normal/i386/TBCityListViewController.o
-t1326435546
-s67452
-
-N/Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/Objects-normal/i386/TBRouteListViewController.o
-t1326438339
-s67816
-
-N/Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/Objects-normal/i386/TBRouteWeatherViewController.o
-t1326439189
-s56972
-
-N/Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/Objects-normal/i386/main.o
-t1326435546
-s2608
-
-N/Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/PrecompiledHeaders/DriveWeatherHelper-Prefix-cjpgtklugrtxucehmdidfnqwwuhi/DriveWeatherHelper-Prefix.pch.pth
-t1326435546
-s4700952
-
-N/Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Products/Debug-iphonesimulator/DriveWeatherHelper.app
-t1326439190
-s442
-
-N/Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Products/Debug-iphonesimulator/DriveWeatherHelper.app.dSYM
-t1326439190
-s102
-
-N/Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Products/Debug-iphonesimulator/DriveWeatherHelper.app/DriveWeatherHelper
-t1326439189
-s2103688
-
-N/Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Products/Debug-iphonesimulator/DriveWeatherHelper.app/Info.plist
-t1326435546
-s894
-
-N/Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Products/Debug-iphonesimulator/DriveWeatherHelper.app/PkgInfo
-t1326435546
-s8
-
-N/Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Products/Debug-iphonesimulator/DriveWeatherHelper.app/TBAddRouteViewController.nib
-t1326436513
-s1307
-
-N/Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Products/Debug-iphonesimulator/DriveWeatherHelper.app/TBCityListViewController.nib
-t1326436513
-s1260
-
-N/Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Products/Debug-iphonesimulator/DriveWeatherHelper.app/TBMainWindow.nib
-t1326436513
-s1761
-
-N/Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Products/Debug-iphonesimulator/DriveWeatherHelper.app/TBRouteListViewController.nib
-t1326436513
-s2155
-
-N/Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Products/Debug-iphonesimulator/DriveWeatherHelper.app/TBRouteWeatherViewController.nib
-t1326436513
-s792
-
-N/Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Products/Debug-iphonesimulator/DriveWeatherHelper.app/dwh.sqlite3
-t1326436512
-s156672
-
-N/Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Products/Debug-iphonesimulator/DriveWeatherHelper.app/en.lproj/InfoPlist.strings
-t1326436512
-s42
-
-N/Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Products/Debug-iphonesimulator/DriveWeatherHelper.app/mapapi.bundle
-t1326436512
-s102
-
-N/Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/../DriveWeatherHelper/dwh.sqlite3
-c000000004F0EEB410000000000026400
-t1326377793
-s156672
-
-N/Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/BMKAnnotation.h
-c000000004E2E694C0000000000000317
-t1311664460
-s791
-
-N/Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/BMKAnnotationView.h
-c000000004EAA17040000000000000C4C
-t1319769860
-s3148
-
-N/Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/BMKCircle.h
-c000000004E2E65740000000000000492
-t1311663476
-s1170
-
-N/Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/BMKCircleView.h
-c000000004E2E657400000000000001E4
-t1311663476
-s484
-
-N/Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/BMKGeneralDelegate.h
-c000000004E3926B800000000000001BB
-t1312368312
-s443
-
-N/Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/BMKGeocodeType.h
-c000000004E30C8BC000000000000050E
-t1311819964
-s1294
-
-N/Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/BMKGeometry.h
-c000000004E3BA07E0000000000003369
-t1312530558
-s13161
-
-N/Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/BMKMapManager.h
-c000000004DF5EED4000000000000017A
-t1307963092
-s378
-
-N/Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/BMKMapView.h
-c000000004E3BA07E0000000000003226
-t1312530558
-s12838
-
-N/Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/BMKMultiPoint.h
-c000000004E37981C0000000000000399
-t1312266268
-s921
-
-N/Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/BMKOfflineMap.h
-c000000004EB9E59E0000000000000A6F
-t1320805790
-s2671
-
-N/Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/BMKOfflineMapType.h
-c000000004EAA1704000000000000051F
-t1319769860
-s1311
-
-N/Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/BMKOverlay.h
-c000000004E325E2E0000000000000337
-t1311923758
-s823
-
-N/Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/BMKOverlayPathView.h
-c000000004E325E2E00000000000008BA
-t1311923758
-s2234
-
-N/Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/BMKOverlayView.h
-c000000004E3BA3B40000000000000A5B
-t1312531380
-s2651
-
-N/Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/BMKPinAnnotationView.h
-c000000004E30C8BC00000000000002B5
-t1311819964
-s693
-
-N/Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/BMKPoiSearchType.h
-c000000004ED4C61C000000000000090D
-t1322567196
-s2317
-
-N/Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/BMKPointAnnotation.h
-c000000004E30C8BC000000000000019C
-t1311819964
-s412
-
-N/Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/BMKPolygon.h
-c000000004E2E6574000000000000079B
-t1311663476
-s1947
-
-N/Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/BMKPolygonView.h
-c000000004E2E65740000000000000229
-t1311663476
-s553
-
-N/Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/BMKPolyline.h
-c000000004E2E657400000000000002F5
-t1311663476
-s757
-
-N/Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/BMKPolylineView.h
-c000000004E37981C0000000000000226
-t1312266268
-s550
-
-N/Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/BMKRouteSearchType.h
-c000000004E325E2E00000000000013E6
-t1311923758
-s5094
-
-N/Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/BMKSearch.h
-c000000004ED4C61C0000000000001F79
-t1322567196
-s8057
-
-N/Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/BMKShape.h
-c000000004E2E6574000000000000021D
-t1311663476
-s541
-
-N/Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/BMKTypes.h
-c000000004E2E657400000000000002DA
-t1311663476
-s730
-
-N/Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/BMKUserLocation.h
-c000000004E2E65740000000000000369
-t1311663476
-s873
-
-N/Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/BMKVersion.h
-c000000004ED4C61C00000000000002A2
-t1322567196
-s674
-
-N/Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/BMapKit.h
-c000000004EAA17040000000000000340
-t1319769860
-s832
-
-N/Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/DriveWeatherHelper-Prefix.pch
-c000000004F0E8AF500000000000001D8
-t1326353141
-s472
-
-N/Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/NSObject+SBJson.h
-c000000004F0FCAD900000000000008B7
-t1326435033
-s2231
-
-N/Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/NSObject+SBJson.m
-c000000004E57F3E200000000000008A6
-t1314386914
-s2214
-
-N/Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/SBJson.h
-c000000004F0FCAD90000000000000DA2
-t1326435033
-s3490
-
-N/Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/SBJsonParser.h
-c000000004F0FCAD90000000000000E0B
-t1326435033
-s3595
-
-N/Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/SBJsonParser.m
-c000000004E57F3E20000000000000CC0
-t1314386914
-s3264
-
-N/Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/SBJsonStreamParser.h
-c000000004F0FCAD90000000000001611
-t1326435033
-s5649
-
-N/Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/SBJsonStreamParser.m
-c000000004E57F3E200000000000020CC
-t1314386914
-s8396
-
-N/Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/SBJsonStreamParserAccumulator.h
-c000000004E57F3E200000000000006D7
-t1314386914
-s1751
-
-N/Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/SBJsonStreamParserAccumulator.m
-c000000004E57F3E2000000000000079B
-t1314386914
-s1947
-
-N/Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/SBJsonStreamParserAdapter.h
-c000000004F0FCAD90000000000001467
-t1326435033
-s5223
-
-N/Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/SBJsonStreamParserAdapter.m
-c000000004E57F3E200000000000011C9
-t1314386914
-s4553
-
-N/Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/SBJsonStreamParserState.h
-c000000004E57F3E20000000000000B10
-t1314386914
-s2832
-
-N/Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/SBJsonStreamParserState.m
-c000000004E57F3E20000000000001F6D
-t1314386914
-s8045
-
-N/Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/SBJsonStreamWriter.h
-c000000004F0FCAD900000000000016CF
-t1326435033
-s5839
-
-N/Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/SBJsonStreamWriter.m
-c000000004E57F3E200000000000029A2
-t1314386914
-s10658
-
-N/Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/SBJsonStreamWriterAccumulator.h
-c000000004E57F3E200000000000006B2
-t1314386914
-s1714
-
-N/Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/SBJsonStreamWriterAccumulator.m
-c000000004E57F3E200000000000007EB
-t1314386914
-s2027
-
-N/Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/SBJsonStreamWriterState.h
-c000000004E57F3E200000000000009EC
-t1314386914
-s2540
-
-N/Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/SBJsonStreamWriterState.m
-c000000004E57F3E20000000000000F61
-t1314386914
-s3937
-
-N/Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/SBJsonTokeniser.h
-c000000004E57F3E2000000000000089C
-t1314386914
-s2204
-
-N/Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/SBJsonTokeniser.m
-c000000004E57F3E200000000000033EE
-t1314386914
-s13294
-
-N/Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/SBJsonUTF8Stream.h
-c000000004E57F3E20000000000000835
-t1314386914
-s2101
-
-N/Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/SBJsonUTF8Stream.m
-c000000004E57F3E20000000000000F21
-t1314386914
-s3873
-
-N/Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/SBJsonWriter.h
-c000000004F0FCAD900000000000010B6
-t1326435033
-s4278
-
-N/Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/SBJsonWriter.m
-c000000004E57F3E20000000000000DBF
-t1314386914
-s3519
-
-N/Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/TBAddRouteViewController.h
-c000000004F0EEC49000000000000034B
-t1326378057
-s843
-
-N/Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/TBAddRouteViewController.m
-c000000004F0F03200000000000001B98
-t1326383904
-s7064
-
-N/Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/TBAddRouteViewController.xib
-c000000004F0E8AF50000000000002E5D
-t1326353141
-s11869
-
-N/Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/TBAppDelegate.h
-c000000004F0F7FC0000000000000025D
-t1326415808
-s605
-
-N/Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/TBAppDelegate.m
-c000000004F0F7FCE0000000000000E98
-t1326415822
-s3736
-
-N/Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/TBCityListViewController.h
-c000000004F0EC061000000000000032F
-t1326366817
-s815
-
-N/Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/TBCityListViewController.m
-c000000004F0F973300000000000015CE
-t1326421811
-s5582
-
-N/Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/TBCityListViewController.xib
-c000000004F0E8AF50000000000001C0B
-t1326353141
-s7179
-
-N/Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/TBMainWindow.xib
-c000000004F0E8AF50000000000003228
-t1326353141
-s12840
-
-N/Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/TBRouteListViewController.h
-c000000004F0EF5DB000000000000037B
-t1326380507
-s891
-
-N/Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/TBRouteListViewController.m
-c000000004F0FD7960000000000001972
-t1326438294
-s6514
-
-N/Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/TBRouteListViewController.xib
-c000000004F0EEBAE0000000000003E3B
-t1326377902
-s15931
-
-N/Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/TBRouteWeatherViewController.h
-c000000004F0FC0E40000000000000247
-t1326432484
-s583
-
-N/Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/TBRouteWeatherViewController.m
-c000000004F0FDB7800000000000011CA
-t1326439288
-s4554
-
-N/Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/TBRouteWeatherViewController.xib
-c000000004F0EF9DA0000000000001458
-t1326381530
-s5208
-
-N/Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/en.lproj/InfoPlist.strings
-c000000004F0E8AF5000000000000002D
-t1326353141
-s45
-
-N/Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/inc/BMKAnnotation.h
-c00000000000000000000000000000000
-t2
-s0
-
-N/Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/inc/BMKAnnotationView.h
-c00000000000000000000000000000000
-t2
-s0
-
-N/Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/inc/BMKCircle.h
-c00000000000000000000000000000000
-t2
-s0
-
-N/Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/inc/BMKCircleView.h
-c00000000000000000000000000000000
-t2
-s0
-
-N/Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/inc/BMKGeneralDelegate.h
-c00000000000000000000000000000000
-t2
-s0
-
-N/Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/inc/BMKGeocodeType.h
-c00000000000000000000000000000000
-t2
-s0
-
-N/Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/inc/BMKGeometry.h
-c00000000000000000000000000000000
-t2
-s0
-
-N/Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/inc/BMKMapManager.h
-c00000000000000000000000000000000
-t2
-s0
-
-N/Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/inc/BMKMapView.h
-c00000000000000000000000000000000
-t2
-s0
-
-N/Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/inc/BMKMultiPoint.h
-c00000000000000000000000000000000
-t2
-s0
-
-N/Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/inc/BMKOfflineMap.h
-c00000000000000000000000000000000
-t2
-s0
-
-N/Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/inc/BMKOfflineMapType.h
-c00000000000000000000000000000000
-t2
-s0
-
-N/Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/inc/BMKOverlay.h
-c00000000000000000000000000000000
-t2
-s0
-
-N/Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/inc/BMKOverlayPathView.h
-c00000000000000000000000000000000
-t2
-s0
-
-N/Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/inc/BMKOverlayView.h
-c00000000000000000000000000000000
-t2
-s0
-
-N/Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/inc/BMKPinAnnotationView.h
-c00000000000000000000000000000000
-t2
-s0
-
-N/Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/inc/BMKPoiSearchType.h
-c00000000000000000000000000000000
-t2
-s0
-
-N/Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/inc/BMKPointAnnotation.h
-c00000000000000000000000000000000
-t2
-s0
-
-N/Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/inc/BMKPolygon.h
-c00000000000000000000000000000000
-t2
-s0
-
-N/Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/inc/BMKPolygonView.h
-c00000000000000000000000000000000
-t2
-s0
-
-N/Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/inc/BMKPolyline.h
-c00000000000000000000000000000000
-t2
-s0
-
-N/Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/inc/BMKPolylineView.h
-c00000000000000000000000000000000
-t2
-s0
-
-N/Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/inc/BMKRouteSearchType.h
-c00000000000000000000000000000000
-t2
-s0
-
-N/Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/inc/BMKSearch.h
-c00000000000000000000000000000000
-t2
-s0
-
-N/Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/inc/BMKShape.h
-c00000000000000000000000000000000
-t2
-s0
-
-N/Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/inc/BMKTypes.h
-c00000000000000000000000000000000
-t2
-s0
-
-N/Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/inc/BMKUserLocation.h
-c00000000000000000000000000000000
-t2
-s0
-
-N/Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/inc/BMKVersion.h
-c00000000000000000000000000000000
-t2
-s0
-
-N/Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/inc/BMapKit.h
-c00000000000000000000000000000000
-t2
-s0
-
-N/Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/libbaidumapapi.a
-c000000004F0FCF100000000002295624
-t1326436112
-s36263460
-
-N/Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/libs/Release-iphoneos/libbaidumapapi.a
-c000000004EDC3E9600000000016DB838
-t1323056790
-s23967800
-
-N/Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/libs/Release-iphonesimulator/libbaidumapapi.a
-c000000004EDC3E960000000000BB9DD8
-t1323056790
-s12295640
-
-N/Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/libsbjson-ios.a
-c000000004F0FD05A000000000008A6D0
-t1326436442
-s566992
-
-N/Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/main.m
-c000000004F0E8AF50000000000000162
-t1326353141
-s354
-
-N/Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/mapapi.bundle
-c000000004E4DFADA0000000000000066
-t1313733338
-s102
-
-NDriveWeatherHelper/DriveWeatherHelper-Info.plist
-c000000004F0F035100000000000004F4
-t1326383953
-s1268
-
-CBuild AST from /Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/NSObject+SBJson.m
-r0
-
-CBuild AST from /Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/SBJsonParser.m
-r0
-
-CBuild AST from /Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/SBJsonStreamParser.m
-r0
-
-CBuild AST from /Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/SBJsonStreamParserAccumulator.m
-r0
-
-CBuild AST from /Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/SBJsonStreamParserAdapter.m
-r0
-
-CBuild AST from /Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/SBJsonStreamParserState.m
-r0
-
-CBuild AST from /Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/SBJsonStreamWriter.m
-r0
-
-CBuild AST from /Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/SBJsonStreamWriterAccumulator.m
-r0
-
-CBuild AST from /Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/SBJsonStreamWriterState.m
-r0
-
-CBuild AST from /Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/SBJsonTokeniser.m
-r0
-
-CBuild AST from /Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/SBJsonUTF8Stream.m
-r0
-
-CBuild AST from /Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/SBJsonWriter.m
-r0
-
-CBuild AST from /Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/TBAddRouteViewController.m
-r0
-
-CBuild AST from /Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/TBAppDelegate.m
-r0
-
-CBuild AST from /Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/TBCityListViewController.m
-r0
-
-CBuild AST from /Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/TBRouteListViewController.m
-r0
-
-CBuild AST from /Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/TBRouteWeatherViewController.m
-r0
-
-CBuild AST from /Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/main.m
-r0
-
-CCheck dependencies
-r0
-lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection18"Check dependencies67f1b2fa12c0b441^9cc5b3fa12c0b441^---0#1#0#--18"Check dependencies36"9CC4EAF6-A78B-42CC-B4FE-58941D03678C-
-
-CCompileC DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/Objects-normal/i386/NSObject+SBJson.o /Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/NSObject+SBJson.m normal i386 objective-c++ com.apple.compilers.llvm.clang.1_0.compiler
-s348128346.393520
-e348128346.512432
-r1
-xCompileC
-xDerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/Objects-normal/i386/NSObject+SBJson.o
-x/Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/NSObject+SBJson.m
-xnormal
-xi386
-xobjective-c++
-xcom.apple.compilers.llvm.clang.1_0.compiler
-lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection90"Compile /Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/NSObject+SBJson.me8dd645a04c0b441^6a2e835a04c0b441^---0#0#0#-19%DVTDocumentLocation2@98"file://localhost/Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/NSObject+SBJson.m0000000000000000^3583"CompileC DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/Objects-normal/i386/NSObject+SBJson.o DriveWeatherHelper/NSObject+SBJson.m normal i386 objective-c++ com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/xulin/Workspace_IOS/DriveWeatherHelper    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/clang -x objective-c++ -arch i386 -fmessage-length=0 -fdiagnostics-print-source-range-info -fdiagnostics-show-category=id -fdiagnostics-parseable-fixits -Wno-trigraphs -fpascal-strings -O0 -Wmissing-prototypes -Wreturn-type -Wparentheses -Wswitch -Wno-unused-parameter -Wunused-variable -Wunused-value -Wno-shorten-64-to-32 -Wno-arc-abi -Wc++0x-extensions -DDEBUG=1 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.0.sdk -fexceptions -fasm-blocks -mmacosx-version-min=10.6 -gdwarf-2 -fvisibility-inlines-hidden -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch "-DIBOutlet=__attribute__((iboutlet))" "-DIBOutletCollection(ClassName)=__attribute__((iboutletcollection(ClassName)))" "-DIBAction=void)__attribute__((ibaction)" -D__IPHONE_OS_VERSION_MIN_REQUIRED=50000 -iquote /Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/DriveWeatherHelper-generated-files.hmap -I/Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/DriveWeatherHelper-own-target-headers.hmap -I/Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/DriveWeatherHelper-all-target-headers.hmap -iquote /Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/DriveWeatherHelper-project-headers.hmap -I/Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Products/Debug-iphonesimulator/include -I/Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/DerivedSources/i386 -I/Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/DerivedSources -F/Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Products/Debug-iphonesimulator -include /Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/PrecompiledHeaders/DriveWeatherHelper-Prefix-cjpgtklugrtxucehmdidfnqwwuhi/DriveWeatherHelper-Prefix.pch -MMD -MT dependencies -MF /Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/Objects-normal/i386/NSObject+SBJson.d -c /Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/NSObject+SBJson.m -o /Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/Objects-normal/i386/NSObject+SBJson.o36"082A1463-E2BA-414C-BF4C-50F826FE5C3B-
-
-CCompileC DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/Objects-normal/i386/SBJsonParser.o /Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/SBJsonParser.m normal i386 objective-c++ com.apple.compilers.llvm.clang.1_0.compiler
-s348128346.393554
-e348128346.528173
-r1
-xCompileC
-xDerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/Objects-normal/i386/SBJsonParser.o
-x/Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/SBJsonParser.m
-xnormal
-xi386
-xobjective-c++
-xcom.apple.compilers.llvm.clang.1_0.compiler
-lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection87"Compile /Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/SBJsonParser.mc2de645a04c0b441^c348875a04c0b441^---0#0#0#-19%DVTDocumentLocation2@95"file://localhost/Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/SBJsonParser.m0000000000000000^3568"CompileC DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/Objects-normal/i386/SBJsonParser.o DriveWeatherHelper/SBJsonParser.m normal i386 objective-c++ com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/xulin/Workspace_IOS/DriveWeatherHelper    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/clang -x objective-c++ -arch i386 -fmessage-length=0 -fdiagnostics-print-source-range-info -fdiagnostics-show-category=id -fdiagnostics-parseable-fixits -Wno-trigraphs -fpascal-strings -O0 -Wmissing-prototypes -Wreturn-type -Wparentheses -Wswitch -Wno-unused-parameter -Wunused-variable -Wunused-value -Wno-shorten-64-to-32 -Wno-arc-abi -Wc++0x-extensions -DDEBUG=1 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.0.sdk -fexceptions -fasm-blocks -mmacosx-version-min=10.6 -gdwarf-2 -fvisibility-inlines-hidden -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch "-DIBOutlet=__attribute__((iboutlet))" "-DIBOutletCollection(ClassName)=__attribute__((iboutletcollection(ClassName)))" "-DIBAction=void)__attribute__((ibaction)" -D__IPHONE_OS_VERSION_MIN_REQUIRED=50000 -iquote /Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/DriveWeatherHelper-generated-files.hmap -I/Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/DriveWeatherHelper-own-target-headers.hmap -I/Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/DriveWeatherHelper-all-target-headers.hmap -iquote /Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/DriveWeatherHelper-project-headers.hmap -I/Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Products/Debug-iphonesimulator/include -I/Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/DerivedSources/i386 -I/Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/DerivedSources -F/Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Products/Debug-iphonesimulator -include /Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/PrecompiledHeaders/DriveWeatherHelper-Prefix-cjpgtklugrtxucehmdidfnqwwuhi/DriveWeatherHelper-Prefix.pch -MMD -MT dependencies -MF /Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/Objects-normal/i386/SBJsonParser.d -c /Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/SBJsonParser.m -o /Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/Objects-normal/i386/SBJsonParser.o36"AEF7CDD8-2249-4E85-8C2A-52B92C0C0150-
-
-CCompileC DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/Objects-normal/i386/SBJsonStreamParser.o /Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/SBJsonStreamParser.m normal i386 objective-c++ com.apple.compilers.llvm.clang.1_0.compiler
-s348128346.513883
-e348128346.584372
-r1
-xCompileC
-xDerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/Objects-normal/i386/SBJsonStreamParser.o
-x/Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/SBJsonStreamParser.m
-xnormal
-xi386
-xobjective-c++
-xcom.apple.compilers.llvm.clang.1_0.compiler
-lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection93"Compile /Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/SBJsonStreamParser.mbec1835a04c0b441^5b98955a04c0b441^---0#0#0#-19%DVTDocumentLocation2@101"file://localhost/Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/SBJsonStreamParser.m0000000000000000^3598"CompileC DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/Objects-normal/i386/SBJsonStreamParser.o DriveWeatherHelper/SBJsonStreamParser.m normal i386 objective-c++ com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/xulin/Workspace_IOS/DriveWeatherHelper    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/clang -x objective-c++ -arch i386 -fmessage-length=0 -fdiagnostics-print-source-range-info -fdiagnostics-show-category=id -fdiagnostics-parseable-fixits -Wno-trigraphs -fpascal-strings -O0 -Wmissing-prototypes -Wreturn-type -Wparentheses -Wswitch -Wno-unused-parameter -Wunused-variable -Wunused-value -Wno-shorten-64-to-32 -Wno-arc-abi -Wc++0x-extensions -DDEBUG=1 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.0.sdk -fexceptions -fasm-blocks -mmacosx-version-min=10.6 -gdwarf-2 -fvisibility-inlines-hidden -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch "-DIBOutlet=__attribute__((iboutlet))" "-DIBOutletCollection(ClassName)=__attribute__((iboutletcollection(ClassName)))" "-DIBAction=void)__attribute__((ibaction)" -D__IPHONE_OS_VERSION_MIN_REQUIRED=50000 -iquote /Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/DriveWeatherHelper-generated-files.hmap -I/Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/DriveWeatherHelper-own-target-headers.hmap -I/Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/DriveWeatherHelper-all-target-headers.hmap -iquote /Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/DriveWeatherHelper-project-headers.hmap -I/Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Products/Debug-iphonesimulator/include -I/Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/DerivedSources/i386 -I/Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/DerivedSources -F/Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Products/Debug-iphonesimulator -include /Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/PrecompiledHeaders/DriveWeatherHelper-Prefix-cjpgtklugrtxucehmdidfnqwwuhi/DriveWeatherHelper-Prefix.pch -MMD -MT dependencies -MF /Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/Objects-normal/i386/SBJsonStreamParser.d -c /Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/SBJsonStreamParser.m -o /Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/Objects-normal/i386/SBJsonStreamParser.o36"03A341ED-8750-4363-BF6A-BE603129658C-
-
-CCompileC DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/Objects-normal/i386/SBJsonStreamParserAccumulator.o /Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/SBJsonStreamParserAccumulator.m normal i386 objective-c++ com.apple.compilers.llvm.clang.1_0.compiler
-s348128346.516659
-e348128346.561615
-r1
-xCompileC
-xDerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/Objects-normal/i386/SBJsonStreamParserAccumulator.o
-x/Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/SBJsonStreamParserAccumulator.m
-xnormal
-xi386
-xobjective-c++
-xcom.apple.compilers.llvm.clang.1_0.compiler
-lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection104"Compile /Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/SBJsonStreamParserAccumulator.me272845a04c0b441^48c58f5a04c0b441^---0#0#0#-19%DVTDocumentLocation2@112"file://localhost/Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/SBJsonStreamParserAccumulator.m0000000000000000^3653"CompileC DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/Objects-normal/i386/SBJsonStreamParserAccumulator.o DriveWeatherHelper/SBJsonStreamParserAccumulator.m normal i386 objective-c++ com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/xulin/Workspace_IOS/DriveWeatherHelper    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/clang -x objective-c++ -arch i386 -fmessage-length=0 -fdiagnostics-print-source-range-info -fdiagnostics-show-category=id -fdiagnostics-parseable-fixits -Wno-trigraphs -fpascal-strings -O0 -Wmissing-prototypes -Wreturn-type -Wparentheses -Wswitch -Wno-unused-parameter -Wunused-variable -Wunused-value -Wno-shorten-64-to-32 -Wno-arc-abi -Wc++0x-extensions -DDEBUG=1 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.0.sdk -fexceptions -fasm-blocks -mmacosx-version-min=10.6 -gdwarf-2 -fvisibility-inlines-hidden -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch "-DIBOutlet=__attribute__((iboutlet))" "-DIBOutletCollection(ClassName)=__attribute__((iboutletcollection(ClassName)))" "-DIBAction=void)__attribute__((ibaction)" -D__IPHONE_OS_VERSION_MIN_REQUIRED=50000 -iquote /Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/DriveWeatherHelper-generated-files.hmap -I/Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/DriveWeatherHelper-own-target-headers.hmap -I/Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/DriveWeatherHelper-all-target-headers.hmap -iquote /Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/DriveWeatherHelper-project-headers.hmap -I/Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Products/Debug-iphonesimulator/include -I/Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/DerivedSources/i386 -I/Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/DerivedSources -F/Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Products/Debug-iphonesimulator -include /Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/PrecompiledHeaders/DriveWeatherHelper-Prefix-cjpgtklugrtxucehmdidfnqwwuhi/DriveWeatherHelper-Prefix.pch -MMD -MT dependencies -MF /Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/Objects-normal/i386/SBJsonStreamParserAccumulator.d -c /Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/SBJsonStreamParserAccumulator.m -o /Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/Objects-normal/i386/SBJsonStreamParserAccumulator.o36"D3AC9C96-5462-4184-A872-D0562F7E26FF-
-
-CCompileC DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/Objects-normal/i386/SBJsonStreamParserAdapter.o /Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/SBJsonStreamParserAdapter.m normal i386 objective-c++ com.apple.compilers.llvm.clang.1_0.compiler
-s348128346.529506
-e348128346.592159
-r1
-xCompileC
-xDerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/Objects-normal/i386/SBJsonStreamParserAdapter.o
-x/Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/SBJsonStreamParserAdapter.m
-xnormal
-xi386
-xobjective-c++
-xcom.apple.compilers.llvm.clang.1_0.compiler
-lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection100"Compile /Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/SBJsonStreamParserAdapter.mf9bb875a04c0b441^ab97975a04c0b441^---0#0#0#-19%DVTDocumentLocation2@108"file://localhost/Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/SBJsonStreamParserAdapter.m0000000000000000^3633"CompileC DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/Objects-normal/i386/SBJsonStreamParserAdapter.o DriveWeatherHelper/SBJsonStreamParserAdapter.m normal i386 objective-c++ com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/xulin/Workspace_IOS/DriveWeatherHelper    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/clang -x objective-c++ -arch i386 -fmessage-length=0 -fdiagnostics-print-source-range-info -fdiagnostics-show-category=id -fdiagnostics-parseable-fixits -Wno-trigraphs -fpascal-strings -O0 -Wmissing-prototypes -Wreturn-type -Wparentheses -Wswitch -Wno-unused-parameter -Wunused-variable -Wunused-value -Wno-shorten-64-to-32 -Wno-arc-abi -Wc++0x-extensions -DDEBUG=1 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.0.sdk -fexceptions -fasm-blocks -mmacosx-version-min=10.6 -gdwarf-2 -fvisibility-inlines-hidden -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch "-DIBOutlet=__attribute__((iboutlet))" "-DIBOutletCollection(ClassName)=__attribute__((iboutletcollection(ClassName)))" "-DIBAction=void)__attribute__((ibaction)" -D__IPHONE_OS_VERSION_MIN_REQUIRED=50000 -iquote /Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/DriveWeatherHelper-generated-files.hmap -I/Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/DriveWeatherHelper-own-target-headers.hmap -I/Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/DriveWeatherHelper-all-target-headers.hmap -iquote /Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/DriveWeatherHelper-project-headers.hmap -I/Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Products/Debug-iphonesimulator/include -I/Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/DerivedSources/i386 -I/Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/DerivedSources -F/Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Products/Debug-iphonesimulator -include /Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/PrecompiledHeaders/DriveWeatherHelper-Prefix-cjpgtklugrtxucehmdidfnqwwuhi/DriveWeatherHelper-Prefix.pch -MMD -MT dependencies -MF /Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/Objects-normal/i386/SBJsonStreamParserAdapter.d -c /Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/SBJsonStreamParserAdapter.m -o /Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/Objects-normal/i386/SBJsonStreamParserAdapter.o36"14B2C326-BB1C-40FD-A496-F293920BE7E1-
-
-CCompileC DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/Objects-normal/i386/SBJsonStreamParserState.o /Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/SBJsonStreamParserState.m normal i386 objective-c++ com.apple.compilers.llvm.clang.1_0.compiler
-s348128346.562964
-e348128346.741987
-r1
-xCompileC
-xDerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/Objects-normal/i386/SBJsonStreamParserState.o
-x/Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/SBJsonStreamParserState.m
-xnormal
-xi386
-xobjective-c++
-xcom.apple.compilers.llvm.clang.1_0.compiler
-lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection98"Compile /Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/SBJsonStreamParserState.mad4c905a04c0b441^88bccd5a04c0b441^---0#0#0#-19%DVTDocumentLocation2@106"file://localhost/Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/SBJsonStreamParserState.m0000000000000000^3623"CompileC DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/Objects-normal/i386/SBJsonStreamParserState.o DriveWeatherHelper/SBJsonStreamParserState.m normal i386 objective-c++ com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/xulin/Workspace_IOS/DriveWeatherHelper    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/clang -x objective-c++ -arch i386 -fmessage-length=0 -fdiagnostics-print-source-range-info -fdiagnostics-show-category=id -fdiagnostics-parseable-fixits -Wno-trigraphs -fpascal-strings -O0 -Wmissing-prototypes -Wreturn-type -Wparentheses -Wswitch -Wno-unused-parameter -Wunused-variable -Wunused-value -Wno-shorten-64-to-32 -Wno-arc-abi -Wc++0x-extensions -DDEBUG=1 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.0.sdk -fexceptions -fasm-blocks -mmacosx-version-min=10.6 -gdwarf-2 -fvisibility-inlines-hidden -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch "-DIBOutlet=__attribute__((iboutlet))" "-DIBOutletCollection(ClassName)=__attribute__((iboutletcollection(ClassName)))" "-DIBAction=void)__attribute__((ibaction)" -D__IPHONE_OS_VERSION_MIN_REQUIRED=50000 -iquote /Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/DriveWeatherHelper-generated-files.hmap -I/Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/DriveWeatherHelper-own-target-headers.hmap -I/Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/DriveWeatherHelper-all-target-headers.hmap -iquote /Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/DriveWeatherHelper-project-headers.hmap -I/Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Products/Debug-iphonesimulator/include -I/Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/DerivedSources/i386 -I/Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/DerivedSources -F/Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Products/Debug-iphonesimulator -include /Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/PrecompiledHeaders/DriveWeatherHelper-Prefix-cjpgtklugrtxucehmdidfnqwwuhi/DriveWeatherHelper-Prefix.pch -MMD -MT dependencies -MF /Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/Objects-normal/i386/SBJsonStreamParserState.d -c /Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/SBJsonStreamParserState.m -o /Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/Objects-normal/i386/SBJsonStreamParserState.o36"D382718C-B1DB-48D6-86C0-6CBED2D14E28-
-
-CCompileC DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/Objects-normal/i386/SBJsonStreamWriter.o /Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/SBJsonStreamWriter.m normal i386 objective-c++ com.apple.compilers.llvm.clang.1_0.compiler
-s348128346.574009
-e348128346.742966
-r1
-xCompileC
-xDerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/Objects-normal/i386/SBJsonStreamWriter.o
-x/Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/SBJsonStreamWriter.m
-xnormal
-xi386
-xobjective-c++
-xcom.apple.compilers.llvm.clang.1_0.compiler
-lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection93"Compile /Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/SBJsonStreamWriter.ma720935a04c0b441^d5cdcd5a04c0b441^---0#0#0#-19%DVTDocumentLocation2@101"file://localhost/Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/SBJsonStreamWriter.m0000000000000000^3598"CompileC DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/Objects-normal/i386/SBJsonStreamWriter.o DriveWeatherHelper/SBJsonStreamWriter.m normal i386 objective-c++ com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/xulin/Workspace_IOS/DriveWeatherHelper    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/clang -x objective-c++ -arch i386 -fmessage-length=0 -fdiagnostics-print-source-range-info -fdiagnostics-show-category=id -fdiagnostics-parseable-fixits -Wno-trigraphs -fpascal-strings -O0 -Wmissing-prototypes -Wreturn-type -Wparentheses -Wswitch -Wno-unused-parameter -Wunused-variable -Wunused-value -Wno-shorten-64-to-32 -Wno-arc-abi -Wc++0x-extensions -DDEBUG=1 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.0.sdk -fexceptions -fasm-blocks -mmacosx-version-min=10.6 -gdwarf-2 -fvisibility-inlines-hidden -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch "-DIBOutlet=__attribute__((iboutlet))" "-DIBOutletCollection(ClassName)=__attribute__((iboutletcollection(ClassName)))" "-DIBAction=void)__attribute__((ibaction)" -D__IPHONE_OS_VERSION_MIN_REQUIRED=50000 -iquote /Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/DriveWeatherHelper-generated-files.hmap -I/Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/DriveWeatherHelper-own-target-headers.hmap -I/Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/DriveWeatherHelper-all-target-headers.hmap -iquote /Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/DriveWeatherHelper-project-headers.hmap -I/Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Products/Debug-iphonesimulator/include -I/Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/DerivedSources/i386 -I/Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/DerivedSources -F/Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Products/Debug-iphonesimulator -include /Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/PrecompiledHeaders/DriveWeatherHelper-Prefix-cjpgtklugrtxucehmdidfnqwwuhi/DriveWeatherHelper-Prefix.pch -MMD -MT dependencies -MF /Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/Objects-normal/i386/SBJsonStreamWriter.d -c /Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/SBJsonStreamWriter.m -o /Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/Objects-normal/i386/SBJsonStreamWriter.o36"F886B362-6628-4466-BC70-CF98415BA8A1-
-
-CCompileC DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/Objects-normal/i386/SBJsonStreamWriterAccumulator.o /Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/SBJsonStreamWriterAccumulator.m normal i386 objective-c++ com.apple.compilers.llvm.clang.1_0.compiler
-s348128346.580523
-e348128346.644934
-r0
-xCompileC
-xDerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/Objects-normal/i386/SBJsonStreamWriterAccumulator.o
-x/Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/SBJsonStreamWriterAccumulator.m
-xnormal
-xi386
-xobjective-c++
-xcom.apple.compilers.llvm.clang.1_0.compiler
-lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection104"Compile /Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/SBJsonStreamWriterAccumulator.m68d0945a04c0b441^ac02a55a04c0b441^---0#0#0#-19%DVTDocumentLocation2@112"file://localhost/Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/SBJsonStreamWriterAccumulator.m0000000000000000^3653"CompileC DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/Objects-normal/i386/SBJsonStreamWriterAccumulator.o DriveWeatherHelper/SBJsonStreamWriterAccumulator.m normal i386 objective-c++ com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/xulin/Workspace_IOS/DriveWeatherHelper    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/clang -x objective-c++ -arch i386 -fmessage-length=0 -fdiagnostics-print-source-range-info -fdiagnostics-show-category=id -fdiagnostics-parseable-fixits -Wno-trigraphs -fpascal-strings -O0 -Wmissing-prototypes -Wreturn-type -Wparentheses -Wswitch -Wno-unused-parameter -Wunused-variable -Wunused-value -Wno-shorten-64-to-32 -Wno-arc-abi -Wc++0x-extensions -DDEBUG=1 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.0.sdk -fexceptions -fasm-blocks -mmacosx-version-min=10.6 -gdwarf-2 -fvisibility-inlines-hidden -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch "-DIBOutlet=__attribute__((iboutlet))" "-DIBOutletCollection(ClassName)=__attribute__((iboutletcollection(ClassName)))" "-DIBAction=void)__attribute__((ibaction)" -D__IPHONE_OS_VERSION_MIN_REQUIRED=50000 -iquote /Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/DriveWeatherHelper-generated-files.hmap -I/Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/DriveWeatherHelper-own-target-headers.hmap -I/Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/DriveWeatherHelper-all-target-headers.hmap -iquote /Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/DriveWeatherHelper-project-headers.hmap -I/Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Products/Debug-iphonesimulator/include -I/Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/DerivedSources/i386 -I/Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/DerivedSources -F/Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Products/Debug-iphonesimulator -include /Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/PrecompiledHeaders/DriveWeatherHelper-Prefix-cjpgtklugrtxucehmdidfnqwwuhi/DriveWeatherHelper-Prefix.pch -MMD -MT dependencies -MF /Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/Objects-normal/i386/SBJsonStreamWriterAccumulator.d -c /Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/SBJsonStreamWriterAccumulator.m -o /Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/Objects-normal/i386/SBJsonStreamWriterAccumulator.o36"69B4CFAF-3B33-4472-B6AB-65F0B7D7F653-
-
-CCompileC DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/Objects-normal/i386/SBJsonStreamWriterState.o /Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/SBJsonStreamWriterState.m normal i386 objective-c++ com.apple.compilers.llvm.clang.1_0.compiler
-s348128346.582240
-e348128346.742924
-r1
-xCompileC
-xDerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/Objects-normal/i386/SBJsonStreamWriterState.o
-x/Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/SBJsonStreamWriterState.m
-xnormal
-xi386
-xobjective-c++
-xcom.apple.compilers.llvm.clang.1_0.compiler
-lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection98"Compile /Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/SBJsonStreamWriterState.m6539955a04c0b441^b1c2cd5a04c0b441^---0#0#0#-19%DVTDocumentLocation2@106"file://localhost/Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/SBJsonStreamWriterState.m0000000000000000^3623"CompileC DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/Objects-normal/i386/SBJsonStreamWriterState.o DriveWeatherHelper/SBJsonStreamWriterState.m normal i386 objective-c++ com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/xulin/Workspace_IOS/DriveWeatherHelper    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/clang -x objective-c++ -arch i386 -fmessage-length=0 -fdiagnostics-print-source-range-info -fdiagnostics-show-category=id -fdiagnostics-parseable-fixits -Wno-trigraphs -fpascal-strings -O0 -Wmissing-prototypes -Wreturn-type -Wparentheses -Wswitch -Wno-unused-parameter -Wunused-variable -Wunused-value -Wno-shorten-64-to-32 -Wno-arc-abi -Wc++0x-extensions -DDEBUG=1 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.0.sdk -fexceptions -fasm-blocks -mmacosx-version-min=10.6 -gdwarf-2 -fvisibility-inlines-hidden -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch "-DIBOutlet=__attribute__((iboutlet))" "-DIBOutletCollection(ClassName)=__attribute__((iboutletcollection(ClassName)))" "-DIBAction=void)__attribute__((ibaction)" -D__IPHONE_OS_VERSION_MIN_REQUIRED=50000 -iquote /Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/DriveWeatherHelper-generated-files.hmap -I/Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/DriveWeatherHelper-own-target-headers.hmap -I/Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/DriveWeatherHelper-all-target-headers.hmap -iquote /Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/DriveWeatherHelper-project-headers.hmap -I/Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Products/Debug-iphonesimulator/include -I/Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/DerivedSources/i386 -I/Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/DerivedSources -F/Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Products/Debug-iphonesimulator -include /Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/PrecompiledHeaders/DriveWeatherHelper-Prefix-cjpgtklugrtxucehmdidfnqwwuhi/DriveWeatherHelper-Prefix.pch -MMD -MT dependencies -MF /Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/Objects-normal/i386/SBJsonStreamWriterState.d -c /Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/SBJsonStreamWriterState.m -o /Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/Objects-normal/i386/SBJsonStreamWriterState.o36"D62FB5AA-63F3-4C53-BF8E-952F7150ED43-
-
-CCompileC DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/Objects-normal/i386/SBJsonTokeniser.o /Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/SBJsonTokeniser.m normal i386 objective-c++ com.apple.compilers.llvm.clang.1_0.compiler
-s348128346.585586
-e348128346.742916
-r1
-xCompileC
-xDerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/Objects-normal/i386/SBJsonTokeniser.o
-x/Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/SBJsonTokeniser.m
-xnormal
-xi386
-xobjective-c++
-xcom.apple.compilers.llvm.clang.1_0.compiler
-lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection90"Compile /Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/SBJsonTokeniser.m1b13965a04c0b441^b0c6cd5a04c0b441^---0#0#0#-19%DVTDocumentLocation2@98"file://localhost/Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/SBJsonTokeniser.m0000000000000000^3583"CompileC DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/Objects-normal/i386/SBJsonTokeniser.o DriveWeatherHelper/SBJsonTokeniser.m normal i386 objective-c++ com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/xulin/Workspace_IOS/DriveWeatherHelper    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/clang -x objective-c++ -arch i386 -fmessage-length=0 -fdiagnostics-print-source-range-info -fdiagnostics-show-category=id -fdiagnostics-parseable-fixits -Wno-trigraphs -fpascal-strings -O0 -Wmissing-prototypes -Wreturn-type -Wparentheses -Wswitch -Wno-unused-parameter -Wunused-variable -Wunused-value -Wno-shorten-64-to-32 -Wno-arc-abi -Wc++0x-extensions -DDEBUG=1 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.0.sdk -fexceptions -fasm-blocks -mmacosx-version-min=10.6 -gdwarf-2 -fvisibility-inlines-hidden -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch "-DIBOutlet=__attribute__((iboutlet))" "-DIBOutletCollection(ClassName)=__attribute__((iboutletcollection(ClassName)))" "-DIBAction=void)__attribute__((ibaction)" -D__IPHONE_OS_VERSION_MIN_REQUIRED=50000 -iquote /Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/DriveWeatherHelper-generated-files.hmap -I/Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/DriveWeatherHelper-own-target-headers.hmap -I/Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/DriveWeatherHelper-all-target-headers.hmap -iquote /Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/DriveWeatherHelper-project-headers.hmap -I/Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Products/Debug-iphonesimulator/include -I/Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/DerivedSources/i386 -I/Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/DerivedSources -F/Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Products/Debug-iphonesimulator -include /Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/PrecompiledHeaders/DriveWeatherHelper-Prefix-cjpgtklugrtxucehmdidfnqwwuhi/DriveWeatherHelper-Prefix.pch -MMD -MT dependencies -MF /Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/Objects-normal/i386/SBJsonTokeniser.d -c /Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/SBJsonTokeniser.m -o /Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/Objects-normal/i386/SBJsonTokeniser.o36"B35F5C66-9A80-42D7-A67E-689C4085B283-
-
-CCompileC DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/Objects-normal/i386/SBJsonUTF8Stream.o /Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/SBJsonUTF8Stream.m normal i386 objective-c++ com.apple.compilers.llvm.clang.1_0.compiler
-s348129070.085467
-e348129070.129509
-r0
-xCompileC
-xDerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/Objects-normal/i386/SBJsonUTF8Stream.o
-x/Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/SBJsonUTF8Stream.m
-xnormal
-xi386
-xobjective-c++
-xcom.apple.compilers.llvm.clang.1_0.compiler
-o/Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/SBJsonUTF8Stream.m:65:12:{65:14-65:27}: error: assigning to 'const char *' from incompatible type 'const void *' [3]
-o     _bytes = [_data bytes];
-o            ^ ~~~~~~~~~~~~~
-o/Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/SBJsonUTF8Stream.m:129:39:{129:25-129:38}: error: arithmetic on a pointer to void [3]
-o     const void *bytes = [_data bytes] + _index;
-o                         ~~~~~~~~~~~~~ ^
-o2 errors generated.
-lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection91"Compile /Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/SBJsonUTF8Stream.m0c07162e07c0b441^501b212e07c0b441^-500"/Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/SBJsonUTF8Stream.m:65:12:{65:14-65:27}: error: assigning to 'const char *' from incompatible type 'const void *' [3]     _bytes = [_data bytes];            ^ ~~~~~~~~~~~~~/Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/SBJsonUTF8Stream.m:129:39:{129:25-129:38}: error: arithmetic on a pointer to void [3]     const void *bytes = [_data bytes] + _index;                         ~~~~~~~~~~~~~ ^2 errors generated.2(21%IDEActivityLogMessage2@65"Assigning to 'const char *' from incompatible type 'const void *'-348129070#0#182#-2#-23%DVTTextDocumentLocation3@99"file://localhost/Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/SBJsonUTF8Stream.m0000000000000000^64#11#64#11#18446744073709551615#0#14"Semantic Issue1(3@99"file://localhost/Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/SBJsonUTF8Stream.m0000000000000000^64#13#64#26#18446744073709551615#0#-2@31"Arithmetic on a pointer to void-348129070#239#151#-2#-3@99"file://localhost/Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/SBJsonUTF8Stream.m0000000000000000^128#38#128#38#18446744073709551615#0#14"Semantic Issue1(3@99"file://localhost/Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/SBJsonUTF8Stream.m0000000000000000^128#24#128#37#18446744073709551615#0#-0#0#0#-19%DVTDocumentLocation4@99"file://localhost/Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/SBJsonUTF8Stream.m0000000000000000^3588"CompileC DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/Objects-normal/i386/SBJsonUTF8Stream.o DriveWeatherHelper/SBJsonUTF8Stream.m normal i386 objective-c++ com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/xulin/Workspace_IOS/DriveWeatherHelper    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/clang -x objective-c++ -arch i386 -fmessage-length=0 -fdiagnostics-print-source-range-info -fdiagnostics-show-category=id -fdiagnostics-parseable-fixits -Wno-trigraphs -fpascal-strings -O0 -Wmissing-prototypes -Wreturn-type -Wparentheses -Wswitch -Wno-unused-parameter -Wunused-variable -Wunused-value -Wno-shorten-64-to-32 -Wno-arc-abi -Wc++0x-extensions -DDEBUG=1 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.0.sdk -fexceptions -fasm-blocks -mmacosx-version-min=10.6 -gdwarf-2 -fvisibility-inlines-hidden -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch "-DIBOutlet=__attribute__((iboutlet))" "-DIBOutletCollection(ClassName)=__attribute__((iboutletcollection(ClassName)))" "-DIBAction=void)__attribute__((ibaction)" -D__IPHONE_OS_VERSION_MIN_REQUIRED=50000 -iquote /Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/DriveWeatherHelper-generated-files.hmap -I/Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/DriveWeatherHelper-own-target-headers.hmap -I/Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/DriveWeatherHelper-all-target-headers.hmap -iquote /Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/DriveWeatherHelper-project-headers.hmap -I/Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Products/Debug-iphonesimulator/include -I/Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/DerivedSources/i386 -I/Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/DerivedSources -F/Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Products/Debug-iphonesimulator -include /Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/PrecompiledHeaders/DriveWeatherHelper-Prefix-cjpgtklugrtxucehmdidfnqwwuhi/DriveWeatherHelper-Prefix.pch -MMD -MT dependencies -MF /Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/Objects-normal/i386/SBJsonUTF8Stream.d -c /Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/SBJsonUTF8Stream.m -o /Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/Objects-normal/i386/SBJsonUTF8Stream.o36"C5A270FE-DDDC-4CB5-8AE1-250C55573D02-
-
-CCompileC DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/Objects-normal/i386/SBJsonWriter.o /Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/SBJsonWriter.m normal i386 objective-c++ com.apple.compilers.llvm.clang.1_0.compiler
-s348128346.606273
-e348128346.742947
-r1
-xCompileC
-xDerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/Objects-normal/i386/SBJsonWriter.o
-x/Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/SBJsonWriter.m
-xnormal
-xi386
-xobjective-c++
-xcom.apple.compilers.llvm.clang.1_0.compiler
-lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection87"Compile /Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/SBJsonWriter.m89619b5a04c0b441^4bcacd5a04c0b441^---0#0#0#-19%DVTDocumentLocation2@95"file://localhost/Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/SBJsonWriter.m0000000000000000^3568"CompileC DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/Objects-normal/i386/SBJsonWriter.o DriveWeatherHelper/SBJsonWriter.m normal i386 objective-c++ com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/xulin/Workspace_IOS/DriveWeatherHelper    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/clang -x objective-c++ -arch i386 -fmessage-length=0 -fdiagnostics-print-source-range-info -fdiagnostics-show-category=id -fdiagnostics-parseable-fixits -Wno-trigraphs -fpascal-strings -O0 -Wmissing-prototypes -Wreturn-type -Wparentheses -Wswitch -Wno-unused-parameter -Wunused-variable -Wunused-value -Wno-shorten-64-to-32 -Wno-arc-abi -Wc++0x-extensions -DDEBUG=1 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.0.sdk -fexceptions -fasm-blocks -mmacosx-version-min=10.6 -gdwarf-2 -fvisibility-inlines-hidden -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch "-DIBOutlet=__attribute__((iboutlet))" "-DIBOutletCollection(ClassName)=__attribute__((iboutletcollection(ClassName)))" "-DIBAction=void)__attribute__((ibaction)" -D__IPHONE_OS_VERSION_MIN_REQUIRED=50000 -iquote /Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/DriveWeatherHelper-generated-files.hmap -I/Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/DriveWeatherHelper-own-target-headers.hmap -I/Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/DriveWeatherHelper-all-target-headers.hmap -iquote /Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/DriveWeatherHelper-project-headers.hmap -I/Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Products/Debug-iphonesimulator/include -I/Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/DerivedSources/i386 -I/Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/DerivedSources -F/Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Products/Debug-iphonesimulator -include /Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/PrecompiledHeaders/DriveWeatherHelper-Prefix-cjpgtklugrtxucehmdidfnqwwuhi/DriveWeatherHelper-Prefix.pch -MMD -MT dependencies -MF /Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/Objects-normal/i386/SBJsonWriter.d -c /Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/SBJsonWriter.m -o /Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/Objects-normal/i386/SBJsonWriter.o36"A416507E-ABC2-479C-AB24-4C0AAACA0B3B-
-
-CCompileC DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/Objects-normal/i386/TBAddRouteViewController.o /Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/TBAddRouteViewController.m normal i386 objective-c++ com.apple.compilers.llvm.clang.1_0.compiler
-s348128346.393184
-e348128346.585966
-r1
-xCompileC
-xDerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/Objects-normal/i386/TBAddRouteViewController.o
-x/Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/TBAddRouteViewController.m
-xnormal
-xi386
-xobjective-c++
-xcom.apple.compilers.llvm.clang.1_0.compiler
-lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection99"Compile /Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/TBAddRouteViewController.m5bcf645a04c0b441^1002965a04c0b441^---0#0#0#-19%DVTDocumentLocation2@107"file://localhost/Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/TBAddRouteViewController.m0000000000000000^3628"CompileC DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/Objects-normal/i386/TBAddRouteViewController.o DriveWeatherHelper/TBAddRouteViewController.m normal i386 objective-c++ com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/xulin/Workspace_IOS/DriveWeatherHelper    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/clang -x objective-c++ -arch i386 -fmessage-length=0 -fdiagnostics-print-source-range-info -fdiagnostics-show-category=id -fdiagnostics-parseable-fixits -Wno-trigraphs -fpascal-strings -O0 -Wmissing-prototypes -Wreturn-type -Wparentheses -Wswitch -Wno-unused-parameter -Wunused-variable -Wunused-value -Wno-shorten-64-to-32 -Wno-arc-abi -Wc++0x-extensions -DDEBUG=1 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.0.sdk -fexceptions -fasm-blocks -mmacosx-version-min=10.6 -gdwarf-2 -fvisibility-inlines-hidden -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch "-DIBOutlet=__attribute__((iboutlet))" "-DIBOutletCollection(ClassName)=__attribute__((iboutletcollection(ClassName)))" "-DIBAction=void)__attribute__((ibaction)" -D__IPHONE_OS_VERSION_MIN_REQUIRED=50000 -iquote /Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/DriveWeatherHelper-generated-files.hmap -I/Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/DriveWeatherHelper-own-target-headers.hmap -I/Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/DriveWeatherHelper-all-target-headers.hmap -iquote /Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/DriveWeatherHelper-project-headers.hmap -I/Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Products/Debug-iphonesimulator/include -I/Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/DerivedSources/i386 -I/Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/DerivedSources -F/Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Products/Debug-iphonesimulator -include /Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/PrecompiledHeaders/DriveWeatherHelper-Prefix-cjpgtklugrtxucehmdidfnqwwuhi/DriveWeatherHelper-Prefix.pch -MMD -MT dependencies -MF /Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/Objects-normal/i386/TBAddRouteViewController.d -c /Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/TBAddRouteViewController.m -o /Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/Objects-normal/i386/TBAddRouteViewController.o36"0D904E34-9C7E-411D-8A61-A2BE7D1C56AE-
-
-CCompileC DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/Objects-normal/i386/TBAppDelegate.o /Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/TBAppDelegate.m normal i386 objective-c++ com.apple.compilers.llvm.clang.1_0.compiler
-s348129070.082971
-e348129070.245129
-r1
-xCompileC
-xDerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/Objects-normal/i386/TBAppDelegate.o
-x/Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/TBAppDelegate.m
-xnormal
-xi386
-xobjective-c++
-xcom.apple.compilers.llvm.clang.1_0.compiler
-lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection88"Compile /Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/TBAppDelegate.m0263152e07c0b441^bb5f412e07c0b441^---0#0#0#-19%DVTDocumentLocation2@96"file://localhost/Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/TBAppDelegate.m0000000000000000^3573"CompileC DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/Objects-normal/i386/TBAppDelegate.o DriveWeatherHelper/TBAppDelegate.m normal i386 objective-c++ com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/xulin/Workspace_IOS/DriveWeatherHelper    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/clang -x objective-c++ -arch i386 -fmessage-length=0 -fdiagnostics-print-source-range-info -fdiagnostics-show-category=id -fdiagnostics-parseable-fixits -Wno-trigraphs -fpascal-strings -O0 -Wmissing-prototypes -Wreturn-type -Wparentheses -Wswitch -Wno-unused-parameter -Wunused-variable -Wunused-value -Wno-shorten-64-to-32 -Wno-arc-abi -Wc++0x-extensions -DDEBUG=1 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.0.sdk -fexceptions -fasm-blocks -mmacosx-version-min=10.6 -gdwarf-2 -fvisibility-inlines-hidden -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch "-DIBOutlet=__attribute__((iboutlet))" "-DIBOutletCollection(ClassName)=__attribute__((iboutletcollection(ClassName)))" "-DIBAction=void)__attribute__((ibaction)" -D__IPHONE_OS_VERSION_MIN_REQUIRED=50000 -iquote /Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/DriveWeatherHelper-generated-files.hmap -I/Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/DriveWeatherHelper-own-target-headers.hmap -I/Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/DriveWeatherHelper-all-target-headers.hmap -iquote /Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/DriveWeatherHelper-project-headers.hmap -I/Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Products/Debug-iphonesimulator/include -I/Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/DerivedSources/i386 -I/Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/DerivedSources -F/Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Products/Debug-iphonesimulator -include /Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/PrecompiledHeaders/DriveWeatherHelper-Prefix-cjpgtklugrtxucehmdidfnqwwuhi/DriveWeatherHelper-Prefix.pch -MMD -MT dependencies -MF /Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/Objects-normal/i386/TBAppDelegate.d -c /Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/TBAppDelegate.m -o /Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/Objects-normal/i386/TBAppDelegate.o36"8BE70CEA-46B6-4713-BF05-AB0A81B60D79-
-
-CCompileC DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/Objects-normal/i386/TBCityListViewController.o /Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/TBCityListViewController.m normal i386 objective-c++ com.apple.compilers.llvm.clang.1_0.compiler
-s348128346.393177
-e348128346.579188
-r1
-xCompileC
-xDerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/Objects-normal/i386/TBCityListViewController.o
-x/Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/TBCityListViewController.m
-xnormal
-xi386
-xobjective-c++
-xcom.apple.compilers.llvm.clang.1_0.compiler
-lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection99"Compile /Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/TBCityListViewController.m08cb645a04c0b441^ef54945a04c0b441^---0#0#0#-19%DVTDocumentLocation2@107"file://localhost/Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/TBCityListViewController.m0000000000000000^3628"CompileC DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/Objects-normal/i386/TBCityListViewController.o DriveWeatherHelper/TBCityListViewController.m normal i386 objective-c++ com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/xulin/Workspace_IOS/DriveWeatherHelper    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/clang -x objective-c++ -arch i386 -fmessage-length=0 -fdiagnostics-print-source-range-info -fdiagnostics-show-category=id -fdiagnostics-parseable-fixits -Wno-trigraphs -fpascal-strings -O0 -Wmissing-prototypes -Wreturn-type -Wparentheses -Wswitch -Wno-unused-parameter -Wunused-variable -Wunused-value -Wno-shorten-64-to-32 -Wno-arc-abi -Wc++0x-extensions -DDEBUG=1 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.0.sdk -fexceptions -fasm-blocks -mmacosx-version-min=10.6 -gdwarf-2 -fvisibility-inlines-hidden -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch "-DIBOutlet=__attribute__((iboutlet))" "-DIBOutletCollection(ClassName)=__attribute__((iboutletcollection(ClassName)))" "-DIBAction=void)__attribute__((ibaction)" -D__IPHONE_OS_VERSION_MIN_REQUIRED=50000 -iquote /Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/DriveWeatherHelper-generated-files.hmap -I/Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/DriveWeatherHelper-own-target-headers.hmap -I/Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/DriveWeatherHelper-all-target-headers.hmap -iquote /Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/DriveWeatherHelper-project-headers.hmap -I/Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Products/Debug-iphonesimulator/include -I/Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/DerivedSources/i386 -I/Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/DerivedSources -F/Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Products/Debug-iphonesimulator -include /Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/PrecompiledHeaders/DriveWeatherHelper-Prefix-cjpgtklugrtxucehmdidfnqwwuhi/DriveWeatherHelper-Prefix.pch -MMD -MT dependencies -MF /Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/Objects-normal/i386/TBCityListViewController.d -c /Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/TBCityListViewController.m -o /Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/Objects-normal/i386/TBCityListViewController.o36"AA5A1B81-84C8-42A9-88AC-895BA42055C4-
-
-CCompileC DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/Objects-normal/i386/TBRouteListViewController.o /Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/TBRouteListViewController.m normal i386 objective-c++ com.apple.compilers.llvm.clang.1_0.compiler
-s348131139.043554
-e348131139.143292
-r1
-xCompileC
-xDerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/Objects-normal/i386/TBRouteListViewController.o
-x/Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/TBRouteListViewController.m
-xnormal
-xi386
-xobjective-c++
-xcom.apple.compilers.llvm.clang.1_0.compiler
-lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection100"Compile /Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/TBRouteListViewController.m5b410b430fc0b441^a7ae24430fc0b441^---0#0#0#-19%DVTDocumentLocation2@108"file://localhost/Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/TBRouteListViewController.m0000000000000000^3633"CompileC DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/Objects-normal/i386/TBRouteListViewController.o DriveWeatherHelper/TBRouteListViewController.m normal i386 objective-c++ com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/xulin/Workspace_IOS/DriveWeatherHelper    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/clang -x objective-c++ -arch i386 -fmessage-length=0 -fdiagnostics-print-source-range-info -fdiagnostics-show-category=id -fdiagnostics-parseable-fixits -Wno-trigraphs -fpascal-strings -O0 -Wmissing-prototypes -Wreturn-type -Wparentheses -Wswitch -Wno-unused-parameter -Wunused-variable -Wunused-value -Wno-shorten-64-to-32 -Wno-arc-abi -Wc++0x-extensions -DDEBUG=1 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.0.sdk -fexceptions -fasm-blocks -mmacosx-version-min=10.6 -gdwarf-2 -fvisibility-inlines-hidden -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch "-DIBOutlet=__attribute__((iboutlet))" "-DIBOutletCollection(ClassName)=__attribute__((iboutletcollection(ClassName)))" "-DIBAction=void)__attribute__((ibaction)" -D__IPHONE_OS_VERSION_MIN_REQUIRED=50000 -iquote /Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/DriveWeatherHelper-generated-files.hmap -I/Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/DriveWeatherHelper-own-target-headers.hmap -I/Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/DriveWeatherHelper-all-target-headers.hmap -iquote /Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/DriveWeatherHelper-project-headers.hmap -I/Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Products/Debug-iphonesimulator/include -I/Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/DerivedSources/i386 -I/Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/DerivedSources -F/Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Products/Debug-iphonesimulator -include /Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/PrecompiledHeaders/DriveWeatherHelper-Prefix-cjpgtklugrtxucehmdidfnqwwuhi/DriveWeatherHelper-Prefix.pch -MMD -MT dependencies -MF /Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/Objects-normal/i386/TBRouteListViewController.d -c /Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/TBRouteListViewController.m -o /Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/Objects-normal/i386/TBRouteListViewController.o36"892C0DD1-2F9E-4A03-8D91-96045E8CE5E7-
-
-CCompileC DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/Objects-normal/i386/TBRouteWeatherViewController.o /Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/TBRouteWeatherViewController.m normal i386 objective-c++ com.apple.compilers.llvm.clang.1_0.compiler
-s348132090.722642
-e348132090.790990
-r1
-xCompileC
-xDerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/Objects-normal/i386/TBRouteWeatherViewController.o
-x/Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/TBRouteWeatherViewController.m
-xnormal
-xi386
-xobjective-c++
-xcom.apple.compilers.llvm.clang.1_0.compiler
-o/Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/TBRouteWeatherViewController.m:115:19: warning: unused variable 'tmp' [-Wunused-variable,12]
-o         NSString *tmp = [[info objectForKey:@"weatherinfo"] objectForKey:@"city"];
-o                   ^
-o1 warning generated.
-lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection103"Compile /Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/TBRouteWeatherViewController.mdf19b9fa12c0b441^417ecafa12c0b441^-284"/Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/TBRouteWeatherViewController.m:115:19: warning: unused variable 'tmp' [-Wunused-variable,12]         NSString *tmp = [[info objectForKey:@"weatherinfo"] objectForKey:@"city"];                   ^1 warning generated.1(21%IDEActivityLogMessage2@21"Unused variable 'tmp'-348132090#0#158#-1#-23%DVTTextDocumentLocation3@111"file://localhost/Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/TBRouteWeatherViewController.m0000000000000000^114#18#114#18#18446744073709551615#0#19"Unused Entity Issue--0#0#0#-19%DVTDocumentLocation4@111"file://localhost/Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/TBRouteWeatherViewController.m0000000000000000^3648"CompileC DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/Objects-normal/i386/TBRouteWeatherViewController.o DriveWeatherHelper/TBRouteWeatherViewController.m normal i386 objective-c++ com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/xulin/Workspace_IOS/DriveWeatherHelper    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/clang -x objective-c++ -arch i386 -fmessage-length=0 -fdiagnostics-print-source-range-info -fdiagnostics-show-category=id -fdiagnostics-parseable-fixits -Wno-trigraphs -fpascal-strings -O0 -Wmissing-prototypes -Wreturn-type -Wparentheses -Wswitch -Wno-unused-parameter -Wunused-variable -Wunused-value -Wno-shorten-64-to-32 -Wno-arc-abi -Wc++0x-extensions -DDEBUG=1 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.0.sdk -fexceptions -fasm-blocks -mmacosx-version-min=10.6 -gdwarf-2 -fvisibility-inlines-hidden -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch "-DIBOutlet=__attribute__((iboutlet))" "-DIBOutletCollection(ClassName)=__attribute__((iboutletcollection(ClassName)))" "-DIBAction=void)__attribute__((ibaction)" -D__IPHONE_OS_VERSION_MIN_REQUIRED=50000 -iquote /Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/DriveWeatherHelper-generated-files.hmap -I/Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/DriveWeatherHelper-own-target-headers.hmap -I/Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/DriveWeatherHelper-all-target-headers.hmap -iquote /Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/DriveWeatherHelper-project-headers.hmap -I/Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Products/Debug-iphonesimulator/include -I/Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/DerivedSources/i386 -I/Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/DerivedSources -F/Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Products/Debug-iphonesimulator -include /Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/PrecompiledHeaders/DriveWeatherHelper-Prefix-cjpgtklugrtxucehmdidfnqwwuhi/DriveWeatherHelper-Prefix.pch -MMD -MT dependencies -MF /Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/Objects-normal/i386/TBRouteWeatherViewController.d -c /Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/TBRouteWeatherViewController.m -o /Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/Objects-normal/i386/TBRouteWeatherViewController.o36"52D9270D-A465-40E3-A63D-041DA4146A2C-
-
-CCompileC DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/Objects-normal/i386/main.o /Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/main.m normal i386 objective-c++ com.apple.compilers.llvm.clang.1_0.compiler
-s348128346.392671
-e348128346.515401
-r1
-xCompileC
-xDerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/Objects-normal/i386/main.o
-x/Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/main.m
-xnormal
-xi386
-xobjective-c++
-xcom.apple.compilers.llvm.clang.1_0.compiler
-lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection79"Compile /Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/main.mbaa2645a04c0b441^84f1835a04c0b441^---0#0#0#-19%DVTDocumentLocation2@87"file://localhost/Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/main.m0000000000000000^3528"CompileC DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/Objects-normal/i386/main.o DriveWeatherHelper/main.m normal i386 objective-c++ com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/xulin/Workspace_IOS/DriveWeatherHelper    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/clang -x objective-c++ -arch i386 -fmessage-length=0 -fdiagnostics-print-source-range-info -fdiagnostics-show-category=id -fdiagnostics-parseable-fixits -Wno-trigraphs -fpascal-strings -O0 -Wmissing-prototypes -Wreturn-type -Wparentheses -Wswitch -Wno-unused-parameter -Wunused-variable -Wunused-value -Wno-shorten-64-to-32 -Wno-arc-abi -Wc++0x-extensions -DDEBUG=1 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.0.sdk -fexceptions -fasm-blocks -mmacosx-version-min=10.6 -gdwarf-2 -fvisibility-inlines-hidden -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch "-DIBOutlet=__attribute__((iboutlet))" "-DIBOutletCollection(ClassName)=__attribute__((iboutletcollection(ClassName)))" "-DIBAction=void)__attribute__((ibaction)" -D__IPHONE_OS_VERSION_MIN_REQUIRED=50000 -iquote /Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/DriveWeatherHelper-generated-files.hmap -I/Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/DriveWeatherHelper-own-target-headers.hmap -I/Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/DriveWeatherHelper-all-target-headers.hmap -iquote /Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/DriveWeatherHelper-project-headers.hmap -I/Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Products/Debug-iphonesimulator/include -I/Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/DerivedSources/i386 -I/Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/DerivedSources -F/Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Products/Debug-iphonesimulator -include /Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/PrecompiledHeaders/DriveWeatherHelper-Prefix-cjpgtklugrtxucehmdidfnqwwuhi/DriveWeatherHelper-Prefix.pch -MMD -MT dependencies -MF /Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/Objects-normal/i386/main.d -c /Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/main.m -o /Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/Objects-normal/i386/main.o36"8F85E9A6-3C85-4A40-8EA8-D560ACFAC082-
-
-CCompileXIB /Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/TBAddRouteViewController.xib
-s348129312.466585
-e348129313.654387
-r1
-xCompileXIB
-x/Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/TBAddRouteViewController.xib
-lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection103"Compiling /Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/TBAddRouteViewController.xibc689772008c0b441^e691a72108c0b441^---0#0#0#-19%DVTDocumentLocation2@109"file://localhost/Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/TBAddRouteViewController.xib0000000000000000^806"CompileXIB DriveWeatherHelper/TBAddRouteViewController.xib    cd /Users/xulin/Workspace_IOS/DriveWeatherHelper    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 5.0    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    setenv XCODE_DEVELOPER_USR_PATH /Developer/usr/bin/..    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Products/Debug-iphonesimulator/DriveWeatherHelper.app/TBAddRouteViewController.nib /Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/TBAddRouteViewController.xib --sdk /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.0.sdk36"5CF33B40-9ACE-49FD-B8D1-A64F09E2F6E3-
-
-CCompileXIB /Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/TBCityListViewController.xib
-s348129312.466623
-e348129313.665144
-r1
-xCompileXIB
-x/Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/TBCityListViewController.xib
-lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection103"Compiling /Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/TBCityListViewController.xib768c772008c0b441^a149aa2108c0b441^---0#0#0#-19%DVTDocumentLocation2@109"file://localhost/Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/TBCityListViewController.xib0000000000000000^806"CompileXIB DriveWeatherHelper/TBCityListViewController.xib    cd /Users/xulin/Workspace_IOS/DriveWeatherHelper    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 5.0    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    setenv XCODE_DEVELOPER_USR_PATH /Developer/usr/bin/..    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Products/Debug-iphonesimulator/DriveWeatherHelper.app/TBCityListViewController.nib /Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/TBCityListViewController.xib --sdk /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.0.sdk36"6FFF953D-7C86-45E1-AFAF-C49BA3627919-
-
-CCompileXIB /Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/TBMainWindow.xib
-s348129312.466013
-e348129313.705813
-r1
-xCompileXIB
-x/Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/TBMainWindow.xib
-lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection91"Compiling /Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/TBMainWindow.xib2f6a772008c0b441^42b2b42108c0b441^---0#0#0#-19%DVTDocumentLocation2@97"file://localhost/Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/TBMainWindow.xib0000000000000000^770"CompileXIB DriveWeatherHelper/TBMainWindow.xib    cd /Users/xulin/Workspace_IOS/DriveWeatherHelper    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 5.0    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    setenv XCODE_DEVELOPER_USR_PATH /Developer/usr/bin/..    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Products/Debug-iphonesimulator/DriveWeatherHelper.app/TBMainWindow.nib /Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/TBMainWindow.xib --sdk /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.0.sdk36"528F6209-086E-44C0-B8FA-76A1A963D142-
-
-CCompileXIB /Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/TBRouteListViewController.xib
-s348129312.466025
-e348129313.671653
-r1
-xCompileXIB
-x/Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/TBRouteListViewController.xib
-lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection104"Compiling /Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/TBRouteListViewController.xibe86a772008c0b441^624eac2108c0b441^---0#0#0#-19%DVTDocumentLocation2@110"file://localhost/Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/TBRouteListViewController.xib0000000000000000^809"CompileXIB DriveWeatherHelper/TBRouteListViewController.xib    cd /Users/xulin/Workspace_IOS/DriveWeatherHelper    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 5.0    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    setenv XCODE_DEVELOPER_USR_PATH /Developer/usr/bin/..    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Products/Debug-iphonesimulator/DriveWeatherHelper.app/TBRouteListViewController.nib /Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/TBRouteListViewController.xib --sdk /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.0.sdk36"8A34223B-8A3E-4D41-BC82-2D7D9C03B727-
-
-CCompileXIB /Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/TBRouteWeatherViewController.xib
-s348129312.466731
-e348129313.641493
-r1
-xCompileXIB
-x/Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/TBRouteWeatherViewController.xib
-lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection107"Compiling /Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/TBRouteWeatherViewController.xiba794772008c0b441^d272a42108c0b441^---0#0#0#-19%DVTDocumentLocation2@113"file://localhost/Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/TBRouteWeatherViewController.xib0000000000000000^818"CompileXIB DriveWeatherHelper/TBRouteWeatherViewController.xib    cd /Users/xulin/Workspace_IOS/DriveWeatherHelper    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 5.0    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    setenv XCODE_DEVELOPER_USR_PATH /Developer/usr/bin/..    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Products/Debug-iphonesimulator/DriveWeatherHelper.app/TBRouteWeatherViewController.nib /Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/TBRouteWeatherViewController.xib --sdk /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.0.sdk36"CF01FC53-1C5A-4A11-991C-B696C53E8D34-
-
-CCopyStringsFile /Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Products/Debug-iphonesimulator/DriveWeatherHelper.app/en.lproj/InfoPlist.strings DriveWeatherHelper/en.lproj/InfoPlist.strings
-s348129312.466009
-e348129312.469401
-r1
-xCopyStringsFile
-x/Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Products/Debug-iphonesimulator/DriveWeatherHelper.app/en.lproj/InfoPlist.strings
-xDriveWeatherHelper/en.lproj/InfoPlist.strings
-lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection50"Copy DriveWeatherHelper/en.lproj/InfoPlist.strings9869772008c0b441^0f2b782008c0b441^---0#0#0#-19%DVTDocumentLocation2@107"file://localhost/Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/en.lproj/InfoPlist.strings0000000000000000^649"CopyStringsFile DerivedData/DriveWeatherHelper/Build/Products/Debug-iphonesimulator/DriveWeatherHelper.app/en.lproj/InfoPlist.strings DriveWeatherHelper/en.lproj/InfoPlist.strings    cd /Users/xulin/Workspace_IOS/DriveWeatherHelper    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-copyStrings --validate --inputencoding utf-8 --outputencoding binary --outdir /Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Products/Debug-iphonesimulator/DriveWeatherHelper.app/en.lproj -- DriveWeatherHelper/en.lproj/InfoPlist.strings36"6F6168BC-D807-4A7C-825E-DF6327F828DD-
-
-CCpResource DriveWeatherHelper/../DriveWeatherHelper/dwh.sqlite3 DerivedData/DriveWeatherHelper/Build/Products/Debug-iphonesimulator/DriveWeatherHelper.app/dwh.sqlite3
-s348129312.466682
-e348129312.506056
-r1
-xCpResource
-xDriveWeatherHelper/../DriveWeatherHelper/dwh.sqlite3
-xDerivedData/DriveWeatherHelper/Build/Products/Debug-iphonesimulator/DriveWeatherHelper.app/dwh.sqlite3
-lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection107"Copy DerivedData/DriveWeatherHelper/Build/Products/Debug-iphonesimulator/DriveWeatherHelper.app/dwh.sqlite33a92772008c0b441^268d812008c0b441^---0#0#0#-19%DVTDocumentLocation2@164"file://localhost/Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Products/Debug-iphonesimulator/DriveWeatherHelper.app/dwh.sqlite300f4882adcffdf42^699"CpResource DriveWeatherHelper/../DriveWeatherHelper/dwh.sqlite3 DerivedData/DriveWeatherHelper/Build/Products/Debug-iphonesimulator/DriveWeatherHelper.app/dwh.sqlite3    cd /Users/xulin/Workspace_IOS/DriveWeatherHelper    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/../DriveWeatherHelper/dwh.sqlite3 /Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Products/Debug-iphonesimulator/DriveWeatherHelper.app36"FF3FFD33-5E5E-43B8-8E62-745B7A480D92-
-
-CCpResource DriveWeatherHelper/mapapi.bundle DerivedData/DriveWeatherHelper/Build/Products/Debug-iphonesimulator/DriveWeatherHelper.app/mapapi.bundle
-s348129312.466753
-e348129312.515981
-r1
-xCpResource
-xDriveWeatherHelper/mapapi.bundle
-xDerivedData/DriveWeatherHelper/Build/Products/Debug-iphonesimulator/DriveWeatherHelper.app/mapapi.bundle
-lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection109"Copy DerivedData/DriveWeatherHelper/Build/Products/Debug-iphonesimulator/DriveWeatherHelper.app/mapapi.bundle3a92772008c0b441^ca17842008c0b441^---0#0#0#-19%DVTDocumentLocation2@166"file://localhost/Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Products/Debug-iphonesimulator/DriveWeatherHelper.app/mapapi.bundle00f4882adcffdf42^661"CpResource DriveWeatherHelper/mapapi.bundle DerivedData/DriveWeatherHelper/Build/Products/Debug-iphonesimulator/DriveWeatherHelper.app/mapapi.bundle    cd /Users/xulin/Workspace_IOS/DriveWeatherHelper    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/mapapi.bundle /Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Products/Debug-iphonesimulator/DriveWeatherHelper.app36"E6A78AE2-B2EF-4000-82CC-D6E721490F3A-
-
-CGenerateDSYMFile /Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Products/Debug-iphonesimulator/DriveWeatherHelper.app.dSYM /Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Products/Debug-iphonesimulator/DriveWeatherHelper.app/DriveWeatherHelper
-s348132090.941855
-e348132091.299003
-r1
-xGenerateDSYMFile
-x/Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Products/Debug-iphonesimulator/DriveWeatherHelper.app.dSYM
-x/Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Products/Debug-iphonesimulator/DriveWeatherHelper.app/DriveWeatherHelper
-lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection152"Generating /Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Products/Debug-iphonesimulator/DriveWeatherHelper.app.dSYM342df1fa12c0b441^878b4cfb12c0b441^---0#0#0#-19%DVTDocumentLocation2@158"file://localhost/Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Products/Debug-iphonesimulator/DriveWeatherHelper.app.dSYM/0000000000000000^740"GenerateDSYMFile DerivedData/DriveWeatherHelper/Build/Products/Debug-iphonesimulator/DriveWeatherHelper.app.dSYM DerivedData/DriveWeatherHelper/Build/Products/Debug-iphonesimulator/DriveWeatherHelper.app/DriveWeatherHelper    cd /Users/xulin/Workspace_IOS/DriveWeatherHelper    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/dsymutil /Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Products/Debug-iphonesimulator/DriveWeatherHelper.app/DriveWeatherHelper -o /Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Products/Debug-iphonesimulator/DriveWeatherHelper.app.dSYM36"A0EC0A45-2984-4D4D-BD07-34E58CA3E7E9-
-
-CLd /Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Products/Debug-iphonesimulator/DriveWeatherHelper.app/DriveWeatherHelper normal i386
-s348132090.798781
-e348132090.935001
-r1
-xLd
-x/Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Products/Debug-iphonesimulator/DriveWeatherHelper.app/DriveWeatherHelper
-xnormal
-xi386
-lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection160"Link /Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Products/Debug-iphonesimulator/DriveWeatherHelper.app/DriveWeatherHelperd89fccfa12c0b441^bc5deffa12c0b441^---0#0#0#--1586"Ld DerivedData/DriveWeatherHelper/Build/Products/Debug-iphonesimulator/DriveWeatherHelper.app/DriveWeatherHelper normal i386    cd /Users/xulin/Workspace_IOS/DriveWeatherHelper    setenv MACOSX_DEPLOYMENT_TARGET 10.6    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/clang++ -arch i386 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.0.sdk -L/Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Products/Debug-iphonesimulator -L/Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper -F/Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Products/Debug-iphonesimulator -filelist /Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/Objects-normal/i386/DriveWeatherHelper.LinkFileList -mmacosx-version-min=10.6 -Xlinker -objc_abi_version -Xlinker 2 -Xlinker -no_implicit_dylibs -D__IPHONE_OS_VERSION_MIN_REQUIRED=50000 -lsbjson-ios -lbaidumapapi -lz -framework CoreGraphics -framework MobileCoreServices -framework SystemConfiguration -framework CFNetwork -framework QuartzCore -framework CoreLocation -lsqlite3 -framework UIKit -framework Foundation -o /Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Products/Debug-iphonesimulator/DriveWeatherHelper.app/DriveWeatherHelper36"868E2577-C7BF-494F-B80C-E41FB48C08B9-
-
-CProcessInfoPlistFile /Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Products/Debug-iphonesimulator/DriveWeatherHelper.app/Info.plist DriveWeatherHelper/DriveWeatherHelper-Info.plist
-s348128346.102942
-e348128346.106798
-r1
-xProcessInfoPlistFile
-x/Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Products/Debug-iphonesimulator/DriveWeatherHelper.app/Info.plist
-xDriveWeatherHelper/DriveWeatherHelper-Info.plist
-lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection56"Process DriveWeatherHelper/DriveWeatherHelper-Info.plist556a1a5a04c0b441^cd591b5a04c0b441^---0#0#0#-19%DVTDocumentLocation2@110"file://localhost/Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/DriveWeatherHelper-Info.plist0000000000000000^804"ProcessInfoPlistFile DerivedData/DriveWeatherHelper/Build/Products/Debug-iphonesimulator/DriveWeatherHelper.app/Info.plist DriveWeatherHelper/DriveWeatherHelper-Info.plist    cd /Users/xulin/Workspace_IOS/DriveWeatherHelper    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-infoPlistUtility DriveWeatherHelper/DriveWeatherHelper-Info.plist -genpkginfo /Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Products/Debug-iphonesimulator/DriveWeatherHelper.app/PkgInfo -expandbuildsettings -format binary -platform iphonesimulator -o /Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Products/Debug-iphonesimulator/DriveWeatherHelper.app/Info.plist36"194F799E-1F06-46FF-8021-5A0543345C01-
-
-CProcessPCH++ /Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/PrecompiledHeaders/DriveWeatherHelper-Prefix-cjpgtklugrtxucehmdidfnqwwuhi/DriveWeatherHelper-Prefix.pch.pth DriveWeatherHelper/DriveWeatherHelper-Prefix.pch normal i386 objective-c++ com.apple.compilers.llvm.clang.1_0.compiler
-s348128346.115902
-e348128346.385691
-r1
-xProcessPCH++
-x/Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/PrecompiledHeaders/DriveWeatherHelper-Prefix-cjpgtklugrtxucehmdidfnqwwuhi/DriveWeatherHelper-Prefix.pch.pth
-xDriveWeatherHelper/DriveWeatherHelper-Prefix.pch
-xnormal
-xi386
-xobjective-c++
-xcom.apple.compilers.llvm.clang.1_0.compiler
-lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection59"Precompile DriveWeatherHelper/DriveWeatherHelper-Prefix.pchdecb1d5a04c0b441^01bf625a04c0b441^---0#0#0#-19%DVTDocumentLocation2@110"file://localhost/Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/DriveWeatherHelper-Prefix.pch0000000000000000^3372"ProcessPCH++ DerivedData/DriveWeatherHelper/Build/PrecompiledHeaders/DriveWeatherHelper-Prefix-cjpgtklugrtxucehmdidfnqwwuhi/DriveWeatherHelper-Prefix.pch.pth DriveWeatherHelper/DriveWeatherHelper-Prefix.pch normal i386 objective-c++ com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/xulin/Workspace_IOS/DriveWeatherHelper    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/clang -x objective-c++-header -arch i386 -fmessage-length=0 -fdiagnostics-print-source-range-info -fdiagnostics-show-category=id -fdiagnostics-parseable-fixits -Wno-trigraphs -fpascal-strings -O0 -Wmissing-prototypes -Wreturn-type -Wparentheses -Wswitch -Wno-unused-parameter -Wunused-variable -Wunused-value -Wno-shorten-64-to-32 -Wno-arc-abi -Wc++0x-extensions -DDEBUG=1 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.0.sdk -fexceptions -fasm-blocks -mmacosx-version-min=10.6 -gdwarf-2 -fvisibility-inlines-hidden -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch "-DIBOutlet=__attribute__((iboutlet))" "-DIBOutletCollection(ClassName)=__attribute__((iboutletcollection(ClassName)))" "-DIBAction=void)__attribute__((ibaction)" -D__IPHONE_OS_VERSION_MIN_REQUIRED=50000 -iquote /Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/DriveWeatherHelper-generated-files.hmap -I/Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/DriveWeatherHelper-own-target-headers.hmap -I/Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/DriveWeatherHelper-all-target-headers.hmap -iquote /Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/DriveWeatherHelper-project-headers.hmap -I/Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Products/Debug-iphonesimulator/include -I/Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/DerivedSources/i386 -I/Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Intermediates/DriveWeatherHelper.build/Debug-iphonesimulator/DriveWeatherHelper.build/DerivedSources -F/Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Products/Debug-iphonesimulator -c /Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/DriveWeatherHelper-Prefix.pch -o /Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/PrecompiledHeaders/DriveWeatherHelper-Prefix-cjpgtklugrtxucehmdidfnqwwuhi/DriveWeatherHelper-Prefix.pch.pth -MMD -MT dependencies -MF /Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/PrecompiledHeaders/DriveWeatherHelper-Prefix-cjpgtklugrtxucehmdidfnqwwuhi/DriveWeatherHelper-Prefix.pch.d36"16B4B6BE-B3ED-49A5-8CF2-45A37D1C4404-
-
-CProcessPCH++ /Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Index/PrecompiledHeaders/DriveWeatherHelper-Prefix-dpksqzwgwoxokhfrvdhnekksgxxl_ast/DriveWeatherHelper-Prefix.pch.pth DriveWeatherHelper/DriveWeatherHelper-Prefix.pch normal i386 objective-c++ com.apple.compilers.llvm.clang.1_0.astbuilder
-r0
-
-CTouch /Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Products/Debug-iphonesimulator/DriveWeatherHelper.app
-s348132091.317230
-e348132091.322334
-r1
-xTouch
-x/Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Products/Debug-iphonesimulator/DriveWeatherHelper.app
-lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection142"Touch /Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Products/Debug-iphonesimulator/DriveWeatherHelper.app314151fb12c0b441^bb9c52fb12c0b441^---0#0#0#--440"Touch DerivedData/DriveWeatherHelper/Build/Products/Debug-iphonesimulator/DriveWeatherHelper.app    cd /Users/xulin/Workspace_IOS/DriveWeatherHelper    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /usr/bin/touch -c /Users/xulin/Workspace_IOS/DriveWeatherHelper/DerivedData/DriveWeatherHelper/Build/Products/Debug-iphonesimulator/DriveWeatherHelper.app36"0BD33559-A987-41FF-A3B1-2FB68F51ACBE-
-
