@@ -97,6 +97,10 @@
                 NSError * error = nil;  
                 detailInfo = [parser objectWithString:detailInfoTmp error:&error];  
             }
+            else
+            {
+                detailInfo = [[NSMutableDictionary alloc] init];
+            }
 
             NSMutableDictionary *routeInfo = [[NSMutableDictionary alloc] init];
             [routeInfo setObject:cityFrom forKey:@"city_from"];

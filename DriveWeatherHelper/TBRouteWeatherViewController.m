@@ -79,7 +79,8 @@
                 for (NSInteger stepIndex = 0; stepIndex < stepNum; stepIndex++) 
                 {
                     //BMKStep *step = [route.steps objectAtIndex:stepIndex];
-                    [self getCityWeather:nil weatherInfo:nil];               
+                    NSDictionary *weatherInfo = nil;
+                    [self getCityWeather:@"101010100" weatherInfo:weatherInfo];               
                 }
             }
         }
@@ -94,14 +95,30 @@
 
 - (NSInteger)getCityWeather:(NSString *)cityCode weatherInfo:(NSDictionary *)info
 {
-    /*NSURL *url = [NSURL URLWithString:@"http://www.weather.com.cn/data/sk/101010100.html"];
-    ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:url];
-    [request startSynchronous];
-    NSError *error = [request error];
-    if (!error) 
+    
+    NSURL *url = [NSURL URLWithString:[[NSString alloc] initWithFormat:@"http://www.weather.com.cn/data/sk/%@.html", cityCode]];
+    NSURLRequest *request = [NSURLRequest requestWithURL:url
+                                             cachePolicy:NSURLRequestUseProtocolCachePolicy
+                                         timeoutInterval:10.0]; 
+    NSError *error = nil;
+    NSData *data = [NSURLConnection sendSynchronousRequest:request 
+                                         returningResponse:nil 
+                                                     error:&error];
+    
+    if (data != nil)
     {
-        NSString *response = [request responseString];
-    }*/
+        NSString *weatherString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+        SBJsonParser *parser = [[SBJsonParser alloc] init];  
+        NSError * error = nil;  
+        info = [parser objectWithString:weatherString error:&error];
+        
+        NSString *tmp = [[info objectForKey:@"weatherinfo"] objectForKey:@"city"];
+    }
+    else
+    {
+        DLog(@"Code:%d, domain:%@, localizedDesc:%@", 
+             [error code], [error domain], [error localizedDescription]);
+    }
     
     return 0;
 }
@@ -116,7 +133,7 @@
     self.view = mapView;
     [mapView release];
     
-    if ([routeInfo valueForKey:@"detail_info"] == nil)
+    if ([[routeInfo valueForKey:@"detail_info"] count] == 0)
     {
         [self searchRoute];
     }
