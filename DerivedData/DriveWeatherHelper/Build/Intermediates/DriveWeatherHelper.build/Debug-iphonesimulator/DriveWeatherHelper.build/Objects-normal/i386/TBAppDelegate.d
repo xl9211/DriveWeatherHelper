@@ -1,0 +1,32 @@
+dependencies: \
+  /Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/TBAppDelegate.m \
+  /Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/TBAppDelegate.h \
+  /Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/BMapKit.h \
+  /Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/BMKMapManager.h \
+  /Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/BMKGeneralDelegate.h \
+  /Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/BMKAnnotation.h \
+  /Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/BMKAnnotationView.h \
+  /Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/BMKGeometry.h \
+  /Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/BMKMapView.h \
+  /Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/BMKTypes.h \
+  /Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/BMKOverlayView.h \
+  /Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/BMKOverlay.h \
+  /Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/BMKUserLocation.h \
+  /Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/BMKOfflineMap.h \
+  /Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/BMKOfflineMapType.h \
+  /Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/BMKShape.h \
+  /Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/BMKPointAnnotation.h \
+  /Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/BMKPinAnnotationView.h \
+  /Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/BMKMultiPoint.h \
+  /Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/BMKPolyline.h \
+  /Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/BMKPolygon.h \
+  /Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/BMKCircle.h \
+  /Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/BMKOverlayPathView.h \
+  /Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/BMKPolygonView.h \
+  /Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/BMKPolylineView.h \
+  /Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/BMKCircleView.h \
+  /Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/BMKSearch.h \
+  /Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/BMKPoiSearchType.h \
+  /Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/BMKRouteSearchType.h \
+  /Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/BMKGeocodeType.h \
+  /Users/xulin/Workspace_IOS/DriveWeatherHelper/DriveWeatherHelper/BMKVersion.h

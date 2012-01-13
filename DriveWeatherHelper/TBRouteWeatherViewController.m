@@ -78,8 +78,8 @@
             {
                 for (NSInteger stepIndex = 0; stepIndex < stepNum; stepIndex++) 
                 {
-                    BMKStep *step = [route.steps objectAtIndex:stepIndex];
-                   //CLLocationCoordinate2D  
+                    //BMKStep *step = [route.steps objectAtIndex:stepIndex];
+                    [self getCityWeather:nil weatherInfo:nil];               
                 }
             }
         }
@@ -94,28 +94,14 @@
 
 - (NSInteger)getCityWeather:(NSString *)cityCode weatherInfo:(NSDictionary *)info
 {
-    CFStringRef url = CFSTR("http://www.weather.com.cn/data/sk/101010100.html");
-    CFURLRef myURL = CFURLCreateWithString(kCFAllocatorDefault, url, NULL);
-    requestMethod = CFSTR("GET");
-    
-    CFHTTPMessageRef myRequest = 
-    
-    CFHTTPMessageCreateRequest(kCFAllocatorDefault, requestMethod, myURL, 
-                               
-                               kCFHTTPVersion1_1);
-    
-    CFHTTPMessageSetBody(myRequest, bodyData);
-    
-    CFHTTPMessageSetHeaderFieldValue(myRequest, headerField, value);
-    
-    CFDataRef mySerializedRequest = CFHTTPMessageCopySerializedMessage(myRequest);
-    
-    CFRelease(myRequest);
-    CFRelease(myURL);
-    CFRelease(url);
-    CFRelease(mySerializedRequest);    
-    myRequest = nil;
-    mySerializedRequest = nil;
+    /*NSURL *url = [NSURL URLWithString:@"http://www.weather.com.cn/data/sk/101010100.html"];
+    ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:url];
+    [request startSynchronous];
+    NSError *error = [request error];
+    if (!error) 
+    {
+        NSString *response = [request responseString];
+    }*/
     
     return 0;
 }

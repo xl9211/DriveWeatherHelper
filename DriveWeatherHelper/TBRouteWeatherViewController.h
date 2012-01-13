@@ -18,4 +18,7 @@
 @property (strong, nonatomic) NSMutableDictionary *routeInfo;
 @property (strong, nonatomic) BMKSearch *mapSearch;
 
+- (void)searchRoute;
+- (NSInteger)getCityWeather:(NSString *)cityCode weatherInfo:(NSDictionary *)info;
+
 @end
