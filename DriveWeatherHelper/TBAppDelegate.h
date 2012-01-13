@@ -15,12 +15,12 @@
 @interface TBAppDelegate : UIResponder <UIApplicationDelegate>
 {
     UINavigationController *navController;
-    BMKMapManager *_mapManager;
+    BMKMapManager *mapManager;
 }
 
 @property (strong, nonatomic) IBOutlet UIWindow *window;
 @property (strong, nonatomic) IBOutlet UINavigationController *navController;
-//@property (strong, nonatomic) BMKMapManager *_mapManager;
+@property (strong, nonatomic) BMKMapManager *mapManager;
 
 - (NSString *)dataFilePath;
 

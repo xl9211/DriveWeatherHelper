@@ -7,7 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BMapKit.h"
 
-@interface TBRouteWeatherViewController : UIViewController
+@interface TBRouteWeatherViewController : UIViewController <BMKSearchDelegate>
+{
+    NSMutableDictionary *routeInfo;
+    BMKSearch *mapSearch;
+}
+
+@property (strong, nonatomic) NSMutableDictionary *routeInfo;
+@property (strong, nonatomic) BMKSearch *mapSearch;
 
 @end

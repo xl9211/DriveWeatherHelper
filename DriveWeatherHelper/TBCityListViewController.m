@@ -73,7 +73,7 @@
 	
     NSString *query = @"select city, province from city_info";
     sqlite3_stmt *statement;
-    int ret = sqlite3_prepare_v2(database, [query UTF8String], -1, &statement, nil);
+    NSInteger ret = sqlite3_prepare_v2(database, [query UTF8String], -1, &statement, nil);
     if (ret == SQLITE_OK) 
     {
 		while (sqlite3_step(statement) == SQLITE_ROW) 

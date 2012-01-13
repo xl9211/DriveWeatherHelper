@@ -9,6 +9,7 @@
 #import "TBRouteListViewController.h"
 #import "TBAddRouteViewController.h"
 #import "TBRouteWeatherViewController.h"
+#import "SBJson.h"
 #import <sqlite3.h>
 
 @implementation TBRouteListViewController
@@ -71,7 +72,7 @@
         NSAssert(0, @"Failed to open database");
     }
 	
-    NSString *query = @"select * from route_info";
+    NSString *query = @"select * from route_info  order by id desc";
     sqlite3_stmt *statement;
     int ret = sqlite3_prepare_v2(database, [query UTF8String], -1, &statement, nil);
     if (ret == SQLITE_OK) 
@@ -88,14 +89,13 @@
             NSString *provinceFrom = [[NSString alloc] initWithUTF8String:provinceFromData];
             NSString *cityTo = [[NSString alloc] initWithUTF8String:cityToData];
             NSString *provinceTo = [[NSString alloc] initWithUTF8String:provinceToData];
-            NSString *detailInfo = nil;
-            if (detailInfoData == nil)
+            NSMutableDictionary *detailInfo = nil;
+            if (detailInfoData != nil)
             {
-                detailInfo = [[NSString alloc] initWithUTF8String:""];
-            }
-            else
-            {
-                detailInfo = [[NSString alloc] initWithUTF8String:detailInfoData];
+                NSString *detailInfoTmp = [[NSString alloc] initWithUTF8String:detailInfoData];
+                SBJsonParser *parser = [[SBJsonParser alloc] init];  
+                NSError * error = nil;  
+                detailInfo = [parser objectWithString:detailInfoTmp error:&error];  
             }
 
             NSMutableDictionary *routeInfo = [[NSMutableDictionary alloc] init];
@@ -181,10 +181,13 @@
 didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     //UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
+    NSUInteger row = [indexPath row];
     
     TBRouteWeatherViewController *routeWeatherViewController = [[TBRouteWeatherViewController alloc]
                                                                 initWithNibName:@"TBRouteWeatherViewController"
                                                                 bundle:nil];
+    
+    routeWeatherViewController.routeInfo = [routeList objectAtIndex:row];
     
     [self.navigationController pushViewController:routeWeatherViewController animated:YES];
 }

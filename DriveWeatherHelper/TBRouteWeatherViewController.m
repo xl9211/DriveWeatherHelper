@@ -8,8 +8,19 @@
 
 #import "TBRouteWeatherViewController.h"
 #import "BMapKit.h"
+#import "SBJson.h"
 
 @implementation TBRouteWeatherViewController
+
+@synthesize routeInfo;
+@synthesize mapSearch;
+
+- (void)dealloc
+{
+    [routeInfo release];
+    [mapSearch release];
+    [super dealloc];
+}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -28,6 +39,87 @@
     // Release any cached data, images, etc that aren't in use.
 }
 
+#pragma mark - Baidu Map Operation
+
+- (void)searchRoute
+{
+    mapSearch = [[BMKSearch alloc]init];
+    mapSearch.delegate = self;
+    
+    BMKPlanNode* start = [[BMKPlanNode alloc]init];
+    start.name = [routeInfo valueForKey:@"city_from"];
+    BMKPlanNode* end = [[BMKPlanNode alloc]init];
+    end.name = [routeInfo valueForKey:@"city_to"];
+    [mapSearch drivingSearch:start.name startNode:start endCity:end.name endNode:end];
+    [start release];
+    [end release];
+}
+
+- (void)onGetDrivingRouteResult:(BMKPlanResult*)result errorCode:(int)error
+{
+    NSMutableDictionary *detailInfo = [routeInfo valueForKey:@"detail_info"];
+    if (detailInfo != nil)
+    {
+        [detailInfo release];
+        detailInfo = nil;
+    }
+    detailInfo = [[NSMutableDictionary alloc] init];
+    
+    NSInteger planNum = [result.plans count]; 
+    if (planNum > 0)
+    {
+        BMKRoutePlan *routePlan= [result.plans objectAtIndex:0];
+        NSInteger routeNum = [routePlan.routes count];
+        if (routeNum > 0)
+        {
+            BMKRoute *route = [routePlan.routes objectAtIndex:0];
+            NSInteger stepNum = [route.steps count];
+            if (stepNum > 0)
+            {
+                for (NSInteger stepIndex = 0; stepIndex < stepNum; stepIndex++) 
+                {
+                    BMKStep *step = [route.steps objectAtIndex:stepIndex];
+                   //CLLocationCoordinate2D  
+                }
+            }
+        }
+        
+    }
+    else
+    {
+    }
+}
+
+#pragma mark - Weather Operation
+
+- (NSInteger)getCityWeather:(NSString *)cityCode weatherInfo:(NSDictionary *)info
+{
+    CFStringRef url = CFSTR("http://www.weather.com.cn/data/sk/101010100.html");
+    CFURLRef myURL = CFURLCreateWithString(kCFAllocatorDefault, url, NULL);
+    requestMethod = CFSTR("GET");
+    
+    CFHTTPMessageRef myRequest = 
+    
+    CFHTTPMessageCreateRequest(kCFAllocatorDefault, requestMethod, myURL, 
+                               
+                               kCFHTTPVersion1_1);
+    
+    CFHTTPMessageSetBody(myRequest, bodyData);
+    
+    CFHTTPMessageSetHeaderFieldValue(myRequest, headerField, value);
+    
+    CFDataRef mySerializedRequest = CFHTTPMessageCopySerializedMessage(myRequest);
+    
+    CFRelease(myRequest);
+    CFRelease(myURL);
+    CFRelease(url);
+    CFRelease(mySerializedRequest);    
+    myRequest = nil;
+    mySerializedRequest = nil;
+    
+    return 0;
+}
+
 #pragma mark - View lifecycle
 
 - (void)viewDidLoad
@@ -37,6 +129,15 @@
     BMKMapView *mapView = [[BMKMapView alloc] initWithFrame:CGRectMake(0, 0, 320, 480)];
     self.view = mapView;
     [mapView release];
+    
+    if ([routeInfo valueForKey:@"detail_info"] == nil)
+    {
+        [self searchRoute];
+    }
+    else
+    {
+        // Direct to show
+    }
 }
 
 - (void)viewDidUnload
@@ -44,6 +145,8 @@
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
+    self.routeInfo = nil;
+    self.mapSearch = nil;
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation

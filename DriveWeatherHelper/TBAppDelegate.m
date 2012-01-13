@@ -13,13 +13,13 @@
 
 @synthesize window = _window;
 @synthesize navController;
-//@synthesize _mapManager;
+@synthesize mapManager;
 
 - (void)dealloc
 {
     [_window release];
     [navController release];
-    [_mapManager release];
+    [mapManager release];
     [super dealloc];
 }
 
@@ -35,8 +35,8 @@
     // Override point for customization after application launch.
     //self.window.backgroundColor = [UIColor whiteColor];
     
-    _mapManager = [[BMKMapManager alloc] init];
-    BOOL ret = [_mapManager start:@"CA33F5A831637C35FB29B7996FD20BB644B6071B" generalDelegate:nil];
+    mapManager = [[BMKMapManager alloc] init];
+    BOOL ret = [mapManager start:@"CA33F5A831637C35FB29B7996FD20BB644B6071B" generalDelegate:nil];
     if (!ret)
     {
         DLog(@"Manager start failed!");
