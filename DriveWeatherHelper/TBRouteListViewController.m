@@ -18,6 +18,7 @@
 @synthesize addRouteViewController;
 @synthesize navController;
 @synthesize routeList;
+@synthesize tvCell;
 
 - (void)dealloc
 {
@@ -26,6 +27,7 @@
     [navController release];
     [routeList removeAllObjects];
     [routeList release];
+    [tvCell release];
     [super dealloc];
 }
 
@@ -144,6 +146,7 @@
     self.addRouteViewController = nil;
     self.navController = nil;
     self.routeList = nil;
+    self.tvCell = nil;
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -163,7 +166,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
+    /*static NSString *CellIdentifier = @"Cell";
     
     UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) 
@@ -178,13 +181,41 @@
     NSUInteger row = [indexPath row];
     cell.textLabel.text = [[self.routeList objectAtIndex:row] valueForKey:@"cityFrom"];
     
+    return cell;*/
+    
+    static NSString *routeInfoCellIdentifier = @"RouteInfoCellIdentifier";
+    
+    UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:routeInfoCellIdentifier];
+    if (cell == nil)
+    {
+        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"RouteInfoCell" owner:self options:nil];
+        if ([nib count] > 0) 
+        {
+            cell = self.tvCell;
+        }
+        else 
+        {
+            ALog(@"failed to load CustomCell nib file!");
+        }
+    }
+    
+    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    
+    NSUInteger row = [indexPath row];
+    NSMutableDictionary *routeInfo = [self.routeList objectAtIndex:row];
+	
+    UILabel *cityFromLabel = (UILabel *)[cell viewWithTag:kCityFromTag];
+    cityFromLabel.text = [routeInfo objectForKey:@"cityFrom"];
+	
+    UILabel *cityToLabel = (UILabel *)[cell viewWithTag:kCityToTag];
+    cityToLabel.text = [routeInfo objectForKey:@"cityTo"];
+    
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView 
 didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    //UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
     NSUInteger row = [indexPath row];
     TBRouteWeatherViewController *routeWeatherViewController = [[TBRouteWeatherViewController alloc]
                                                                 initWithNibName:@"TBRouteWeatherViewController"
