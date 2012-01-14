@@ -10,6 +10,7 @@
 #import "TBCityListViewController.h"
 #import "TBAppDelegate.h"
 #import "TBRouteListViewController.h"
+#import "TBRouteWeatherViewController.h"
 #import <sqlite3.h>
 
 @implementation TBAddRouteViewController
@@ -30,18 +31,9 @@
     [super dealloc];
 }
 
-- (void)clean
-{
-    self.cityFrom.text = nil;
-    self.provinceFrom.text = nil;
-    self.cityTo.text = nil;
-    self.provinceTo.text = nil;
-    [self dismissModalViewControllerAnimated:YES];
-}
-
 - (IBAction)cancel:(id)sender
 {
-    [self clean];
+    [self dismissModalViewControllerAnimated:YES];
 }
 
 - (NSString *)dataFilePath {
@@ -50,37 +42,52 @@
     return [documentsDirectory stringByAppendingPathComponent:kDBFilename];
 }
 
-- (IBAction)save:(id)sender
+- (IBAction)search:(id)sender
 {
-    TBAppDelegate *delegate = [[UIApplication sharedApplication] delegate];
-	TBRouteListViewController *root = [delegate.navController.viewControllers objectAtIndex:0];
-    
-    sqlite3 *database;
-    const char *db_path = [[self dataFilePath] UTF8String];
-    if (sqlite3_open(db_path, &database) != SQLITE_OK)
+    if (self.cityFrom.text == nil ||
+        self.provinceFrom.text == nil) 
     {
-        sqlite3_close(database);
-        NSAssert(0, @"Failed to open database");
+        UIAlertView *alert = [[UIAlertView alloc]
+                              initWithTitle:@"提示" 
+                              message:@"请输入出发城市"
+                              delegate:self 
+                              cancelButtonTitle:@"确定" 
+                              otherButtonTitles:nil];
+        
+        [alert show];
+        [alert release];
     }
-    
-    NSString *insert = [[NSString alloc] 
-                              initWithFormat:@"insert or replace into route_info (city_from, province_from, city_to, province_to) values ('%@', '%@', '%@', '%@')",
-                              self.cityFrom.text,
-                              self.provinceFrom.text,
-                              self.cityTo.text,
-                              self.provinceTo.text];
-	char *errorMsg;
-	if (sqlite3_exec(database, [insert UTF8String], NULL, NULL, &errorMsg) != SQLITE_OK)
-	{
-		NSAssert1(0, @"Error insertSelecting tables: %s", errorMsg);	
-	}
-
-    sqlite3_close(database);
-    
-    [root readDataFromDB];
-    [[root tableView] reloadData];
-    
-    [self clean];
+    else if(self.cityTo.text == nil ||
+            self.provinceTo == nil) 
+    {
+        UIAlertView *alert = [[UIAlertView alloc]
+                              initWithTitle:@"提示" 
+                              message:@"请输入到达城市"
+                              delegate:self 
+                              cancelButtonTitle:@"确定" 
+                              otherButtonTitles:nil];
+        
+        [alert show];
+        [alert release];
+    }
+    else
+    {
+        TBRouteWeatherViewController *routeWeatherViewController = [[TBRouteWeatherViewController alloc]
+                                                                    initWithNibName:@"TBRouteWeatherViewController"
+                                                                    bundle:nil];
+        
+        NSMutableDictionary *routeInfo = [[NSMutableDictionary alloc] init];
+        [routeInfo setObject:cityFrom.text forKey:@"cityFrom"];
+        [routeInfo setObject:provinceFrom.text forKey:@"provinceFrom"];
+        [routeInfo setObject:cityTo.text forKey:@"cityTo"];
+        [routeInfo setObject:provinceTo.text forKey:@"provinceTo"];
+        NSMutableArray *stepInfo = [[NSMutableArray alloc] init];
+        [routeInfo setObject:stepInfo forKey:@"stepInfo"];
+        
+        routeWeatherViewController.routeInfo = routeInfo;
+        routeWeatherViewController.srcOp = @"search";
+        [self.navigationController pushViewController:routeWeatherViewController animated:YES];
+    }
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -106,6 +113,10 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    self.cityFrom.text = nil;
+    self.provinceFrom.text = nil;
+    self.cityTo.text = nil;
+    self.provinceTo.text = nil;
 }
 
 - (void)viewDidUnload

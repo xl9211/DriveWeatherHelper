@@ -26,7 +26,7 @@
 @property (strong, nonatomic) UITextField *provinceTo;
 
 - (IBAction)cancel:(id)sender;
-- (IBAction)save:(id)sender;
+- (IBAction)search:(id)sender;
 - (NSString *)dataFilePath;
 
 @end

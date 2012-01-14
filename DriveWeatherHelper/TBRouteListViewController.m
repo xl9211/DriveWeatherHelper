@@ -24,6 +24,7 @@
     [tableView release];
     [addRouteViewController release];
     [navController release];
+    [routeList removeAllObjects];
     [routeList release];
     [super dealloc];
 }
@@ -52,7 +53,11 @@
     // Release any cached data, images, etc that aren't in use.
 }
 
-#pragma mark - View lifecycle
+- (NSString *)dataFilePath {
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    return [documentsDirectory stringByAppendingPathComponent:kDBFilename];
+}
 
 - (void)readDataFromDB
 {
@@ -83,50 +88,45 @@
             char *provinceFromData = (char *)sqlite3_column_text(statement, 2);
             char *cityToData = (char *)sqlite3_column_text(statement, 3);
             char *provinceToData = (char *)sqlite3_column_text(statement, 4);
-            char *detailInfoData = (char *)sqlite3_column_text(statement, 5);
+            char *stepInfoData = (char *)sqlite3_column_text(statement, 5);
             
 			NSString *cityFrom = [[NSString alloc] initWithUTF8String:cityFromData];
             NSString *provinceFrom = [[NSString alloc] initWithUTF8String:provinceFromData];
             NSString *cityTo = [[NSString alloc] initWithUTF8String:cityToData];
             NSString *provinceTo = [[NSString alloc] initWithUTF8String:provinceToData];
-            NSMutableDictionary *detailInfo = nil;
-            if (detailInfoData != nil)
+            NSMutableArray *stepInfo = nil;
+            if (stepInfoData != nil)
             {
-                NSString *detailInfoTmp = [[NSString alloc] initWithUTF8String:detailInfoData];
+                NSString *stepInfoTmp = [[NSString alloc] initWithUTF8String:stepInfoData];
                 SBJsonParser *parser = [[SBJsonParser alloc] init];  
                 NSError * error = nil;  
-                detailInfo = [parser objectWithString:detailInfoTmp error:&error];  
+                stepInfo = [parser objectWithString:stepInfoTmp error:&error];
             }
             else
             {
-                detailInfo = [[NSMutableDictionary alloc] init];
+                stepInfo = [[NSMutableArray alloc] init];
             }
-
+            
             NSMutableDictionary *routeInfo = [[NSMutableDictionary alloc] init];
-            [routeInfo setObject:cityFrom forKey:@"city_from"];
-            [routeInfo setObject:provinceFrom forKey:@"province_from"];
-            [routeInfo setObject:cityTo forKey:@"city_to"];
-            [routeInfo setObject:provinceTo forKey:@"province_to"];
-            [routeInfo setObject:detailInfo forKey:@"detail_info"];
+            [routeInfo setObject:cityFrom forKey:@"cityFrom"];
+            [routeInfo setObject:provinceFrom forKey:@"provinceFrom"];
+            [routeInfo setObject:cityTo forKey:@"cityTo"];
+            [routeInfo setObject:provinceTo forKey:@"provinceTo"];
+            [routeInfo setObject:stepInfo forKey:@"stepInfo"];
             
             [self.routeList addObject:routeInfo];
-        
+            
 			[cityFrom release];
             [provinceFrom release];
             [cityTo release];
             [provinceTo release];
-            [detailInfo release];
 		}
 		sqlite3_finalize(statement);
     }
     sqlite3_close(database);
 }
 
-- (NSString *)dataFilePath {
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    NSString *documentsDirectory = [paths objectAtIndex:0];
-    return [documentsDirectory stringByAppendingPathComponent:kDBFilename];
-}
+#pragma mark - View lifecycle
 
 - (void)viewDidLoad
 {
@@ -176,7 +176,7 @@
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     
     NSUInteger row = [indexPath row];
-    cell.textLabel.text = [[self.routeList objectAtIndex:row] valueForKey:@"city_from"];
+    cell.textLabel.text = [[self.routeList objectAtIndex:row] valueForKey:@"cityFrom"];
     
     return cell;
 }
@@ -186,13 +186,12 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     //UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
     NSUInteger row = [indexPath row];
-    
     TBRouteWeatherViewController *routeWeatherViewController = [[TBRouteWeatherViewController alloc]
                                                                 initWithNibName:@"TBRouteWeatherViewController"
                                                                 bundle:nil];
     
     routeWeatherViewController.routeInfo = [routeList objectAtIndex:row];
-    
+    routeWeatherViewController.srcOp = @"look";
     [self.navigationController pushViewController:routeWeatherViewController animated:YES];
 }
 
