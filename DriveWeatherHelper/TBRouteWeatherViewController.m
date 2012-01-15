@@ -342,6 +342,7 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    self.navigationItem.title = @"线路详情";
     if (srcOp == @"search")
     {
         UIBarButtonItem *saveButton = [[UIBarButtonItem alloc]

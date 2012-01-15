@@ -12,19 +12,15 @@
 #define kCityFromTag    1
 #define kCityToTag      2
 
-@class TBAddRouteViewController;
-
 @interface TBRouteListViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 {
     UITableView *tableView;
-    TBAddRouteViewController *addRouteViewController;
     UINavigationController *navController;
     UITableViewCell *tvCell;
     NSMutableArray *routeList;
 }
 
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
-@property (strong, nonatomic) TBAddRouteViewController *addRouteViewController;
 @property (strong, nonatomic) IBOutlet UINavigationController *navController;
 @property (strong, nonatomic) IBOutlet UITableViewCell *tvCell;
 @property (strong, nonatomic) NSMutableArray *routeList;

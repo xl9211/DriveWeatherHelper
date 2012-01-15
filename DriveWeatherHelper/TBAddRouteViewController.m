@@ -112,11 +112,28 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.navigationItem.title = @"添加线路";
     // Do any additional setup after loading the view from its nib.
-    self.cityFrom.text = nil;
+    UIBarButtonItem *cancelButton = [[UIBarButtonItem alloc]
+                                   initWithTitle:@"取消"
+                                   style:UIBarButtonItemStyleBordered
+                                   target:self
+                                   action:@selector(cancel:)];
+    self.navigationItem.leftBarButtonItem = cancelButton;
+    [cancelButton release];
+    
+    UIBarButtonItem *searchButton = [[UIBarButtonItem alloc]
+                                     initWithTitle:@"搜索"
+                                     style:UIBarButtonItemStyleBordered
+                                     target:self
+                                     action:@selector(search:)];
+    self.navigationItem.rightBarButtonItem = searchButton;
+    [searchButton release];
+    
+    /*self.cityFrom.text = nil;
     self.provinceFrom.text = nil;
     self.cityTo.text = nil;
-    self.provinceTo.text = nil;
+    self.provinceTo.text = nil;*/
 }
 
 - (void)viewDidUnload

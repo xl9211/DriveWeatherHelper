@@ -15,7 +15,6 @@
 @implementation TBRouteListViewController
 
 @synthesize tableView;
-@synthesize addRouteViewController;
 @synthesize navController;
 @synthesize routeList;
 @synthesize tvCell;
@@ -23,7 +22,6 @@
 - (void)dealloc
 {
     [tableView release];
-    [addRouteViewController release];
     [navController release];
     [routeList removeAllObjects];
     [routeList release];
@@ -32,10 +30,23 @@
 }
 
 - (IBAction)addRoute:(id)sender
-{    
-    self.addRouteViewController = [[TBAddRouteViewController alloc]
-                                   initWithNibName:@"TBAddRouteViewController" bundle:nil];
-    [self presentModalViewController:self.navController animated:YES];
+{
+    TBAddRouteViewController *addRouteViewController = [[TBAddRouteViewController alloc]
+                                                        initWithNibName:@"TBAddRouteViewController" bundle:nil];
+	
+	UINavigationController *navigationController = [[UINavigationController alloc]
+                                                    initWithRootViewController:addRouteViewController];
+    navigationController
+	//[navigationController setToolbarHidden:NO];
+	self.navController = navigationController;
+    
+	[self presentModalViewController:self.navController animated:YES];
+	
+	// The navigation controller is now owned by the current view controller
+	// and the root view controller is owned by the navigation controller,
+	// so both objects should be released to prevent over-retention.
+	[navigationController release];
+	[addRouteViewController release];
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -143,7 +154,6 @@
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
     self.tableView = nil;
-    self.addRouteViewController = nil;
     self.navController = nil;
     self.routeList = nil;
     self.tvCell = nil;
