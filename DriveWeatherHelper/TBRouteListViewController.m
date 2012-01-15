@@ -165,24 +165,7 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    /*static NSString *CellIdentifier = @"Cell";
-    
-    UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (cell == nil) 
-    {
-        cell = [[[UITableViewCell alloc] 
-                 initWithStyle:UITableViewCellStyleDefault 
-                 reuseIdentifier:CellIdentifier] autorelease];
-    }
-    
-    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-    
-    NSUInteger row = [indexPath row];
-    cell.textLabel.text = [[self.routeList objectAtIndex:row] valueForKey:@"cityFrom"];
-    
-    return cell;*/
-    
+{    
     static NSString *routeInfoCellIdentifier = @"RouteInfoCellIdentifier";
     
     UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:routeInfoCellIdentifier];
@@ -200,6 +183,8 @@
     }
     
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    cell.backgroundView = [[UIImageView alloc] 
+                           initWithImage:[UIImage imageNamed:@"CellBackground.png"]];
     
     NSUInteger row = [indexPath row];
     NSMutableDictionary *routeInfo = [self.routeList objectAtIndex:row];

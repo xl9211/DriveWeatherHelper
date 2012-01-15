@@ -42,7 +42,7 @@
 							<object class="IBUILabel" id="617896620">
 								<reference key="NSNextResponder" ref="295754165"/>
 								<int key="NSvFlags">292</int>
-								<string key="NSFrame">{{20, 11}, {42, 21}}</string>
+								<string key="NSFrame">{{0, 27}, {110, 21}}</string>
 								<reference key="NSSuperview" ref="295754165"/>
 								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="660523654"/>
@@ -61,6 +61,7 @@
 								<nil key="IBUIHighlightedColor"/>
 								<int key="IBUIBaselineAdjustment">1</int>
 								<float key="IBUIMinimumFontSize">10</float>
+								<int key="IBUITextAlignment">1</int>
 								<object class="IBUIFontDescription" key="IBUIFontDescription" id="243346634">
 									<int key="type">2</int>
 									<double key="pointSize">19</double>
@@ -74,7 +75,7 @@
 							<object class="IBUILabel" id="930846224">
 								<reference key="NSNextResponder" ref="295754165"/>
 								<int key="NSvFlags">292</int>
-								<string key="NSFrame">{{169, 11}, {42, 21}}</string>
+								<string key="NSFrame">{{168, 27}, {110, 21}}</string>
 								<reference key="NSSuperview" ref="295754165"/>
 								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView"/>
@@ -90,13 +91,14 @@
 								<nil key="IBUIHighlightedColor"/>
 								<int key="IBUIBaselineAdjustment">1</int>
 								<float key="IBUIMinimumFontSize">10</float>
+								<int key="IBUITextAlignment">1</int>
 								<reference key="IBUIFontDescription" ref="243346634"/>
 								<reference key="IBUIFont" ref="596474754"/>
 							</object>
 							<object class="IBUILabel" id="660523654">
 								<reference key="NSNextResponder" ref="295754165"/>
 								<int key="NSvFlags">292</int>
-								<string key="NSFrame">{{119, 10}, {42, 21}}</string>
+								<string key="NSFrame">{{118, 26}, {42, 21}}</string>
 								<reference key="NSSuperview" ref="295754165"/>
 								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="930846224"/>
@@ -114,6 +116,7 @@
 								<nil key="IBUIHighlightedColor"/>
 								<int key="IBUIBaselineAdjustment">1</int>
 								<float key="IBUIMinimumFontSize">10</float>
+								<int key="IBUITextAlignment">1</int>
 								<object class="IBUIFontDescription" key="IBUIFontDescription">
 									<int key="type">1</int>
 									<double key="pointSize">17</double>
@@ -125,7 +128,7 @@
 								</object>
 							</object>
 						</array>
-						<string key="NSFrameSize">{320, 43}</string>
+						<string key="NSFrameSize">{320, 73}</string>
 						<reference key="NSSuperview" ref="440090219"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="617896620"/>
@@ -141,7 +144,7 @@
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 					</object>
 				</array>
-				<string key="NSFrameSize">{320, 44}</string>
+				<string key="NSFrameSize">{320, 74}</string>
 				<reference key="NSSuperview"/>
 				<reference key="NSWindow"/>
 				<reference key="NSNextKeyView" ref="295754165"/>
@@ -186,16 +189,11 @@
 						<int key="objectID">2</int>
 						<reference key="object" ref="440090219"/>
 						<array class="NSMutableArray" key="children">
-							<reference ref="930846224"/>
 							<reference ref="617896620"/>
 							<reference ref="660523654"/>
+							<reference ref="930846224"/>
 						</array>
 						<reference key="parent" ref="0"/>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">3</int>
-						<reference key="object" ref="617896620"/>
-						<reference key="parent" ref="440090219"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">4</int>
@@ -205,6 +203,11 @@
 					<object class="IBObjectRecord">
 						<int key="objectID">8</int>
 						<reference key="object" ref="660523654"/>
+						<reference key="parent" ref="440090219"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">3</int>
+						<reference key="object" ref="617896620"/>
 						<reference key="parent" ref="440090219"/>
 					</object>
 				</array>
@@ -223,7 +226,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">8</int>
+			<int key="maxID">10</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">

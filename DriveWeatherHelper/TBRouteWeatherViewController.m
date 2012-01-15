@@ -56,41 +56,57 @@
 
 - (IBAction)save:(id)sender
 {
-    TBAppDelegate *delegate = [[UIApplication sharedApplication] delegate];
-	TBRouteListViewController *root = [delegate.navController.viewControllers objectAtIndex:0];
-    
-    sqlite3 *database;
-    const char *db_path = [[self dataFilePath] UTF8String];
-    if (sqlite3_open(db_path, &database) != SQLITE_OK)
+    NSMutableArray *stepInfo = [routeInfo valueForKey:@"stepInfo"];
+    if (nowOpStep == 0 || nowOpStep < [stepInfo count])
     {
-        sqlite3_close(database);
-        NSAssert(0, @"Failed to open database");
+        UIAlertView *alert = [[UIAlertView alloc]
+                              initWithTitle:@"提示" 
+                              message:@"天气数据未获取完整，暂时无法保存。"
+                              delegate:self 
+                              cancelButtonTitle:@"确定" 
+                              otherButtonTitles:nil];
+        
+        [alert show];
+        [alert release];
     }
-    
-    SBJsonWriter *writer = [[SBJsonWriter alloc] init];  
-    NSError * error = nil;
-    NSMutableArray *stepInfo = [routeInfo objectForKey:@"stepInfo"];
-    NSString *stepInfoStr = [writer stringWithObject:stepInfo error:&error]; 
-    
-    NSString *insert = [[NSString alloc] 
-                        initWithFormat:@"insert or replace into route_info (city_from, province_from, city_to, province_to, step_info) values ('%@', '%@', '%@', '%@', '%@')",
-                        [routeInfo objectForKey:@"cityFrom"],
-                        [routeInfo objectForKey:@"provinceFrom"],
-                        [routeInfo objectForKey:@"cityTo"],
-                        [routeInfo objectForKey:@"provinceTo"],
-                        stepInfoStr];
-	char *errorMsg;
-	if (sqlite3_exec(database, [insert UTF8String], NULL, NULL, &errorMsg) != SQLITE_OK)
-	{
-		NSAssert1(0, @"Error insertSelecting tables: %s", errorMsg);	
-	}
-    [insert release];
-    sqlite3_close(database);
-    
-    [root readDataFromDB];
-    [[root tableView] reloadData];
-    
-    [self dismissModalViewControllerAnimated:YES];
+    else
+    {
+        TBAppDelegate *delegate = [[UIApplication sharedApplication] delegate];
+        TBRouteListViewController *root = [delegate.navController.viewControllers objectAtIndex:0];
+        
+        sqlite3 *database;
+        const char *db_path = [[self dataFilePath] UTF8String];
+        if (sqlite3_open(db_path, &database) != SQLITE_OK)
+        {
+            sqlite3_close(database);
+            NSAssert(0, @"Failed to open database");
+        }
+        
+        SBJsonWriter *writer = [[SBJsonWriter alloc] init];  
+        NSError * error = nil;
+        NSMutableArray *stepInfo = [routeInfo objectForKey:@"stepInfo"];
+        NSString *stepInfoStr = [writer stringWithObject:stepInfo error:&error]; 
+        
+        NSString *insert = [[NSString alloc] 
+                            initWithFormat:@"insert or replace into route_info (city_from, province_from, city_to, province_to, step_info) values ('%@', '%@', '%@', '%@', '%@')",
+                            [routeInfo objectForKey:@"cityFrom"],
+                            [routeInfo objectForKey:@"provinceFrom"],
+                            [routeInfo objectForKey:@"cityTo"],
+                            [routeInfo objectForKey:@"provinceTo"],
+                            stepInfoStr];
+        char *errorMsg;
+        if (sqlite3_exec(database, [insert UTF8String], NULL, NULL, &errorMsg) != SQLITE_OK)
+        {
+            NSAssert1(0, @"Error insertSelecting tables: %s", errorMsg);	
+        }
+        [insert release];
+        sqlite3_close(database);
+        
+        [root readDataFromDB];
+        [[root tableView] reloadData];
+        
+        [root dismissModalViewControllerAnimated:YES];
+    }
 }
 
 - (IBAction)share:(id)sender
@@ -137,6 +153,8 @@
 
 - (void)onGetDrivingRouteResult:(BMKPlanResult*)result errorCode:(int)error
 {
+    [self weatherViewDidStartLoad];
+    
     NSMutableArray *stepInfo = [routeInfo valueForKey:@"stepInfo"];
     
     NSInteger planNum = [result.plans count]; 
@@ -203,8 +221,8 @@
     {
         NSMutableDictionary* oneStep = [stepInfo objectAtIndex:nowOpStep];
         
-        NSInteger districtStrLen = [result.addressComponent.district length];
-        NSString *district = [result.addressComponent.district substringToIndex:(districtStrLen - 1)];
+        //NSInteger districtStrLen = [result.addressComponent.district length];
+        //NSString *district = [result.addressComponent.district substringToIndex:(districtStrLen - 1)];
         NSInteger cityStrLen = [result.addressComponent.city length];
         NSString *city = [result.addressComponent.city substringToIndex:(cityStrLen - 1)];
         NSInteger provinceStrLen = [result.addressComponent.province length];
@@ -324,7 +342,6 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    
     if (srcOp == @"search")
     {
         UIBarButtonItem *saveButton = [[UIBarButtonItem alloc]
