@@ -112,7 +112,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.navigationItem.title = @"添加线路";
     // Do any additional setup after loading the view from its nib.
     UIBarButtonItem *cancelButton = [[UIBarButtonItem alloc]
                                    initWithTitle:@"取消"
@@ -120,6 +119,7 @@
                                    target:self
                                    action:@selector(cancel:)];
     self.navigationItem.leftBarButtonItem = cancelButton;
+    self.navigationItem.title = @"添加线路";
     [cancelButton release];
     
     UIBarButtonItem *searchButton = [[UIBarButtonItem alloc]

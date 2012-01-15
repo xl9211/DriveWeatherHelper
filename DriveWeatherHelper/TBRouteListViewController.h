@@ -25,7 +25,7 @@
 @property (strong, nonatomic) IBOutlet UITableViewCell *tvCell;
 @property (strong, nonatomic) NSMutableArray *routeList;
 
-- (IBAction)addRoute:(id)sender;
+- (IBAction)add:(id)sender;
 - (NSString *)dataFilePath;
 - (void)readDataFromDB;
 

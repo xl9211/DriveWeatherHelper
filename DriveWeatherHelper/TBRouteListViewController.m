@@ -29,7 +29,7 @@
     [super dealloc];
 }
 
-- (IBAction)addRoute:(id)sender
+- (IBAction)add:(id)sender
 {
     TBAddRouteViewController *addRouteViewController = [[TBAddRouteViewController alloc]
                                                         initWithNibName:@"TBAddRouteViewController" bundle:nil];
@@ -139,6 +139,14 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] 
+                                  initWithBarButtonSystemItem:UIBarButtonSystemItemAdd 
+                                  target:self 
+                                  action:@selector(add:)];
+    self.navigationItem.rightBarButtonItem = addButton;
+    self.navigationItem.title = @"自驾天气助手";
+    [addButton release];
+    
     [self readDataFromDB];
 }
 

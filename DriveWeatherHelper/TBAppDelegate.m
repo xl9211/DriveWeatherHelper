@@ -8,6 +8,7 @@
 
 #import "TBAppDelegate.h"
 #import "BMapKit.h"
+#import "TBRouteListViewController.h"
 
 @implementation TBAppDelegate
 
@@ -65,8 +66,19 @@
         }  
     }
     
+    TBRouteListViewController *routeListViewController = [[TBRouteListViewController alloc]
+                                                        initWithNibName:@"TBRouteListViewController" bundle:nil];
+	
+	UINavigationController *navigationController = [[UINavigationController alloc]
+                                                    initWithRootViewController:routeListViewController];
+	self.navController = navigationController;
+    
     [self.window addSubview:navController.view];
     [self.window makeKeyAndVisible];
+    
+    [navigationController release];
+	[routeListViewController release];
+    
     return YES;
 }
 
