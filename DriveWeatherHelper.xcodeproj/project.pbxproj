@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6D08D4A614C325C10003E2EF /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D08D4A514C325C10003E2EF /* Icon.png */; };
 		6D46506D14BEC52000B223B5 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D46506C14BEC52000B223B5 /* libsqlite3.dylib */; };
 		6D46507314BEC8E700B223B5 /* dwh.sqlite3 in Resources */ = {isa = PBXBuildFile; fileRef = 6D46507214BEC8E700B223B5 /* dwh.sqlite3 */; };
 		6D7D54E014BF315A0098BD89 /* TBRouteWeatherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D7D54DE14BF315A0098BD89 /* TBRouteWeatherViewController.m */; };
@@ -38,6 +39,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6D08D4A514C325C10003E2EF /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon.png; path = DriveWeatherHelper/Icon.png; sourceTree = "<group>"; };
 		6D46506C14BEC52000B223B5 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		6D46507214BEC8E700B223B5 /* dwh.sqlite3 */ = {isa = PBXFileReference; lastKnownFileType = file; name = dwh.sqlite3; path = DriveWeatherHelper/dwh.sqlite3; sourceTree = "<group>"; };
 		6D7D54DD14BF315A0098BD89 /* TBRouteWeatherViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBRouteWeatherViewController.h; sourceTree = "<group>"; };
@@ -140,6 +142,7 @@
 		6D46506F14BEC7CB00B223B5 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				6D08D4A514C325C10003E2EF /* Icon.png */,
 				6DDECABC14C3019B009C63F8 /* CellBackground.png */,
 				6D46507214BEC8E700B223B5 /* dwh.sqlite3 */,
 			);
@@ -334,6 +337,7 @@
 				6D7D550E14BF31F70098BD89 /* mapapi.bundle in Resources */,
 				6DDECAAA14C1D7B3009C63F8 /* RouteInfoCell.xib in Resources */,
 				6DDECABD14C3019B009C63F8 /* CellBackground.png in Resources */,
+				6D08D4A614C325C10003E2EF /* Icon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
