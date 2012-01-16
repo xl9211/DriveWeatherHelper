@@ -12,17 +12,18 @@
 @implementation TBCityListViewController
 
 @synthesize tableView;
-@synthesize provinceList;
+@synthesize searchBar;
+//@synthesize provinceList;
 @synthesize cityList;
 @synthesize selectedCity;
 @synthesize selectedProvince;
 
 - (void)dealloc
 {
-    [provinceList release];
     [cityList release];
     [selectedCity release];
     [selectedProvince release];
+    [searchBar release];
     [tableView release];
     [super dealloc];
 }
@@ -44,23 +45,8 @@
     // Release any cached data, images, etc that aren't in use.
 }
 
-#pragma mark - View lifecycle
-
-- (NSString *)dataFilePath {
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    NSString *documentsDirectory = [paths objectAtIndex:0];
-    return [documentsDirectory stringByAppendingPathComponent:kDBFilename];
-}
-
-- (void)viewDidLoad
+- (void)readDataFromDB:(NSString *)searchText
 {
-    [super viewDidLoad];
-    
-    provinceList = [[NSArray alloc] initWithObjects:@"北京", @"上海", @"天津", @"重庆", @"黑龙江", @"吉林", 
-                    @"辽宁", @"内蒙古", @"河北", @"山西", @"陕西", @"山东", @"新疆", @"西藏", @"青海", @"甘肃", 
-                    @"宁夏", @"河南", @"江苏", @"湖北", @"浙江", @"安徽", @"福建", @"江西", @"湖南", @"贵州", 
-                    @"四川", @"广东", @"云南", @"广西", @"海南", @"香港", @"澳门", @"台湾", nil];
-    
     cityList = [[NSMutableDictionary alloc] init];
     
     sqlite3 *database;
@@ -71,7 +57,16 @@
         NSAssert(0, @"Failed to open database");
     }
 	
-    NSString *query = @"select city, province from city_info";
+    NSString *query = nil;
+    if (searchText == nil || searchText == @"") 
+    {
+        query = [[NSString alloc] initWithString:@"select city, province from city_info"];
+    }
+    else
+    {
+        query = [[NSString alloc] initWithFormat:@"select city, province from city_info where city like '%%%@%%'", searchText];
+    }
+    
     sqlite3_stmt *statement;
     NSInteger ret = sqlite3_prepare_v2(database, [query UTF8String], -1, &statement, nil);
     if (ret == SQLITE_OK) 
@@ -97,6 +92,23 @@
 		sqlite3_finalize(statement);
     }
     sqlite3_close(database);
+    
+    [query release];
+}
+
+#pragma mark - View lifecycle
+
+- (NSString *)dataFilePath {
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    return [documentsDirectory stringByAppendingPathComponent:kDBFilename];
+}
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    
+    [self readDataFromDB:nil];
 }
 
 - (void)viewDidUnload
@@ -108,7 +120,7 @@
     self.selectedCity = nil;
     self.selectedProvince = nil;
     self.cityList = nil;
-    self.provinceList = nil;
+    self.searchBar = nil;
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -118,30 +130,52 @@
 }
 
 #pragma mark -
-#pragma mark Table View
+#pragma mark Search Bar Delegate Methods
+
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
+{
+	NSString *searchText = [self.searchBar text];
+    NSString *newSearchText = [searchText stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+	
+    [self readDataFromDB:newSearchText];
+    [self.tableView reloadData];
+    [self.searchBar resignFirstResponder];
+}
+
+- (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar
+{
+	[self readDataFromDB:nil];
+    [self.tableView reloadData];
+	[self.searchBar resignFirstResponder];
+}
+
+- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText
+{
+    NSString *newSearchText = [searchText stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+    
+    [self readDataFromDB:newSearchText];
+    [self.tableView reloadData];
+}
+
+#pragma mark -
+#pragma mark Table View Delegate Methods
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView 
 {
-    return [self.provinceList count];
+    return [[self.cityList allKeys] count];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    NSString *province = [self.provinceList objectAtIndex:section];
+    NSString *province = [[self.cityList allKeys] objectAtIndex:section];
     return [[self.cityList objectForKey:province] count];
 }
 
 - (NSString *)tableView:(UITableView *)tableView
 titleForHeaderInSection:(NSInteger)section {
-    NSString *province = [self.provinceList objectAtIndex:section];
+    NSString *province = [[self.cityList allKeys] objectAtIndex:section];
     return province;
 }
-
-/*
-- (NSArray *)sectionIndexTitlesForTableView:(UITableView *)tableView {
-    return keys;
-}
- */
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -157,7 +191,7 @@ titleForHeaderInSection:(NSInteger)section {
     
     NSUInteger section = [indexPath section];
     NSUInteger row = [indexPath row];
-    NSString *province = [self.provinceList objectAtIndex:section];
+    NSString *province = [[self.cityList allKeys] objectAtIndex:section];
     cell.textLabel.text = [[self.cityList objectForKey:province] objectAtIndex:row];
     
     return cell;
@@ -170,7 +204,7 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath
     
     NSUInteger section = [indexPath section];
     NSUInteger row = [indexPath row];
-    NSString *province = [self.provinceList objectAtIndex:section];
+    NSString *province = [[self.cityList allKeys] objectAtIndex:section];
     NSString *city = [[self.cityList objectForKey:province] objectAtIndex:row];
     
     self.selectedCity.text = city;

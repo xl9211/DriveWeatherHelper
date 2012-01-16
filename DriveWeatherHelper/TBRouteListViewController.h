@@ -28,5 +28,6 @@
 - (IBAction)add:(id)sender;
 - (NSString *)dataFilePath;
 - (void)readDataFromDB;
+- (void)deleteDataFromDB:(NSInteger)row;
 
 @end

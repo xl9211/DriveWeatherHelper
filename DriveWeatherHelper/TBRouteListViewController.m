@@ -84,19 +84,21 @@
         NSAssert(0, @"Failed to open database");
     }
 	
-    NSString *query = @"select * from route_info  order by id desc";
+    NSString *query = @"select * from route_info order by id desc";
     sqlite3_stmt *statement;
     int ret = sqlite3_prepare_v2(database, [query UTF8String], -1, &statement, nil);
     if (ret == SQLITE_OK) 
     {
 		while (sqlite3_step(statement) == SQLITE_ROW) 
         {
+            int idData = sqlite3_column_int(statement, 0);
 			char *cityFromData = (char *)sqlite3_column_text(statement, 1);
             char *provinceFromData = (char *)sqlite3_column_text(statement, 2);
             char *cityToData = (char *)sqlite3_column_text(statement, 3);
             char *provinceToData = (char *)sqlite3_column_text(statement, 4);
             char *stepInfoData = (char *)sqlite3_column_text(statement, 5);
             
+            NSNumber *id = [[NSNumber alloc] initWithInt:idData];
 			NSString *cityFrom = [[NSString alloc] initWithUTF8String:cityFromData];
             NSString *provinceFrom = [[NSString alloc] initWithUTF8String:provinceFromData];
             NSString *cityTo = [[NSString alloc] initWithUTF8String:cityToData];
@@ -115,6 +117,7 @@
             }
             
             NSMutableDictionary *routeInfo = [[NSMutableDictionary alloc] init];
+            [routeInfo setObject:id forKey:@"id"];
             [routeInfo setObject:cityFrom forKey:@"cityFrom"];
             [routeInfo setObject:provinceFrom forKey:@"provinceFrom"];
             [routeInfo setObject:cityTo forKey:@"cityTo"];
@@ -131,6 +134,31 @@
 		sqlite3_finalize(statement);
     }
     sqlite3_close(database);
+}
+
+- (void)deleteDataFromDB:(NSInteger)row
+{
+    sqlite3 *database;
+    const char *db_path = [[self dataFilePath] UTF8String];
+    if (sqlite3_open(db_path, &database) != SQLITE_OK)
+    {
+        sqlite3_close(database);
+        NSAssert(0, @"Failed to open database");
+    }
+	
+    NSMutableDictionary *routeInfo = [self.routeList objectAtIndex:row];
+    NSString *deleteSQL = [[NSString alloc] 
+                       initWithFormat:@"delete from route_info where id = %d", 
+                       [[routeInfo objectForKey:@"id"] intValue]];
+    char *errorMsg;
+    if (sqlite3_exec(database, [deleteSQL UTF8String], NULL, NULL, &errorMsg) != SQLITE_OK)
+    {
+        NSAssert1(0, @"Error insertSelecting tables: %s", errorMsg);	
+    }
+    [deleteSQL release];
+    sqlite3_close(database);
+    
+    [self.routeList removeObjectAtIndex:row];
 }
 
 #pragma mark - View lifecycle
@@ -221,6 +249,23 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath
     routeWeatherViewController.routeInfo = [routeList objectAtIndex:row];
     routeWeatherViewController.srcOp = @"look";
     [self.navigationController pushViewController:routeWeatherViewController animated:YES];
+}
+
+- (void)tableView:(UITableView *)tableView 
+commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath 
+{ 
+    
+    if (editingStyle == UITableViewCellEditingStyleDelete) 
+    {
+        [self deleteDataFromDB:indexPath.row];
+        [self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];        
+    }   
+}
+
+- (NSString *)tableView:(UITableView *)tableView 
+titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath
+{ 
+    return @"删除"; 
 }
 
 @end

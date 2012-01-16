@@ -10,21 +10,23 @@
 
 #define kDBFilename @"dwh.sqlite3"
 
-@interface TBCityListViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
+@interface TBCityListViewController : UIViewController 
+<UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate>
 {
     UITableView *tableView;
-    NSArray *provinceList;
+    UISearchBar *searchBar;
     NSMutableDictionary *cityList;
     UITextField *selectedCity;
     UITextField *selectedProvince;
 }
 
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
-@property (strong, nonatomic) NSArray *provinceList;
+@property (strong, nonatomic) IBOutlet UISearchBar *searchBar;
 @property (strong, nonatomic) NSMutableDictionary *cityList;
 @property (strong, nonatomic) UITextField *selectedCity;
 @property (strong, nonatomic) UITextField *selectedProvince;
 
 - (NSString *)dataFilePath;
+- (void)readDataFromDB:(NSString *)searchText;
 
 @end

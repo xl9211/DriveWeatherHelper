@@ -17,6 +17,7 @@
     NSString *srcOp;
     NSInteger nowOpStep;
     UIAlertView *waitAlert;
+    NSArray *provinceList;
     
     BMKMapView *mapView;
     BMKSearch *mapSearch;
@@ -27,9 +28,10 @@
 @property (strong, nonatomic) NSString *srcOp;
 @property (strong, nonatomic) UIAlertView *waitAlert;
 @property (strong, nonatomic) IBOutlet BMKMapView *mapView;
+@property (strong, nonatomic) NSArray *provinceList;
 
 - (void)searchRoute;
-- (NSInteger)getCityWeather:(NSString *)cityCode weatherInfo:(NSDictionary **)info;
+- (NSInteger)getCityWeather:(NSString *)cityCode weatherInfo:(NSMutableDictionary *)info;
 - (NSString *)dataFilePath;
 - (void)showWeather:(NSMutableDictionary*)step;
 - (void)parseAddr;
@@ -37,5 +39,6 @@
 - (IBAction)share:(id)sender;
 - (void)weatherViewDidStartLoad;
 - (void)weatherViewDidFinishLoad;
+- (void)nextAddr;
 
 @end
