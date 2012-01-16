@@ -11,13 +11,15 @@
 
 #define kDBFilename @"dwh.sqlite3"
 
-@interface TBRouteWeatherViewController : UIViewController <BMKSearchDelegate, BMKMapViewDelegate>
+@interface TBRouteWeatherViewController : UIViewController 
+<UIActionSheetDelegate, BMKSearchDelegate, BMKMapViewDelegate>
 {
     NSMutableDictionary *routeInfo;
     NSString *srcOp;
     NSInteger nowOpStep;
     UIAlertView *waitAlert;
     NSArray *provinceList;
+    CGPoint addWeatherPoint;
     
     BMKMapView *mapView;
     BMKSearch *mapSearch;
@@ -40,5 +42,7 @@
 - (void)weatherViewDidStartLoad;
 - (void)weatherViewDidFinishLoad;
 - (void)nextAddr;
+- (void)showAddWeatherMenu:(UILongPressGestureRecognizer *)gestureRecognizer;
+- (void)updateDataToDB;
 
 @end

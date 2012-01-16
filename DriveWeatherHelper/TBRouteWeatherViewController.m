@@ -162,6 +162,45 @@
     [waitAlert dismissWithClickedButtonIndex:0 animated:YES];
 }
 
+- (void)showAddWeatherMenu:(UILongPressGestureRecognizer *)gestureRecognizer
+{
+    if (gestureRecognizer.state == UIGestureRecognizerStateBegan)
+    {
+        addWeatherPoint = [gestureRecognizer locationInView:self.mapView];
+        
+        UIActionSheet *actionSheet = [[UIActionSheet alloc]
+                                      initWithTitle:@"添加天气标注" 
+                                      delegate:self
+                                      cancelButtonTitle:@"取消" 
+                                      destructiveButtonTitle:@"确定" 
+                                      otherButtonTitles:nil];
+        
+        [actionSheet showInView:self.mapView];
+        [actionSheet release];
+    }
+}
+
+#pragma mark - Action Sheet
+
+- (void)actionSheet:(UIActionSheet *)actionSheet didDismissWithButtonIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex != [actionSheet cancelButtonIndex])
+    {
+        NSMutableArray *stepInfo = [routeInfo valueForKey:@"stepInfo"];
+        NSMutableDictionary* oneStep = [[NSMutableDictionary alloc] init];
+        
+        CLLocationCoordinate2D coordinate = [self.mapView convertPoint:addWeatherPoint toCoordinateFromView:self.mapView];
+        NSNumber *latitude = [[NSNumber alloc] initWithDouble:coordinate.latitude];
+        NSNumber *longitude = [[NSNumber alloc] initWithDouble:coordinate.longitude];
+        [oneStep setValue:latitude forKey:@"latitude"];
+        [oneStep setValue:longitude forKey:@"longitude"];
+        
+        [stepInfo addObject:oneStep];
+        
+        [self parseAddr];
+    }
+}
+
 #pragma mark - Baidu Map Operation
 
 - (void)searchRoute
@@ -312,7 +351,7 @@
     
     if ([step objectForKey:@"cityWeather"] == nil ||
         (nowOpStep > 0 && 
-         nowOpStep < [stepInfo count] &&
+         nowOpStep < ([stepInfo count] - 1) &&
          [[step objectForKey:@"cityCode"] isEqualToString:[[stepInfo objectAtIndex:(nowOpStep - 1)] objectForKey:@"cityCode"]]))
     {
         [self nextAddr];
@@ -366,6 +405,11 @@
             [self weatherViewDidFinishLoad];
         }
     }
+    else if (srcOp == @"add")
+    {
+        [self updateDataToDB];
+        [self weatherViewDidFinishLoad];
+    }
 }
 
 #pragma mark - Weather Operation
@@ -402,6 +446,35 @@
     return 0;
 }
 
+- (void)updateDataToDB
+{
+    sqlite3 *database;
+    const char *db_path = [[self dataFilePath] UTF8String];
+    if (sqlite3_open(db_path, &database) != SQLITE_OK)
+    {
+        sqlite3_close(database);
+        NSAssert(0, @"Failed to open database");
+    }
+    
+    SBJsonWriter *writer = [[SBJsonWriter alloc] init];  
+    NSError * error = nil;
+    NSMutableArray *stepInfo = [routeInfo objectForKey:@"stepInfo"];
+    NSString *stepInfoStr = [writer stringWithObject:stepInfo error:&error]; 
+    
+    NSString *insert = [[NSString alloc] 
+                        initWithFormat:@"update route_info set step_info = '%@' where id = '%@'",
+                        stepInfoStr,
+                        [routeInfo objectForKey:@"id"]];
+    char *errorMsg;
+    if (sqlite3_exec(database, [insert UTF8String], NULL, NULL, &errorMsg) != SQLITE_OK)
+    {
+        NSAssert1(0, @"Error insertSelecting tables: %s", errorMsg);	
+    }
+    [insert release];
+
+    sqlite3_close(database);
+}
+
 #pragma mark - View lifecycle
 
 - (void)viewDidLoad
@@ -435,22 +508,28 @@
         [shareButton release];
     }
     
+    UILongPressGestureRecognizer *longPressGesture = [[UILongPressGestureRecognizer alloc] 
+                                                      initWithTarget:self 
+                                                      action:@selector(showAddWeatherMenu:)];
+    [self.mapView addGestureRecognizer:longPressGesture];
+    [longPressGesture release];
+    
     mapView.delegate = self;
     mapSearch = [[BMKSearch alloc]init];
     mapSearch.delegate = self;
-    
-    BMKCoordinateRegion region;
-    region.center.latitude = 35.0f;
-    region.center.longitude = 110.0f;
-    region.span.latitudeDelta = 15.0f;
-    region.span.longitudeDelta = 15.0f;
-    [mapView setRegion:region];
     
     nowOpStep = 0;
     NSMutableArray *stepInfo = [routeInfo valueForKey:@"stepInfo"];
     NSInteger stepNum = [stepInfo count];
     if (stepNum == 0)
     {
+        BMKCoordinateRegion region;
+        region.center.latitude = 35.0f;
+        region.center.longitude = 110.0f;
+        region.span.latitudeDelta = 15.0f;
+        region.span.longitudeDelta = 15.0f;
+        [mapView setRegion:region];
+        
         [self searchRoute];
     }
     else
@@ -460,7 +539,16 @@
             NSMutableDictionary *step = [stepInfo objectAtIndex:index];
             [self showWeather:step];
         }
+        
+        BMKCoordinateRegion region;
+        region.center.latitude = [[[stepInfo objectAtIndex:0] objectForKey:@"latitude"] doubleValue];
+        region.center.longitude = [[[stepInfo objectAtIndex:0] objectForKey:@"longitude"] doubleValue];
+        region.span.latitudeDelta = 10.0f;
+        region.span.longitudeDelta = 10.0f;
+        [mapView setRegion:region];
     }
+    
+    self.srcOp = @"add";
 }
 
 - (void)viewDidUnload
