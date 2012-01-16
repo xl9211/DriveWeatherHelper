@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6D08D4A614C325C10003E2EF /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D08D4A514C325C10003E2EF /* Icon.png */; };
 		6D46506D14BEC52000B223B5 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D46506C14BEC52000B223B5 /* libsqlite3.dylib */; };
 		6D46507314BEC8E700B223B5 /* dwh.sqlite3 in Resources */ = {isa = PBXBuildFile; fileRef = 6D46507214BEC8E700B223B5 /* dwh.sqlite3 */; };
 		6D7D54E014BF315A0098BD89 /* TBRouteWeatherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D7D54DE14BF315A0098BD89 /* TBRouteWeatherViewController.m */; };
@@ -28,6 +27,7 @@
 		6DBE91EF14BD696100AB25E3 /* TBRouteListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6DBE91ED14BD696100AB25E3 /* TBRouteListViewController.xib */; };
 		6DBE920414BD944B00AB25E3 /* TBCityListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DBE920214BD944B00AB25E3 /* TBCityListViewController.m */; };
 		6DBE920514BD944B00AB25E3 /* TBCityListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6DBE920314BD944B00AB25E3 /* TBCityListViewController.xib */; };
+		6DC16B8314C4046300CA0AE3 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DC16B8214C4046300CA0AE3 /* Icon@2x.png */; };
 		6DDECAAA14C1D7B3009C63F8 /* RouteInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6DDECAA914C1D7B3009C63F8 /* RouteInfoCell.xib */; };
 		6DDECABD14C3019B009C63F8 /* CellBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DDECABC14C3019B009C63F8 /* CellBackground.png */; };
 		6DE326E114BFF5BB007FA4C2 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DE326E014BFF5BB007FA4C2 /* CFNetwork.framework */; };
@@ -39,7 +39,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		6D08D4A514C325C10003E2EF /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon.png; path = DriveWeatherHelper/Icon.png; sourceTree = "<group>"; };
 		6D46506C14BEC52000B223B5 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		6D46507214BEC8E700B223B5 /* dwh.sqlite3 */ = {isa = PBXFileReference; lastKnownFileType = file; name = dwh.sqlite3; path = DriveWeatherHelper/dwh.sqlite3; sourceTree = "<group>"; };
 		6D7D54DD14BF315A0098BD89 /* TBRouteWeatherViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBRouteWeatherViewController.h; sourceTree = "<group>"; };
@@ -68,6 +67,7 @@
 		6DBE920114BD944B00AB25E3 /* TBCityListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBCityListViewController.h; sourceTree = "<group>"; };
 		6DBE920214BD944B00AB25E3 /* TBCityListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBCityListViewController.m; sourceTree = "<group>"; };
 		6DBE920314BD944B00AB25E3 /* TBCityListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TBCityListViewController.xib; sourceTree = "<group>"; };
+		6DC16B8214C4046300CA0AE3 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon@2x.png"; path = "DriveWeatherHelper/Icon@2x.png"; sourceTree = "<group>"; };
 		6DDECAA914C1D7B3009C63F8 /* RouteInfoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RouteInfoCell.xib; sourceTree = "<group>"; };
 		6DDECABC14C3019B009C63F8 /* CellBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = CellBackground.png; path = DriveWeatherHelper/CellBackground.png; sourceTree = "<group>"; };
 		6DE326E014BFF5BB007FA4C2 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
@@ -142,7 +142,7 @@
 		6D46506F14BEC7CB00B223B5 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				6D08D4A514C325C10003E2EF /* Icon.png */,
+				6DC16B8214C4046300CA0AE3 /* Icon@2x.png */,
 				6DDECABC14C3019B009C63F8 /* CellBackground.png */,
 				6D46507214BEC8E700B223B5 /* dwh.sqlite3 */,
 			);
@@ -337,7 +337,7 @@
 				6D7D550E14BF31F70098BD89 /* mapapi.bundle in Resources */,
 				6DDECAAA14C1D7B3009C63F8 /* RouteInfoCell.xib in Resources */,
 				6DDECABD14C3019B009C63F8 /* CellBackground.png in Resources */,
-				6D08D4A614C325C10003E2EF /* Icon.png in Resources */,
+				6DC16B8314C4046300CA0AE3 /* Icon@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
