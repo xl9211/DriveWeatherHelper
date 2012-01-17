@@ -20,6 +20,9 @@
     UIAlertView *waitAlert;
     NSArray *provinceList;
     CGPoint addWeatherPoint;
+    UIBarButtonItem *saveButton;
+    NSMutableArray *annotations;
+    BOOL addOp;
     
     BMKMapView *mapView;
     BMKSearch *mapSearch;
@@ -31,18 +34,22 @@
 @property (strong, nonatomic) UIAlertView *waitAlert;
 @property (strong, nonatomic) IBOutlet BMKMapView *mapView;
 @property (strong, nonatomic) NSArray *provinceList;
+@property (strong, nonatomic) UIBarButtonItem *saveButton;
+@property (strong, nonatomic) NSMutableArray *annotations;
 
 - (void)searchRoute;
 - (NSInteger)getCityWeather:(NSString *)cityCode weatherInfo:(NSMutableDictionary *)info;
 - (NSString *)dataFilePath;
-- (void)showWeather:(NSMutableDictionary*)step;
 - (void)parseAddr;
 - (IBAction)save:(id)sender;
-- (IBAction)share:(id)sender;
-- (void)weatherViewDidStartLoad;
-- (void)weatherViewDidFinishLoad;
+- (IBAction)update:(id)sender;
+- (void)dataDidStartLoad:(NSString *)msg;
+- (void)dataDidFinishLoad;
 - (void)nextAddr;
 - (void)showAddWeatherMenu:(UILongPressGestureRecognizer *)gestureRecognizer;
 - (void)updateDataToDB;
+- (void)addWeather;
+- (void)showWeather:(NSMutableDictionary *)step;
+- (void)updateWeather:(NSMutableDictionary *)step;
 
 @end

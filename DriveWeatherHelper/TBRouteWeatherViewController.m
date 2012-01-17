@@ -21,6 +21,8 @@
 @synthesize srcOp;
 @synthesize waitAlert;
 @synthesize provinceList;
+@synthesize saveButton;
+@synthesize annotations;
 
 - (void)dealloc
 {
@@ -30,6 +32,9 @@
     [srcOp release];
     [waitAlert release];
     [provinceList release];
+    [saveButton release];
+    [annotations removeAllObjects];
+    [annotations release];
     [super dealloc];
 }
 
@@ -58,108 +63,105 @@
 
 - (IBAction)save:(id)sender
 {
-    NSMutableArray *stepInfo = [routeInfo valueForKey:@"stepInfo"];
-    if (nowOpStep == 0 || nowOpStep < [stepInfo count])
+    TBAppDelegate *delegate = [[UIApplication sharedApplication] delegate];
+    TBRouteListViewController *root = [delegate.navController.viewControllers objectAtIndex:0];
+    
+    sqlite3 *database;
+    const char *db_path = [[self dataFilePath] UTF8String];
+    if (sqlite3_open(db_path, &database) != SQLITE_OK)
     {
-        UIAlertView *alert = [[UIAlertView alloc]
-                              initWithTitle:@"提示" 
-                              message:@"天气数据未获取完整，暂时无法保存。"
-                              delegate:self 
-                              cancelButtonTitle:@"确定" 
-                              otherButtonTitles:nil];
-        
-        [alert show];
-        [alert release];
-    }
-    else
-    {
-        TBAppDelegate *delegate = [[UIApplication sharedApplication] delegate];
-        TBRouteListViewController *root = [delegate.navController.viewControllers objectAtIndex:0];
-        
-        sqlite3 *database;
-        const char *db_path = [[self dataFilePath] UTF8String];
-        if (sqlite3_open(db_path, &database) != SQLITE_OK)
-        {
-            sqlite3_close(database);
-            NSAssert(0, @"Failed to open database");
-        }
-        
-        NSString *query = [[NSString alloc] 
-                           initWithFormat:@"select id from route_info where city_from = '%@' and province_from = '%@' and city_to = '%@' and province_to = '%@'",
-                           [routeInfo objectForKey:@"cityFrom"],
-                           [routeInfo objectForKey:@"provinceFrom"],
-                           [routeInfo objectForKey:@"cityTo"],
-                           [routeInfo objectForKey:@"provinceTo"]];
-        
-        sqlite3_stmt *statement;
-        NSInteger findCount = 0;
-        NSInteger ret = sqlite3_prepare_v2(database, [query UTF8String], -1, &statement, nil);
-        if (ret == SQLITE_OK) 
-        {
-            while (sqlite3_step(statement) == SQLITE_ROW) 
-            {
-                findCount++;
-            }
-            sqlite3_finalize(statement);
-        }
-        
-        if (findCount == 0)
-        {
-            SBJsonWriter *writer = [[SBJsonWriter alloc] init];  
-            NSError * error = nil;
-            NSMutableArray *stepInfo = [routeInfo objectForKey:@"stepInfo"];
-            NSString *stepInfoStr = [writer stringWithObject:stepInfo error:&error]; 
-            
-            NSString *insert = [[NSString alloc] 
-                                initWithFormat:@"insert into route_info (city_from, province_from, city_to, province_to, step_info) values ('%@', '%@', '%@', '%@', '%@')",
-                                [routeInfo objectForKey:@"cityFrom"],
-                                [routeInfo objectForKey:@"provinceFrom"],
-                                [routeInfo objectForKey:@"cityTo"],
-                                [routeInfo objectForKey:@"provinceTo"],
-                                stepInfoStr];
-            char *errorMsg;
-            if (sqlite3_exec(database, [insert UTF8String], NULL, NULL, &errorMsg) != SQLITE_OK)
-            {
-                NSAssert1(0, @"Error insertSelecting tables: %s", errorMsg);	
-            }
-            [insert release];
-        }
-        
         sqlite3_close(database);
+        NSAssert(0, @"Failed to open database");
+    }
+    
+    NSString *query = [[NSString alloc] 
+                       initWithFormat:@"select id from route_info where city_from = '%@' and province_from = '%@' and city_to = '%@' and province_to = '%@'",
+                       [routeInfo objectForKey:@"cityFrom"],
+                       [routeInfo objectForKey:@"provinceFrom"],
+                       [routeInfo objectForKey:@"cityTo"],
+                       [routeInfo objectForKey:@"provinceTo"]];
+    
+    sqlite3_stmt *statement;
+    NSInteger findCount = 0;
+    NSInteger ret = sqlite3_prepare_v2(database, [query UTF8String], -1, &statement, nil);
+    if (ret == SQLITE_OK) 
+    {
+        while (sqlite3_step(statement) == SQLITE_ROW) 
+        {
+            findCount++;
+        }
+        sqlite3_finalize(statement);
+    }
+    
+    if (findCount == 0)
+    {
+        SBJsonWriter *writer = [[SBJsonWriter alloc] init];  
+        NSError * error = nil;
+        NSMutableArray *stepInfo = [routeInfo objectForKey:@"stepInfo"];
+        NSString *stepInfoStr = [writer stringWithObject:stepInfo error:&error]; 
         
-        [root readDataFromDB];
-        [[root tableView] reloadData];
-        
-        [root dismissModalViewControllerAnimated:YES];
+        NSString *insert = [[NSString alloc] 
+                            initWithFormat:@"insert into route_info (city_from, province_from, city_to, province_to, step_info) values ('%@', '%@', '%@', '%@', '%@')",
+                            [routeInfo objectForKey:@"cityFrom"],
+                            [routeInfo objectForKey:@"provinceFrom"],
+                            [routeInfo objectForKey:@"cityTo"],
+                            [routeInfo objectForKey:@"provinceTo"],
+                            stepInfoStr];
+        char *errorMsg;
+        if (sqlite3_exec(database, [insert UTF8String], NULL, NULL, &errorMsg) != SQLITE_OK)
+        {
+            NSAssert1(0, @"Error insertSelecting tables: %s", errorMsg);	
+        }
+        [insert release];
+    }
+    
+    sqlite3_close(database);
+    
+    [root readDataFromDB];
+    [[root tableView] reloadData];
+    
+    [root dismissModalViewControllerAnimated:YES];
+}
+
+- (IBAction)update:(id)sender
+{
+    NSMutableArray *stepInfo = [routeInfo valueForKey:@"stepInfo"];
+    if ([stepInfo count] > 0)
+    {
+        [self dataDidStartLoad:@"正在获取天气信息"];
+        [self updateWeather:nil];
     }
 }
 
-- (IBAction)share:(id)sender
-{
-}
-
-- (void)weatherViewDidStartLoad
+- (void)dataDidStartLoad:(NSString *)msg
 {
     if (waitAlert == nil)
     {
-        waitAlert = [[UIAlertView alloc] initWithTitle:nil
-                                               message:@"正在获取天气数据"
-                                              delegate:self
-                                     cancelButtonTitle:nil
-                                     otherButtonTitles:nil];
+        self.waitAlert = [[UIAlertView alloc] initWithTitle:nil
+                                                    message:msg
+                                                   delegate:self
+                                          cancelButtonTitle:nil
+                                          otherButtonTitles:nil];
         
         UIActivityIndicatorView *activityView = [[UIActivityIndicatorView alloc] 
                                                  initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhite];
         activityView.frame = CGRectMake(120.f, 48.0f, 37.0f, 37.0f);
-        [waitAlert addSubview:activityView];
         [activityView startAnimating];
+        [self.waitAlert addSubview:activityView];
+        [activityView release];
     }
-    [waitAlert show];
+    
+    [self.waitAlert show];
 }
 
-- (void)weatherViewDidFinishLoad
+- (void)dataDidFinishLoad
 {
-    [waitAlert dismissWithClickedButtonIndex:0 animated:YES];
+    if (waitAlert != nil) 
+    {
+        [self.waitAlert dismissWithClickedButtonIndex:[self.waitAlert cancelButtonIndex] animated:YES];
+        [self.waitAlert release];
+        self.waitAlert = nil;
+    }
 }
 
 - (void)showAddWeatherMenu:(UILongPressGestureRecognizer *)gestureRecognizer
@@ -186,25 +188,130 @@
 {
     if (buttonIndex != [actionSheet cancelButtonIndex])
     {
+        [self addWeather];
+    }
+}
+
+- (void)addWeather
+{
+    [self dataDidStartLoad:@"正在获取天气信息"];
+    
+    addOp = YES;
+    NSMutableArray *stepInfo = [routeInfo valueForKey:@"stepInfo"];
+    NSMutableDictionary* oneStep = [[NSMutableDictionary alloc] init];
+    
+    CLLocationCoordinate2D coordinate = [self.mapView convertPoint:addWeatherPoint toCoordinateFromView:self.mapView];
+    NSNumber *latitude = [[NSNumber alloc] initWithDouble:coordinate.latitude];
+    NSNumber *longitude = [[NSNumber alloc] initWithDouble:coordinate.longitude];
+    [oneStep setValue:latitude forKey:@"latitude"];
+    [oneStep setValue:longitude forKey:@"longitude"];
+    
+    nowOpStep = [stepInfo count];
+    [stepInfo addObject:oneStep];
+    
+    [self parseAddr];
+}
+
+- (void)updateWeather:(NSMutableDictionary *)step
+{
+    if (step == nil)
+    {
         NSMutableArray *stepInfo = [routeInfo valueForKey:@"stepInfo"];
-        NSMutableDictionary* oneStep = [[NSMutableDictionary alloc] init];
+        NSMutableDictionary *preStep = nil;
         
-        CLLocationCoordinate2D coordinate = [self.mapView convertPoint:addWeatherPoint toCoordinateFromView:self.mapView];
-        NSNumber *latitude = [[NSNumber alloc] initWithDouble:coordinate.latitude];
-        NSNumber *longitude = [[NSNumber alloc] initWithDouble:coordinate.longitude];
-        [oneStep setValue:latitude forKey:@"latitude"];
-        [oneStep setValue:longitude forKey:@"longitude"];
+        for (NSInteger index = 0; index < [stepInfo count]; index++) 
+        {
+            NSMutableDictionary *oneStep = [stepInfo objectAtIndex:index];
+            
+            if (index == 0 || 
+                (index + 1) == [stepInfo count] ||
+                !([[oneStep objectForKey:@"cityCode"] isEqualToString:[preStep objectForKey:@"cityCode"]]))
+            {
+                NSMutableDictionary *weather = [[NSMutableDictionary alloc] init];
+                [self getCityWeather:[oneStep objectForKey:@"cityCode"] weatherInfo:weather];
+                [oneStep removeObjectForKey:@"cityWeather"];
+                [oneStep setObject:weather forKey:@"cityWeather"];
+                [weather release];
+            }
+            preStep = oneStep;
+        }
+    }
+    else
+    {
+        NSMutableDictionary *weather = [[NSMutableDictionary alloc] init];
+        [self getCityWeather:[step objectForKey:@"cityCode"] weatherInfo:weather];
+        [step removeObjectForKey:@"cityWeather"];
+        [step setObject:weather forKey:@"cityWeather"];
+        [weather release];
         
-        [stepInfo addObject:oneStep];
+        if (srcOp == @"look") 
+        {
+            [self updateDataToDB];
+        }
+    }
+    
+    [self showWeather:step];
+}
+
+- (void)showWeather:(NSMutableDictionary *)step
+{
+    if (step == nil)
+    {
+        [mapView removeAnnotations:annotations];
+        [annotations removeAllObjects];
+        [annotations release];
         
-        [self parseAddr];
+        NSMutableArray *stepInfo = [routeInfo valueForKey:@"stepInfo"];
+        annotations = [[NSMutableArray alloc] init];
+        
+        for (NSInteger index = 0; index < [stepInfo count]; index++) 
+        {
+            NSDictionary *oneStep = [stepInfo objectAtIndex:index];
+            
+            if ([oneStep objectForKey:@"cityWeather"] != nil)
+            {
+                BMKPointAnnotation* annotation = [[BMKPointAnnotation alloc]init];
+                CLLocationCoordinate2D pt;
+                pt.latitude = [[oneStep objectForKey:@"latitude"] doubleValue];
+                pt.longitude = [[oneStep objectForKey:@"longitude"] doubleValue];
+                annotation.coordinate = pt;
+                annotation.title = [oneStep objectForKey:@"addr"];
+                annotation.subtitle = [[NSString alloc] initWithFormat:@"%@ %@",
+                                       [[oneStep objectForKey:@"cityWeather"] objectForKey:@"weather"],
+                                       [[oneStep objectForKey:@"cityWeather"] objectForKey:@"temp"]];
+                
+                [annotations addObject:annotation];
+            }
+        }
+        
+        [mapView addAnnotations:annotations];
+    }
+    else
+    {
+        BMKPointAnnotation* annotation = [[BMKPointAnnotation alloc]init];
+        CLLocationCoordinate2D pt;
+        pt.latitude = [[step objectForKey:@"latitude"] doubleValue];
+        pt.longitude = [[step objectForKey:@"longitude"] doubleValue];
+        annotation.coordinate = pt;
+        annotation.title = [step objectForKey:@"addr"];
+        annotation.subtitle = [[NSString alloc] initWithFormat:@"%@ %@",
+                               [[step objectForKey:@"cityWeather"] objectForKey:@"weather"],
+                               [[step objectForKey:@"cityWeather"] objectForKey:@"temp"]];
+       
+        if (annotations == nil)
+        {
+            annotations = [[NSMutableArray alloc] init];
+            [annotations addObject:annotation];
+        }
+        
+        [mapView addAnnotation:annotation];
     }
 }
 
 #pragma mark - Baidu Map Operation
 
 - (void)searchRoute
-{
+{    
     BMKPlanNode* start = [[BMKPlanNode alloc]init];
     start.name = [routeInfo valueForKey:@"cityFrom"];
     BMKPlanNode* end = [[BMKPlanNode alloc]init];
@@ -216,7 +323,7 @@
 
 - (void)onGetDrivingRouteResult:(BMKPlanResult*)result errorCode:(int)error
 {
-    [self weatherViewDidStartLoad];
+    [self dataDidStartLoad:@"正在获取天气信息"];
     
     NSMutableArray *stepInfo = [routeInfo valueForKey:@"stepInfo"];
     
@@ -243,7 +350,7 @@
                     [stepInfo addObject:oneStep];
                 }
                 
-                // 开始操作第一个地址
+                // 开始解析第一个地址
                 [self parseAddr];
             }
         }
@@ -259,13 +366,14 @@
         
         [alert show];
         [alert release];
+        
+        [self dataDidFinishLoad];
+        saveButton.enabled = YES;
     }
 }
 
 - (void)parseAddr
 {
-    [self weatherViewDidStartLoad];
-    
     NSMutableArray *stepInfo = [routeInfo valueForKey:@"stepInfo"];
     NSMutableDictionary* oneStep = [stepInfo objectAtIndex:nowOpStep];
     CLLocationCoordinate2D pt;
@@ -276,7 +384,7 @@
 }
 
 - (void)onGetAddrResult:(BMKAddrInfo*)result errorCode:(int)error
-{
+{ 
     NSMutableArray *stepInfo = [routeInfo valueForKey:@"stepInfo"];
     NSInteger stepNum = [stepInfo count];
     
@@ -327,48 +435,38 @@
                 char *codeData = (char *)sqlite3_column_text(statement, 0);
                 NSString *code = [[NSString alloc] initWithUTF8String:codeData];
                 [oneStep setObject:code forKey:@"cityCode"];
-                
-                NSMutableDictionary *weather = [[NSMutableDictionary alloc] init];
-                [self getCityWeather:code weatherInfo:weather];
-                [oneStep removeObjectForKey:@"cityWeather"];
-                [oneStep setObject:weather forKey:@"cityWeather"];
-                
                 [code release];
-                [weather release];
             }
             sqlite3_finalize(statement);
         }
         [query release];
         sqlite3_close(database);
         
-        [self showWeather:oneStep];
+        [self nextAddr];
     }
 }
 
-- (void)showWeather:(NSMutableDictionary*)step;
+- (void)nextAddr
 {
-    NSMutableArray *stepInfo = [routeInfo valueForKey:@"stepInfo"];
+    nowOpStep++;
     
-    if ([step objectForKey:@"cityWeather"] == nil ||
-        (nowOpStep > 0 && 
-         nowOpStep < ([stepInfo count] - 1) &&
-         [[step objectForKey:@"cityCode"] isEqualToString:[[stepInfo objectAtIndex:(nowOpStep - 1)] objectForKey:@"cityCode"]]))
+    // 开始解析下一个地址
+    NSMutableArray *stepInfo = [routeInfo valueForKey:@"stepInfo"];
+    if (nowOpStep < [stepInfo count])
     {
-        [self nextAddr];
+        [self parseAddr];
     }
     else
     {
-        BMKPointAnnotation* annotation = [[BMKPointAnnotation alloc]init];
-        CLLocationCoordinate2D pt;
-        pt.latitude = [[step objectForKey:@"latitude"] doubleValue];
-        pt.longitude = [[step objectForKey:@"longitude"] doubleValue];
-        annotation.coordinate = pt;
-        annotation.title = [step objectForKey:@"addr"];
-        annotation.subtitle = [[NSString alloc] initWithFormat:@"%@ %@",
-                               [[step objectForKey:@"cityWeather"] objectForKey:@"weather"],
-                               [[step objectForKey:@"cityWeather"] objectForKey:@"temp"]];
-        
-        [mapView addAnnotation:annotation];
+        if (addOp)
+        {
+            [self updateWeather:[stepInfo lastObject]];
+            addOp = NO;
+        }
+        else
+        {
+            [self updateWeather:nil];
+        }
     }
 }
 
@@ -379,37 +477,14 @@
 		BMKPinAnnotationView *newAnnotation = [[BMKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"myAnnotation"];   
 		newAnnotation.pinColor = BMKPinAnnotationColorPurple;   
 		newAnnotation.animatesDrop = YES;
-		
-        [self nextAddr];
+        
+        [self dataDidFinishLoad];
+        saveButton.enabled = YES;
         
 		return newAnnotation;   
 	}
 
     return nil;
-}
-
-- (void)nextAddr
-{
-    nowOpStep++;
-    
-    if (srcOp == @"search")
-    {
-        // 开始操作下一个地址
-        NSMutableArray *stepInfo = [routeInfo valueForKey:@"stepInfo"];
-        if (nowOpStep < [stepInfo count])
-        {
-            [self parseAddr];
-        }
-        else
-        {
-            [self weatherViewDidFinishLoad];
-        }
-    }
-    else if (srcOp == @"add")
-    {
-        [self updateDataToDB];
-        [self weatherViewDidFinishLoad];
-    }
 }
 
 #pragma mark - Weather Operation
@@ -441,6 +516,7 @@
              [error code], 
              [error domain], 
              [error localizedDescription]);
+        // 利用天气缓存数据
     }
     
     return 0;
@@ -461,16 +537,16 @@
     NSMutableArray *stepInfo = [routeInfo objectForKey:@"stepInfo"];
     NSString *stepInfoStr = [writer stringWithObject:stepInfo error:&error]; 
     
-    NSString *insert = [[NSString alloc] 
+    NSString *update = [[NSString alloc] 
                         initWithFormat:@"update route_info set step_info = '%@' where id = '%@'",
                         stepInfoStr,
                         [routeInfo objectForKey:@"id"]];
     char *errorMsg;
-    if (sqlite3_exec(database, [insert UTF8String], NULL, NULL, &errorMsg) != SQLITE_OK)
+    if (sqlite3_exec(database, [update UTF8String], NULL, NULL, &errorMsg) != SQLITE_OK)
     {
         NSAssert1(0, @"Error insertSelecting tables: %s", errorMsg);	
     }
-    [insert release];
+    [update release];
 
     sqlite3_close(database);
 }
@@ -481,31 +557,32 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    provinceList = [[NSArray alloc] initWithObjects:@"北京", @"上海", @"天津", @"重庆", @"黑龙江", @"吉林", 
-                    @"辽宁", @"内蒙古", @"河北", @"山西", @"陕西", @"山东", @"新疆", @"西藏", @"青海", @"甘肃", 
-                    @"宁夏", @"河南", @"江苏", @"湖北", @"浙江", @"安徽", @"福建", @"江西", @"湖南", @"贵州", 
-                    @"四川", @"广东", @"云南", @"广西", @"海南", @"香港", @"澳门", @"台湾", nil];
+    
+    mapView.delegate = self;
+    mapSearch = [[BMKSearch alloc] init];
+    mapSearch.delegate = self;
+    [mapView setShowsUserLocation:YES];
     
     self.navigationItem.title = @"线路详情";
     if (srcOp == @"search")
     {
-        UIBarButtonItem *saveButton = [[UIBarButtonItem alloc]
-                                       initWithTitle:@"保存"
-                                       style:UIBarButtonItemStyleBordered
-                                       target:self
-                                       action:@selector(save:)];
+        saveButton = [[UIBarButtonItem alloc]
+                      initWithTitle:@"保存"
+                      style:UIBarButtonItemStyleBordered
+                      target:self
+                      action:@selector(save:)];
         self.navigationItem.rightBarButtonItem = saveButton;
-        [saveButton release];
+        saveButton.enabled = NO;
     }
     else
     {
-        UIBarButtonItem *shareButton = [[UIBarButtonItem alloc]
-                                       initWithTitle:@"分享"
-                                       style:UIBarButtonItemStyleBordered
-                                       target:self
-                                        action:@selector(share:)];
-        self.navigationItem.rightBarButtonItem = shareButton;
-        [shareButton release];
+        UIBarButtonItem *updateButton = [[UIBarButtonItem alloc]
+                                         initWithTitle:@"刷新"
+                                         style:UIBarButtonItemStyleBordered
+                                         target:self
+                                         action:@selector(update:)];
+        self.navigationItem.rightBarButtonItem = updateButton;
+        [updateButton release];
     }
     
     UILongPressGestureRecognizer *longPressGesture = [[UILongPressGestureRecognizer alloc] 
@@ -514,10 +591,10 @@
     [self.mapView addGestureRecognizer:longPressGesture];
     [longPressGesture release];
     
-    mapView.delegate = self;
-    mapSearch = [[BMKSearch alloc]init];
-    mapSearch.delegate = self;
-    
+    provinceList = [[NSArray alloc] initWithObjects:@"北京", @"上海", @"天津", @"重庆", @"黑龙江", @"吉林", 
+                    @"辽宁", @"内蒙古", @"河北", @"山西", @"陕西", @"山东", @"新疆", @"西藏", @"青海", @"甘肃", 
+                    @"宁夏", @"河南", @"江苏", @"湖北", @"浙江", @"安徽", @"福建", @"江西", @"湖南", @"贵州", 
+                    @"四川", @"广东", @"云南", @"广西", @"海南", @"香港", @"澳门", @"台湾", nil]; 
     nowOpStep = 0;
     NSMutableArray *stepInfo = [routeInfo valueForKey:@"stepInfo"];
     NSInteger stepNum = [stepInfo count];
@@ -534,21 +611,15 @@
     }
     else
     {
-        for (NSInteger index = 0; index < stepNum; index++) 
-        {
-            NSMutableDictionary *step = [stepInfo objectAtIndex:index];
-            [self showWeather:step];
-        }
-        
         BMKCoordinateRegion region;
         region.center.latitude = [[[stepInfo objectAtIndex:0] objectForKey:@"latitude"] doubleValue];
         region.center.longitude = [[[stepInfo objectAtIndex:0] objectForKey:@"longitude"] doubleValue];
         region.span.latitudeDelta = 10.0f;
         region.span.longitudeDelta = 10.0f;
         [mapView setRegion:region];
+        
+        [self showWeather:nil];
     }
-    
-    self.srcOp = @"add";
 }
 
 - (void)viewDidUnload
@@ -562,6 +633,8 @@
     self.srcOp = nil;
     self.waitAlert = nil;
     self.provinceList = nil;
+    self.saveButton = nil;
+    self.annotations = nil;
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
