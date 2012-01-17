@@ -227,22 +227,30 @@
                 (index + 1) == [stepInfo count] ||
                 !([[oneStep objectForKey:@"cityCode"] isEqualToString:[preStep objectForKey:@"cityCode"]]))
             {
-                NSMutableDictionary *weather = [[NSMutableDictionary alloc] init];
-                [self getCityWeather:[oneStep objectForKey:@"cityCode"] weatherInfo:weather];
+                NSMutableDictionary *weather = nil;
+                [self getCityWeather:[oneStep objectForKey:@"cityCode"] weatherInfo:&weather];
                 [oneStep removeObjectForKey:@"cityWeather"];
-                [oneStep setObject:weather forKey:@"cityWeather"];
-                [weather release];
+                
+                if (weather != nil)
+                {
+                    [oneStep setObject:weather forKey:@"cityWeather"];
+                    [weather release];
+                }
             }
             preStep = oneStep;
         }
     }
     else
     {
-        NSMutableDictionary *weather = [[NSMutableDictionary alloc] init];
-        [self getCityWeather:[step objectForKey:@"cityCode"] weatherInfo:weather];
+        NSMutableDictionary *weather = nil;
+        [self getCityWeather:[step objectForKey:@"cityCode"] weatherInfo:&weather];
         [step removeObjectForKey:@"cityWeather"];
-        [step setObject:weather forKey:@"cityWeather"];
-        [weather release];
+        
+        if (weather != nil)
+        {
+            [step setObject:weather forKey:@"cityWeather"];
+            [weather release];
+        }
         
         if (srcOp == @"look") 
         {
@@ -489,7 +497,7 @@
 
 #pragma mark - Weather Operation
 
-- (NSInteger)getCityWeather:(NSString *)cityCode weatherInfo:(NSMutableDictionary *)info
+- (NSInteger)getCityWeather:(NSString *)cityCode weatherInfo:(NSMutableDictionary **)info
 {
     NSURL *url = [NSURL URLWithString:[[NSString alloc] initWithFormat:@"http://m.weather.com.cn/data/%@.html", cityCode]];
     NSURLRequest *request = [NSURLRequest requestWithURL:url
@@ -500,6 +508,9 @@
                                          returningResponse:nil 
                                                      error:&error];
     
+    (*info) = [[NSMutableDictionary alloc] init];
+    
+    BOOL useCache = NO;
     if (data != nil)
     {
         NSString *weatherString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
@@ -507,8 +518,18 @@
         NSError * error = nil;  
         NSDictionary *srcData = [parser objectWithString:weatherString error:&error];
         
-        [info setObject:[[srcData objectForKey:@"weatherinfo"] objectForKey:@"temp1"] forKey:@"temp"];
-        [info setObject:[[srcData objectForKey:@"weatherinfo"] objectForKey:@"weather1"] forKey:@"weather"];
+        NSString *temp = [[srcData objectForKey:@"weatherinfo"] objectForKey:@"temp1"];
+        NSString *weather = [[srcData objectForKey:@"weatherinfo"] objectForKey:@"weather1"];
+        if (temp != nil &&
+            weather != nil) 
+        {
+            [(*info) setObject:temp forKey:@"temp"];
+            [(*info) setObject:weather forKey:@"weather"];
+        }
+        else
+        {
+            useCache = YES;
+        }
     }
     else
     {
@@ -516,7 +537,15 @@
              [error code], 
              [error domain], 
              [error localizedDescription]);
-        // 利用天气缓存数据
+        
+        useCache = YES;
+    }
+    
+    if (useCache)
+    {
+        // 现在没有Cache，所以先把@"cityWeather"移除
+        [(*info) release];
+        (*info) = nil;
     }
     
     return 0;

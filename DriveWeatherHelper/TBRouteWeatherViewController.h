@@ -38,7 +38,7 @@
 @property (strong, nonatomic) NSMutableArray *annotations;
 
 - (void)searchRoute;
-- (NSInteger)getCityWeather:(NSString *)cityCode weatherInfo:(NSMutableDictionary *)info;
+- (NSInteger)getCityWeather:(NSString *)cityCode weatherInfo:(NSMutableDictionary **)info;
 - (NSString *)dataFilePath;
 - (void)parseAddr;
 - (IBAction)save:(id)sender;
