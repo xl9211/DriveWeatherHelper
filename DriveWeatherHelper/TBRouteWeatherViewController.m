@@ -309,8 +309,8 @@
         if (annotations == nil)
         {
             annotations = [[NSMutableArray alloc] init];
-            [annotations addObject:annotation];
         }
+        [annotations addObject:annotation];
         
         [mapView addAnnotation:annotation];
     }
