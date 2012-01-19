@@ -63,7 +63,7 @@
 
 - (IBAction)save:(id)sender
 {
-    TBAppDelegate *delegate = [[UIApplication sharedApplication] delegate];
+    TBAppDelegate *delegate = (TBAppDelegate *)[[UIApplication sharedApplication] delegate];
     TBRouteListViewController *root = [delegate.navController.viewControllers objectAtIndex:0];
     
     sqlite3 *database;
@@ -251,11 +251,11 @@
             [step setObject:weather forKey:@"cityWeather"];
             [weather release];
         }
-        
-        if (srcOp == @"look") 
-        {
-            [self updateDataToDB];
-        }
+    }
+    
+    if (srcOp == @"look") 
+    {
+        [self updateDataToDB];
     }
     
     [self showWeather:step];
@@ -485,6 +485,7 @@
 		BMKPinAnnotationView *newAnnotation = [[BMKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"myAnnotation"];   
 		newAnnotation.pinColor = BMKPinAnnotationColorPurple;   
 		newAnnotation.animatesDrop = YES;
+        newAnnotation.pinColor = BMKPinAnnotationColorRed;
         
         [self dataDidFinishLoad];
         saveButton.enabled = YES;

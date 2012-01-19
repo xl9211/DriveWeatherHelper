@@ -16,6 +16,11 @@
 @synthesize navController;
 @synthesize mapManager;
 
+- (NSString *)appKey
+{
+    return @"4f178cd55270153136000003";
+}
+
 - (void)dealloc
 {
     [_window release];
@@ -35,6 +40,7 @@
     //self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
     // Override point for customization after application launch.
     //self.window.backgroundColor = [UIColor whiteColor];
+    [MobClick setDelegate:self reportPolicy:REALTIME];
     
     mapManager = [[BMKMapManager alloc] init];
     BOOL ret = [mapManager start:@"CA33F5A831637C35FB29B7996FD20BB644B6071B" generalDelegate:nil];

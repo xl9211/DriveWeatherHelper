@@ -7,12 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MobClick.h"
 
 #define kDBFilename @"dwh.sqlite3"
 
 @class BMKMapManager;
 
-@interface TBAppDelegate : UIResponder <UIApplicationDelegate>
+@interface TBAppDelegate : UIResponder <UIApplicationDelegate, MobClickDelegate>
 {
     UINavigationController *navController;
     BMKMapManager *mapManager;

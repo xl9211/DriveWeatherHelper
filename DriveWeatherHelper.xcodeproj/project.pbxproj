@@ -16,6 +16,8 @@
 		6D7D551214BF331D0098BD89 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D7D551114BF331D0098BD89 /* QuartzCore.framework */; };
 		6DA9B0B814BDB7CA0042E007 /* TBAddRouteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DA9B0B614BDB7CA0042E007 /* TBAddRouteViewController.m */; };
 		6DA9B0B914BDB7CA0042E007 /* TBAddRouteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6DA9B0B714BDB7CA0042E007 /* TBAddRouteViewController.xib */; };
+		6DB4E0F114C7C51D0025257C /* libMobClickLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DB4E0F014C7C51D0025257C /* libMobClickLibrary.a */; };
+		6DB4E0F714C7C6E00025257C /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DB4E0F614C7C6E00025257C /* CoreTelephony.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		6DBE91D314BD67FB00AB25E3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DBE91D214BD67FB00AB25E3 /* UIKit.framework */; };
 		6DBE91D514BD67FB00AB25E3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DBE91D414BD67FB00AB25E3 /* Foundation.framework */; };
 		6DBE91D714BD67FB00AB25E3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DBE91D614BD67FB00AB25E3 /* CoreGraphics.framework */; };
@@ -50,6 +52,9 @@
 		6DA9B0B514BDB7CA0042E007 /* TBAddRouteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBAddRouteViewController.h; sourceTree = "<group>"; };
 		6DA9B0B614BDB7CA0042E007 /* TBAddRouteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBAddRouteViewController.m; sourceTree = "<group>"; };
 		6DA9B0B714BDB7CA0042E007 /* TBAddRouteViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TBAddRouteViewController.xib; sourceTree = "<group>"; };
+		6DB4E0EF14C7C4F50025257C /* MobClick.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobClick.h; sourceTree = "<group>"; };
+		6DB4E0F014C7C51D0025257C /* libMobClickLibrary.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libMobClickLibrary.a; sourceTree = "<group>"; };
+		6DB4E0F614C7C6E00025257C /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		6DBE91CE14BD67FB00AB25E3 /* DriveWeatherHelper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DriveWeatherHelper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6DBE91D214BD67FB00AB25E3 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		6DBE91D414BD67FB00AB25E3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -121,6 +126,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6DB4E0F714C7C6E00025257C /* CoreTelephony.framework in Frameworks */,
+				6DB4E0F114C7C51D0025257C /* libMobClickLibrary.a in Frameworks */,
 				6DE3274E14C00815007FA4C2 /* libsbjson-ios.a in Frameworks */,
 				6DE3274314C0071C007FA4C2 /* libbaidumapapi.a in Frameworks */,
 				6DE326E714BFF629007FA4C2 /* libz.dylib in Frameworks */,
@@ -188,9 +195,19 @@
 			name = BaiduMapAPI;
 			sourceTree = "<group>";
 		};
+		6DB4E0ED14C7C4D20025257C /* UMeng */ = {
+			isa = PBXGroup;
+			children = (
+				6DB4E0F014C7C51D0025257C /* libMobClickLibrary.a */,
+				6DB4E0EF14C7C4F50025257C /* MobClick.h */,
+			);
+			name = UMeng;
+			sourceTree = "<group>";
+		};
 		6DBE91C314BD67FB00AB25E3 = {
 			isa = PBXGroup;
 			children = (
+				6DB4E0F614C7C6E00025257C /* CoreTelephony.framework */,
 				6DBE91D814BD67FB00AB25E3 /* DriveWeatherHelper */,
 				6DBE91D114BD67FB00AB25E3 /* Frameworks */,
 				6DBE91CF14BD67FB00AB25E3 /* Products */,
@@ -241,6 +258,7 @@
 				6DBE920114BD944B00AB25E3 /* TBCityListViewController.h */,
 				6DBE920214BD944B00AB25E3 /* TBCityListViewController.m */,
 				6DBE920314BD944B00AB25E3 /* TBCityListViewController.xib */,
+				6DB4E0ED14C7C4D20025257C /* UMeng */,
 				6DE3269914BFDB51007FA4C2 /* SBJson */,
 				6D7D54E714BF31D60098BD89 /* BaiduMapAPI */,
 				6D46506F14BEC7CB00B223B5 /* Resources */,
