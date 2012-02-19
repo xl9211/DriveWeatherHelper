@@ -249,6 +249,8 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath
     routeWeatherViewController.routeInfo = [routeList objectAtIndex:row];
     routeWeatherViewController.srcOp = @"look";
     [self.navigationController pushViewController:routeWeatherViewController animated:YES];
+    
+    [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 - (void)tableView:(UITableView *)tableView 

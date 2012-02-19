@@ -20,6 +20,10 @@
 
 - (void)dealloc
 {
+    [[NSNotificationCenter defaultCenter] removeObserver:self 
+                                                    name:nil 
+                                                  object:nil];
+    
     [cityList release];
     [selectedCity release];
     [selectedProvince release];
@@ -109,6 +113,10 @@
     [super viewDidLoad];
     
     [self readDataFromDB:nil];
+    [self registerForKeyboardNotifications];
+    
+    CGRect tableViewFrame= [tableView frame];
+    tableViewOriginHeight = tableViewFrame.size.height;
 }
 
 - (void)viewDidUnload
@@ -116,6 +124,8 @@
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
+    
+    [self unRegisterForKeyboardNotifications];
     self.tableView = nil;
     self.selectedCity = nil;
     self.selectedProvince = nil;
@@ -211,6 +221,62 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath
     self.selectedProvince.text = province;
     
     [self.navigationController popViewControllerAnimated:YES];
+    
+    [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
+- (void)registerForKeyboardNotifications
+{
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(keyboardWillShow:)
+                                                 name:UIKeyboardDidShowNotification 
+                                               object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(keyboardWillHide:)
+                                                 name:UIKeyboardDidHideNotification 
+                                               object:nil];
+}
+
+- (void)unRegisterForKeyboardNotifications
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self 
+                                                    name:UIKeyboardWillShowNotification 
+                                                  object:nil];
+    
+    [[NSNotificationCenter defaultCenter] removeObserver:self 
+                                                    name:UIKeyboardWillHideNotification 
+                                                  object:nil];
+}
+
+- (void)keyboardWillShow:(NSNotification *)notification 
+{
+    NSDictionary *userInfo = [notification userInfo];
+    
+    NSValue* aValue = [userInfo objectForKey:UIKeyboardFrameEndUserInfoKey];    
+    CGSize keyboardSize = [aValue CGRectValue].size;
+    
+    CGRect viewFrame = [self.tableView frame];
+    viewFrame.size.height = tableViewOriginHeight - keyboardSize.height - self.searchBar.frame.size.height;
+    self.tableView.frame = viewFrame;
+}
+
+- (void)keyboardWillHide:(NSNotification *)notification 
+{
+    NSDictionary *userInfo = [notification userInfo];
+    
+    NSValue* aValue = [userInfo objectForKey:UIKeyboardFrameEndUserInfoKey];    
+    CGSize keyboardSize = [aValue CGRectValue].size;
+    
+    CGRect viewFrame = [self.tableView frame];
+    viewFrame.size.height += keyboardSize.height;
+    self.tableView.frame = viewFrame;
+    
+    //[UIView commitAnimations];
+}
+
+
 @end
+
+

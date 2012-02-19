@@ -18,6 +18,8 @@
     NSMutableDictionary *cityList;
     UITextField *selectedCity;
     UITextField *selectedProvince;
+    
+    double tableViewOriginHeight;
 }
 
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
@@ -28,5 +30,9 @@
 
 - (NSString *)dataFilePath;
 - (void)readDataFromDB:(NSString *)searchText;
+- (void)registerForKeyboardNotifications;
+- (void)unRegisterForKeyboardNotifications;
+- (void)keyboardWillShow:(NSNotification *)notification;
+- (void)keyboardWillHide:(NSNotification *)notification;
 
 @end

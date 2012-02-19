@@ -244,6 +244,8 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath
     
     cityListViewController.title = label.text;
     [self.navigationController pushViewController:cityListViewController animated:YES];
+    
+    [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 @end

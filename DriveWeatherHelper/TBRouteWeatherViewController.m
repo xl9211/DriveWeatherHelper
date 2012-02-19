@@ -478,7 +478,8 @@
     }
 }
 
-- (BMKAnnotationView *)mapView:(BMKMapView *)mapView viewForAnnotation:(id <BMKAnnotation>)annotation
+- (BMKAnnotationView *)mapView:(BMKMapView *)mapView 
+viewForAnnotation:(id <BMKAnnotation>)annotation
 {
     if ([annotation isKindOfClass:[BMKPointAnnotation class]]) 
     {
@@ -486,6 +487,7 @@
 		newAnnotation.pinColor = BMKPinAnnotationColorPurple;   
 		newAnnotation.animatesDrop = YES;
         newAnnotation.pinColor = BMKPinAnnotationColorRed;
+        //newAnnotation.canShowCallout = NO;
         
         [self dataDidFinishLoad];
         saveButton.enabled = YES;
@@ -494,6 +496,19 @@
 	}
 
     return nil;
+}
+
+- (void)mapView:(BMKMapView *)mapView 
+didSelectAnnotationView:(BMKAnnotationView *)view 
+{
+    NSString *temp = [view.annotation title];
+    DLog(temp);
+}
+
+- (void)mapView:(BMKMapView *)mapView 
+didDeselectAnnotationView: (BMKAnnotationView*)view
+{
+    NSString *title = [view.annotation title];
 }
 
 #pragma mark - Weather Operation
